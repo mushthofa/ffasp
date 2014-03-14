@@ -1,0 +1,1755 @@
+Stratified
+( time ../gringo strat/strat_100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.426s
+user	0m1.324s
+sys	0m0.097s
+( time ../gringo strat/strat_110.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.481s
+user	0m1.370s
+sys	0m0.107s
+( time ../gringo strat/strat_120.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.488s
+user	0m1.376s
+sys	0m0.107s
+( time ../gringo strat/strat_130.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.524s
+user	0m1.411s
+sys	0m0.103s
+( time ../gringo strat/strat_140.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.497s
+user	0m1.380s
+sys	0m0.105s
+( time ../gringo strat/strat_150.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.493s
+user	0m1.386s
+sys	0m0.105s
+( time ../gringo strat/strat_160.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.545s
+user	0m1.434s
+sys	0m0.106s
+( time ../gringo strat/strat_170.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.559s
+user	0m1.448s
+sys	0m0.108s
+( time ../gringo strat/strat_180.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.572s
+user	0m1.465s
+sys	0m0.102s
+( time ../gringo strat/strat_190.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.565s
+user	0m1.456s
+sys	0m0.105s
+( time ../gringo strat/strat_200.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.586s
+user	0m1.479s
+sys	0m0.104s
+( time ../gringo strat/strat_210.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.585s
+user	0m1.479s
+sys	0m0.104s
+( time ../gringo strat/strat_220.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.599s
+user	0m1.492s
+sys	0m0.106s
+( time ../gringo strat/strat_230.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.628s
+user	0m1.520s
+sys	0m0.105s
+( time ../gringo strat/strat_240.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.684s
+user	0m1.576s
+sys	0m0.104s
+( time ../gringo strat/strat_250.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.660s
+user	0m1.550s
+sys	0m0.106s
+( time ../gringo strat/strat_260.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.683s
+user	0m1.573s
+sys	0m0.106s
+( time ../gringo strat/strat_270.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.662s
+user	0m1.560s
+sys	0m0.099s
+( time ../gringo strat/strat_280.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.722s
+user	0m1.611s
+sys	0m0.106s
+( time ../gringo strat/strat_290.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.763s
+user	0m1.651s
+sys	0m0.111s
+( time ../gringo strat/strat_300.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.754s
+user	0m1.642s
+sys	0m0.109s
+( time ../gringo strat/strat_310.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.740s
+user	0m1.634s
+sys	0m0.103s
+( time ../gringo strat/strat_320.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.770s
+user	0m1.665s
+sys	0m0.102s
+( time ../gringo strat/strat_330.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.784s
+user	0m1.672s
+sys	0m0.110s
+( time ../gringo strat/strat_340.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.787s
+user	0m1.682s
+sys	0m0.102s
+( time ../gringo strat/strat_350.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.795s
+user	0m1.694s
+sys	0m0.099s
+( time ../gringo strat/strat_360.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.876s
+user	0m1.763s
+sys	0m0.106s
+( time ../gringo strat/strat_370.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.832s
+user	0m1.726s
+sys	0m0.103s
+( time ../gringo strat/strat_380.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.862s
+user	0m1.747s
+sys	0m0.112s
+( time ../gringo strat/strat_390.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.885s
+user	0m1.777s
+sys	0m0.106s
+( time ../gringo strat/strat_400.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.981s
+user	0m1.860s
+sys	0m0.117s
+( time ../gringo strat/strat_410.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.036s
+user	0m1.920s
+sys	0m0.113s
+( time ../gringo strat/strat_420.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.912s
+user	0m1.806s
+sys	0m0.104s
+( time ../gringo strat/strat_430.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.888s
+user	0m1.786s
+sys	0m0.101s
+( time ../gringo strat/strat_440.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.932s
+user	0m1.824s
+sys	0m0.107s
+( time ../gringo strat/strat_450.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.039s
+user	0m1.926s
+sys	0m0.110s
+( time ../gringo strat/strat_460.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.037s
+user	0m1.905s
+sys	0m0.113s
+( time ../gringo strat/strat_470.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.082s
+user	0m1.967s
+sys	0m0.109s
+( time ../gringo strat/strat_480.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.064s
+user	0m1.951s
+sys	0m0.110s
+( time ../gringo strat/strat_490.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.108s
+user	0m1.997s
+sys	0m0.110s
+( time ../gringo strat/strat_500.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.102s
+user	0m1.988s
+sys	0m0.113s
+( time ../gringo strat/strat_510.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.190s
+user	0m2.067s
+sys	0m0.124s
+( time ../gringo strat/strat_520.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.073s
+user	0m1.929s
+sys	0m0.113s
+( time ../gringo strat/strat_530.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.283s
+user	0m2.163s
+sys	0m0.119s
+( time ../gringo strat/strat_540.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.685s
+user	0m2.531s
+sys	0m0.125s
+( time ../gringo strat/strat_550.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.282s
+user	0m2.158s
+sys	0m0.114s
+( time ../gringo strat/strat_560.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.135s
+user	0m2.008s
+sys	0m0.113s
+( time ../gringo strat/strat_570.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.149s
+user	0m2.039s
+sys	0m0.110s
+( time ../gringo strat/strat_580.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.136s
+user	0m2.032s
+sys	0m0.103s
+( time ../gringo strat/strat_590.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.179s
+user	0m2.073s
+sys	0m0.104s
+( time ../gringo strat/strat_600.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.133s
+user	0m2.021s
+sys	0m0.111s
+( time ../gringo strat/strat_610.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.258s
+user	0m2.144s
+sys	0m0.113s
+( time ../gringo strat/strat_620.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.184s
+user	0m2.071s
+sys	0m0.112s
+( time ../gringo strat/strat_630.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.180s
+user	0m2.071s
+sys	0m0.106s
+( time ../gringo strat/strat_640.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.194s
+user	0m2.089s
+sys	0m0.105s
+( time ../gringo strat/strat_650.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.243s
+user	0m2.132s
+sys	0m0.110s
+( time ../gringo strat/strat_660.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.302s
+user	0m2.191s
+sys	0m0.110s
+( time ../gringo strat/strat_670.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.214s
+user	0m2.105s
+sys	0m0.108s
+( time ../gringo strat/strat_680.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.303s
+user	0m2.198s
+sys	0m0.107s
+( time ../gringo strat/strat_690.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.479s
+user	0m2.361s
+sys	0m0.117s
+( time ../gringo strat/strat_700.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.299s
+user	0m2.192s
+sys	0m0.111s
+( time ../gringo strat/strat_710.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.334s
+user	0m2.224s
+sys	0m0.110s
+( time ../gringo strat/strat_720.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.359s
+user	0m2.251s
+sys	0m0.109s
+( time ../gringo strat/strat_730.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.385s
+user	0m2.274s
+sys	0m0.113s
+( time ../gringo strat/strat_740.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.379s
+user	0m2.271s
+sys	0m0.109s
+( time ../gringo strat/strat_750.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.377s
+user	0m2.269s
+sys	0m0.109s
+( time ../gringo strat/strat_760.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.372s
+user	0m2.257s
+sys	0m0.117s
+( time ../gringo strat/strat_770.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.454s
+user	0m2.343s
+sys	0m0.113s
+( time ../gringo strat/strat_780.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.560s
+user	0m2.446s
+sys	0m0.115s
+( time ../gringo strat/strat_790.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.614s
+user	0m2.496s
+sys	0m0.119s
+( time ../gringo strat/strat_800.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.529s
+user	0m2.390s
+sys	0m0.111s
+( time ../gringo strat/strat_810.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.465s
+user	0m2.353s
+sys	0m0.113s
+( time ../gringo strat/strat_820.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.475s
+user	0m2.365s
+sys	0m0.111s
+( time ../gringo strat/strat_830.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.453s
+user	0m2.348s
+sys	0m0.113s
+( time ../gringo strat/strat_840.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.562s
+user	0m2.450s
+sys	0m0.108s
+( time ../gringo strat/strat_850.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.511s
+user	0m2.406s
+sys	0m0.108s
+( time ../gringo strat/strat_860.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.576s
+user	0m2.465s
+sys	0m0.115s
+( time ../gringo strat/strat_870.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.540s
+user	0m2.435s
+sys	0m0.107s
+( time ../gringo strat/strat_880.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.602s
+user	0m2.492s
+sys	0m0.112s
+( time ../gringo strat/strat_890.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.722s
+user	0m2.604s
+sys	0m0.119s
+( time ../gringo strat/strat_900.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.766s
+user	0m2.621s
+sys	0m0.125s
+( time ../gringo strat/strat_910.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.695s
+user	0m2.586s
+sys	0m0.112s
+( time ../gringo strat/strat_920.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.608s
+user	0m2.505s
+sys	0m0.109s
+( time ../gringo strat/strat_930.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.596s
+user	0m2.491s
+sys	0m0.111s
+( time ../gringo strat/strat_940.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m3.033s
+user	0m2.833s
+sys	0m0.122s
+( time ../gringo strat/strat_950.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m3.607s
+user	0m3.417s
+sys	0m0.154s
+( time ../gringo strat/strat_960.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.702s
+user	0m2.595s
+sys	0m0.113s
+( time ../gringo strat/strat_970.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.672s
+user	0m2.569s
+sys	0m0.112s
+( time ../gringo strat/strat_980.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.695s
+user	0m2.588s
+sys	0m0.113s
+( time ../gringo strat/strat_990.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.703s
+user	0m2.598s
+sys	0m0.111s
+Odd
+( time ../gringo odd/odd_100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.452s
+user	0m1.344s
+sys	0m0.104s
+( time ../gringo odd/odd_110.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.455s
+user	0m1.346s
+sys	0m0.106s
+( time ../gringo odd/odd_120.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.475s
+user	0m1.368s
+sys	0m0.105s
+( time ../gringo odd/odd_130.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.451s
+user	0m1.352s
+sys	0m0.096s
+( time ../gringo odd/odd_140.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.540s
+user	0m1.424s
+sys	0m0.106s
+( time ../gringo odd/odd_150.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.532s
+user	0m1.423s
+sys	0m0.106s
+( time ../gringo odd/odd_160.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.706s
+user	0m1.593s
+sys	0m0.109s
+( time ../gringo odd/odd_170.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.560s
+user	0m1.453s
+sys	0m0.103s
+( time ../gringo odd/odd_180.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.534s
+user	0m1.429s
+sys	0m0.103s
+( time ../gringo odd/odd_190.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.558s
+user	0m1.449s
+sys	0m0.105s
+( time ../gringo odd/odd_200.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.580s
+user	0m1.471s
+sys	0m0.105s
+( time ../gringo odd/odd_210.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.640s
+user	0m1.526s
+sys	0m0.106s
+( time ../gringo odd/odd_220.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.620s
+user	0m1.510s
+sys	0m0.108s
+( time ../gringo odd/odd_230.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.610s
+user	0m1.504s
+sys	0m0.102s
+( time ../gringo odd/odd_240.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.654s
+user	0m1.548s
+sys	0m0.102s
+( time ../gringo odd/odd_250.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.662s
+user	0m1.554s
+sys	0m0.106s
+( time ../gringo odd/odd_260.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.650s
+user	0m1.541s
+sys	0m0.105s
+( time ../gringo odd/odd_270.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.656s
+user	0m1.549s
+sys	0m0.104s
+( time ../gringo odd/odd_280.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.695s
+user	0m1.584s
+sys	0m0.107s
+( time ../gringo odd/odd_290.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.732s
+user	0m1.622s
+sys	0m0.106s
+( time ../gringo odd/odd_300.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.699s
+user	0m1.589s
+sys	0m0.106s
+( time ../gringo odd/odd_310.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.697s
+user	0m1.588s
+sys	0m0.105s
+( time ../gringo odd/odd_320.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.776s
+user	0m1.666s
+sys	0m0.107s
+( time ../gringo odd/odd_330.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.726s
+user	0m1.621s
+sys	0m0.103s
+( time ../gringo odd/odd_340.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.774s
+user	0m1.665s
+sys	0m0.106s
+( time ../gringo odd/odd_350.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.787s
+user	0m1.676s
+sys	0m0.108s
+( time ../gringo odd/odd_360.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.784s
+user	0m1.681s
+sys	0m0.099s
+( time ../gringo odd/odd_370.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.794s
+user	0m1.687s
+sys	0m0.104s
+( time ../gringo odd/odd_380.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.824s
+user	0m1.714s
+sys	0m0.107s
+( time ../gringo odd/odd_390.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.868s
+user	0m1.764s
+sys	0m0.101s
+( time ../gringo odd/odd_400.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.850s
+user	0m1.743s
+sys	0m0.105s
+( time ../gringo odd/odd_410.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.868s
+user	0m1.763s
+sys	0m0.101s
+( time ../gringo odd/odd_420.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.875s
+user	0m1.766s
+sys	0m0.104s
+( time ../gringo odd/odd_430.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.898s
+user	0m1.789s
+sys	0m0.106s
+( time ../gringo odd/odd_440.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.941s
+user	0m1.838s
+sys	0m0.101s
+( time ../gringo odd/odd_450.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.941s
+user	0m1.830s
+sys	0m0.107s
+( time ../gringo odd/odd_460.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.933s
+user	0m1.824s
+sys	0m0.108s
+( time ../gringo odd/odd_470.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.974s
+user	0m1.866s
+sys	0m0.106s
+( time ../gringo odd/odd_480.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.957s
+user	0m1.855s
+sys	0m0.099s
+( time ../gringo odd/odd_490.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m1.984s
+user	0m1.872s
+sys	0m0.110s
+( time ../gringo odd/odd_500.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.032s
+user	0m1.924s
+sys	0m0.105s
+( time ../gringo odd/odd_510.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.049s
+user	0m1.938s
+sys	0m0.106s
+( time ../gringo odd/odd_520.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.072s
+user	0m1.960s
+sys	0m0.103s
+( time ../gringo odd/odd_530.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.000s
+user	0m1.893s
+sys	0m0.103s
+( time ../gringo odd/odd_540.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.048s
+user	0m1.942s
+sys	0m0.104s
+( time ../gringo odd/odd_550.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.080s
+user	0m1.971s
+sys	0m0.108s
+( time ../gringo odd/odd_560.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.044s
+user	0m1.933s
+sys	0m0.109s
+( time ../gringo odd/odd_570.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.123s
+user	0m2.012s
+sys	0m0.109s
+( time ../gringo odd/odd_580.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.161s
+user	0m2.050s
+sys	0m0.108s
+( time ../gringo odd/odd_590.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.223s
+user	0m2.106s
+sys	0m0.115s
+( time ../gringo odd/odd_600.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.239s
+user	0m2.123s
+sys	0m0.116s
+( time ../gringo odd/odd_610.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.147s
+user	0m2.034s
+sys	0m0.112s
+( time ../gringo odd/odd_620.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.232s
+user	0m2.111s
+sys	0m0.116s
+( time ../gringo odd/odd_630.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.196s
+user	0m2.083s
+sys	0m0.112s
+( time ../gringo odd/odd_640.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.216s
+user	0m2.104s
+sys	0m0.112s
+( time ../gringo odd/odd_650.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.307s
+user	0m2.197s
+sys	0m0.113s
+( time ../gringo odd/odd_660.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.220s
+user	0m2.110s
+sys	0m0.110s
+( time ../gringo odd/odd_670.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.303s
+user	0m2.192s
+sys	0m0.111s
+( time ../gringo odd/odd_680.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.270s
+user	0m2.160s
+sys	0m0.110s
+( time ../gringo odd/odd_690.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.334s
+user	0m2.217s
+sys	0m0.116s
+( time ../gringo odd/odd_700.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.383s
+user	0m2.277s
+sys	0m0.108s
+( time ../gringo odd/odd_710.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.379s
+user	0m2.272s
+sys	0m0.110s
+( time ../gringo odd/odd_720.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.354s
+user	0m2.242s
+sys	0m0.112s
+( time ../gringo odd/odd_730.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.368s
+user	0m2.257s
+sys	0m0.109s
+( time ../gringo odd/odd_740.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.364s
+user	0m2.259s
+sys	0m0.107s
+( time ../gringo odd/odd_750.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.402s
+user	0m2.294s
+sys	0m0.111s
+( time ../gringo odd/odd_760.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.370s
+user	0m2.268s
+sys	0m0.102s
+( time ../gringo odd/odd_770.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.401s
+user	0m2.302s
+sys	0m0.101s
+( time ../gringo odd/odd_780.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.416s
+user	0m2.314s
+sys	0m0.102s
+( time ../gringo odd/odd_790.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.468s
+user	0m2.362s
+sys	0m0.108s
+( time ../gringo odd/odd_800.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.609s
+user	0m2.495s
+sys	0m0.117s
+( time ../gringo odd/odd_810.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.558s
+user	0m2.440s
+sys	0m0.117s
+( time ../gringo odd/odd_820.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.731s
+user	0m2.583s
+sys	0m0.120s
+( time ../gringo odd/odd_830.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m3.255s
+user	0m2.786s
+sys	0m0.120s
+( time ../gringo odd/odd_840.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.696s
+user	0m2.545s
+sys	0m0.116s
+( time ../gringo odd/odd_850.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.777s
+user	0m2.664s
+sys	0m0.116s
+( time ../gringo odd/odd_860.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.811s
+user	0m2.701s
+sys	0m0.113s
+( time ../gringo odd/odd_870.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.637s
+user	0m2.526s
+sys	0m0.111s
+( time ../gringo odd/odd_880.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.715s
+user	0m2.604s
+sys	0m0.113s
+( time ../gringo odd/odd_890.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.628s
+user	0m2.516s
+sys	0m0.113s
+( time ../gringo odd/odd_900.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.654s
+user	0m2.546s
+sys	0m0.115s
+( time ../gringo odd/odd_910.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.678s
+user	0m2.568s
+sys	0m0.113s
+( time ../gringo odd/odd_920.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.788s
+user	0m2.676s
+sys	0m0.117s
+( time ../gringo odd/odd_930.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.882s
+user	0m2.772s
+sys	0m0.113s
+( time ../gringo odd/odd_940.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.952s
+user	0m2.827s
+sys	0m0.126s
+( time ../gringo odd/odd_950.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.905s
+user	0m2.771s
+sys	0m0.126s
+( time ../gringo odd/odd_960.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.883s
+user	0m2.760s
+sys	0m0.128s
+( time ../gringo odd/odd_970.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.810s
+user	0m2.703s
+sys	0m0.112s
+( time ../gringo odd/odd_980.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m2.774s
+user	0m2.674s
+sys	0m0.109s
+( time ../gringo odd/odd_990.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m3.029s
+user	0m2.913s
+sys	0m0.120s
+graph-col
+Denom=20
+( time ../gringo graph-col/20/col-10-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m29.165s
+user	0m28.831s
+sys	0m0.175s
+( time ../gringo graph-col/20/col-20-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m49.049s
+user	0m48.761s
+sys	0m0.224s
+( time ../gringo graph-col/20/col-30-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m32.638s
+user	0m32.432s
+sys	0m0.193s
+( time ../gringo graph-col/20/col-40-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m38.339s
+user	0m38.159s
+sys	0m0.204s
+( time ../gringo graph-col/20/col-50-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m38.510s
+user	0m38.318s
+sys	0m0.206s
+( time ../gringo graph-col/20/col-60-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m47.643s
+user	0m47.430s
+sys	0m0.221s
+Denom=40
+( time ../gringo graph-col/40/col-10-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m33.076s
+user	0m31.089s
+sys	0m0.218s
+( time ../gringo graph-col/40/col-20-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m34.143s
+user	0m32.054s
+sys	0m0.218s
+( time ../gringo graph-col/40/col-30-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m32.623s
+user	0m32.410s
+sys	0m0.183s
+( time ../gringo graph-col/40/col-40-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m41.386s
+user	0m39.672s
+sys	0m0.242s
+( time ../gringo graph-col/40/col-50-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m39.379s
+user	0m39.183s
+sys	0m0.202s
+( time ../gringo graph-col/40/col-60-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m52.541s
+user	0m52.228s
+sys	0m0.244s
+Denom=60
+( time ../gringo graph-col/60/col-10-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m32.131s
+user	0m28.421s
+sys	0m0.254s
+( time ../gringo graph-col/60/col-20-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m35.113s
+user	0m31.022s
+sys	0m0.249s
+( time ../gringo graph-col/60/col-30-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m37.828s
+user	0m37.083s
+sys	0m0.207s
+( time ../gringo graph-col/60/col-40-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m42.213s
+user	0m38.583s
+sys	0m0.267s
+( time ../gringo graph-col/60/col-50-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m40.737s
+user	0m38.562s
+sys	0m0.223s
+( time ../gringo graph-col/60/col-60-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m46.189s
+user	0m42.762s
+sys	0m0.279s
+Denom=80
+( time ../gringo graph-col/80/col-10-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m38.778s
+user	0m31.873s
+sys	0m0.257s
+( time ../gringo graph-col/80/col-20-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m50.728s
+user	0m47.230s
+sys	0m0.281s
+( time ../gringo graph-col/80/col-30-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m33.436s
+user	0m31.445s
+sys	0m0.210s
+( time ../gringo graph-col/80/col-40-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m41.906s
+user	0m38.614s
+sys	0m0.270s
+( time ../gringo graph-col/80/col-50-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m41.558s
+user	0m38.202s
+sys	0m0.257s
+( time ../gringo graph-col/80/col-60-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m48.973s
+user	0m45.547s
+sys	0m0.283s
+Denom=100
+( time ../gringo graph-col/100/col-10-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m36.072s
+user	0m32.831s
+sys	0m0.245s
+( time ../gringo graph-col/100/col-20-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m41.039s
+user	0m37.385s
+sys	0m0.262s
+( time ../gringo graph-col/100/col-30-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m37.951s
+user	0m34.240s
+sys	0m0.250s
+( time ../gringo graph-col/100/col-40-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m43.987s
+user	0m40.280s
+sys	0m0.275s
+( time ../gringo graph-col/100/col-50-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m42.544s
+user	0m39.236s
+sys	0m0.252s
+( time ../gringo graph-col/100/col-60-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m56.223s
+user	0m52.292s
+sys	0m0.307s
+ham-path
+Denom=20
+( time ../gringo ham-path/20/ham-11-20.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m39.341s
+user	0m39.112s
+sys	0m0.232s
+( time ../gringo ham-path/20/ham-12-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m13.770s
+user	0m13.628s
+sys	0m0.142s
+( time ../gringo ham-path/20/ham-13-20.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m23.474s
+user	0m23.306s
+sys	0m0.171s
+( time ../gringo ham-path/20/ham-14-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m18.190s
+user	0m18.036s
+sys	0m0.146s
+( time ../gringo ham-path/20/ham-15-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m21.896s
+user	0m21.741s
+sys	0m0.158s
+( time ../gringo ham-path/20/ham-16-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m13.137s
+user	0m12.991s
+sys	0m0.139s
+( time ../gringo ham-path/20/ham-17-20.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m4.380s
+user	1m4.116s
+sys	0m0.280s
+( time ../gringo ham-path/20/ham-18-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m9.980s
+user	0m9.853s
+sys	0m0.123s
+( time ../gringo ham-path/20/ham-19-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m49.765s
+user	0m49.523s
+sys	0m0.246s
+( time ../gringo ham-path/20/ham-20-20.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m22.934s
+user	0m22.756s
+sys	0m0.168s
+Denom=40
+( time ../gringo ham-path/40/ham-11-40.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m25.565s
+user	0m25.388s
+sys	0m0.169s
+( time ../gringo ham-path/40/ham-12-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m10.890s
+user	0m10.765s
+sys	0m0.125s
+( time ../gringo ham-path/40/ham-13-40.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m27.198s
+user	0m27.021s
+sys	0m0.185s
+( time ../gringo ham-path/40/ham-14-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m18.275s
+user	0m18.073s
+sys	0m0.176s
+( time ../gringo ham-path/40/ham-15-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m11.003s
+user	0m10.865s
+sys	0m0.131s
+( time ../gringo ham-path/40/ham-16-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m13.474s
+user	0m13.328s
+sys	0m0.142s
+( time ../gringo ham-path/40/ham-17-40.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m40.000s
+user	0m39.781s
+sys	0m0.216s
+( time ../gringo ham-path/40/ham-18-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m21.656s
+user	0m21.503s
+sys	0m0.156s
+( time ../gringo ham-path/40/ham-19-40.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m29.721s
+user	0m29.553s
+sys	0m0.172s
+( time ../gringo ham-path/40/ham-20-40.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m21.291s
+user	1m21.014s
+sys	0m0.299s
+Denom=60
+( time ../gringo ham-path/60/ham-11-60.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m26.343s
+user	0m26.170s
+sys	0m0.173s
+( time ../gringo ham-path/60/ham-12-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m14.162s
+user	0m14.012s
+sys	0m0.147s
+( time ../gringo ham-path/60/ham-13-60.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m37.592s
+user	0m37.381s
+sys	0m0.198s
+( time ../gringo ham-path/60/ham-14-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m26.122s
+user	0m25.939s
+sys	0m0.182s
+( time ../gringo ham-path/60/ham-15-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m12.257s
+user	0m12.106s
+sys	0m0.139s
+( time ../gringo ham-path/60/ham-16-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m33.214s
+user	0m33.019s
+sys	0m0.196s
+( time ../gringo ham-path/60/ham-17-60.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m8.476s
+user	1m8.188s
+sys	0m0.285s
+( time ../gringo ham-path/60/ham-18-60.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m28.737s
+user	0m28.568s
+sys	0m0.170s
+( time ../gringo ham-path/60/ham-19-60.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m32.301s
+user	1m31.947s
+sys	0m0.326s
+( time ../gringo ham-path/60/ham-20-60.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	2m52.746s
+user	2m52.258s
+sys	0m0.476s
+Denom=80
+( time ../gringo ham-path/80/ham-11-80.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m28.018s
+user	0m27.841s
+sys	0m0.176s
+( time ../gringo ham-path/80/ham-12-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m15.719s
+user	0m15.570s
+sys	0m0.143s
+( time ../gringo ham-path/80/ham-13-80.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m29.347s
+user	0m29.145s
+sys	0m0.187s
+( time ../gringo ham-path/80/ham-14-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m23.241s
+user	0m23.083s
+sys	0m0.159s
+( time ../gringo ham-path/80/ham-15-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m9.710s
+user	0m9.576s
+sys	0m0.128s
+( time ../gringo ham-path/80/ham-16-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m38.960s
+user	0m38.750s
+sys	0m0.200s
+( time ../gringo ham-path/80/ham-17-80.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m42.384s
+user	0m42.160s
+sys	0m0.228s
+( time ../gringo ham-path/80/ham-18-80.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m26.400s
+user	0m26.236s
+sys	0m0.162s
+( time ../gringo ham-path/80/ham-19-80.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m16.893s
+user	1m16.605s
+sys	0m0.287s
+( time ../gringo ham-path/80/ham-20-80.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m17.895s
+user	1m17.605s
+sys	0m0.311s
+Denom=100
+( time ../gringo ham-path/100/ham-11-100.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m29.245s
+user	0m29.062s
+sys	0m0.184s
+( time ../gringo ham-path/100/ham-12-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m11.042s
+user	0m10.907s
+sys	0m0.132s
+( time ../gringo ham-path/100/ham-13-100.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m29.360s
+user	0m29.174s
+sys	0m0.190s
+( time ../gringo ham-path/100/ham-14-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m41.619s
+user	0m41.399s
+sys	0m0.221s
+( time ../gringo ham-path/100/ham-15-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m21.898s
+user	0m21.741s
+sys	0m0.155s
+( time ../gringo ham-path/100/ham-16-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m19.543s
+user	0m19.395s
+sys	0m0.144s
+( time ../gringo ham-path/100/ham-17-100.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m43.496s
+user	0m43.249s
+sys	0m0.225s
+( time ../gringo ham-path/100/ham-18-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m22.647s
+user	0m22.484s
+sys	0m0.162s
+( time ../gringo ham-path/100/ham-19-100.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m49.512s
+user	0m49.229s
+sys	0m0.230s
+( time ../gringo ham-path/100/ham-20-100.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m29.218s
+user	1m28.864s
+sys	0m0.344s
+ham-path
+( time timeout -t 602 ../gringo ham-path/120/ham-11-120.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m26.777s
+user	0m23.662s
+sys	0m0.259s
+( time timeout -t 602 ../gringo ham-path/120/ham-12-120.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m9.849s
+user	0m9.611s
+sys	0m0.135s
+( time timeout -t 602 ../gringo ham-path/120/ham-13-120.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m37.352s
+user	0m37.161s
+sys	0m0.200s
+( time timeout -t 602 ../gringo ham-path/120/ham-14-120.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m28.498s
+user	0m28.341s
+sys	0m0.163s
+( time timeout -t 602 ../gringo ham-path/120/ham-15-120.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m16.964s
+user	0m16.703s
+sys	0m0.149s
+( time timeout -t 602 ../gringo ham-path/120/ham-16-120.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m29.781s
+user	0m29.019s
+sys	0m0.183s
+( time timeout -t 602 ../gringo ham-path/120/ham-17-120.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m57.484s
+user	0m57.133s
+sys	0m0.254s
+( time timeout -t 602 ../gringo ham-path/120/ham-18-120.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m20.571s
+user	0m19.068s
+sys	0m0.194s
+( time timeout -t 602 ../gringo ham-path/120/ham-19-120.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	1m36.433s
+user	1m34.947s
+sys	0m0.358s
+( time timeout -t 602 ../gringo ham-path/120/ham-20-120.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	3m22.436s
+user	3m20.376s
+sys	0m0.551s
+( time timeout -t 602 ../gringo ham-path/140/ham-11-140.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m32.503s
+user	0m30.748s
+sys	0m0.249s
+( time timeout -t 602 ../gringo ham-path/140/ham-12-140.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m20.589s
+user	0m20.348s
+sys	0m0.157s
+( time timeout -t 602 ../gringo ham-path/140/ham-13-140.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m37.240s
+user	0m37.060s
+sys	0m0.186s
+( time timeout -t 602 ../gringo ham-path/140/ham-14-140.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m13.592s
+user	0m13.457s
+sys	0m0.134s
+( time timeout -t 602 ../gringo ham-path/140/ham-15-140.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m40.638s
+user	0m40.404s
+sys	0m0.218s
+( time timeout -t 602 ../gringo ham-path/140/ham-16-140.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m26.302s
+user	0m22.938s
+sys	0m0.238s
+( time timeout -t 602 ../gringo ham-path/140/ham-17-140.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m47.985s
+user	1m47.167s
+sys	0m0.373s
+( time timeout -t 602 ../gringo ham-path/140/ham-18-140.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m20.957s
+user	0m19.154s
+sys	0m0.216s
+( time timeout -t 602 ../gringo ham-path/140/ham-19-140.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m50.733s
+user	1m50.392s
+sys	0m0.347s
+( time timeout -t 602 ../gringo ham-path/140/ham-20-140.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	3m12.714s
+user	3m11.699s
+sys	0m0.503s
+( time timeout -t 602 ../gringo ham-path/160/ham-11-160.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m35.044s
+user	0m31.896s
+sys	0m0.259s
+( time timeout -t 602 ../gringo ham-path/160/ham-12-160.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m15.791s
+user	0m14.234s
+sys	0m0.203s
+( time timeout -t 602 ../gringo ham-path/160/ham-13-160.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m28.481s
+user	0m28.299s
+sys	0m0.188s
+( time timeout -t 602 ../gringo ham-path/160/ham-14-160.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m22.571s
+user	0m22.418s
+sys	0m0.155s
+( time timeout -t 602 ../gringo ham-path/160/ham-15-160.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m33.103s
+user	0m32.916s
+sys	0m0.185s
+( time timeout -t 602 ../gringo ham-path/160/ham-16-160.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m25.528s
+user	0m25.378s
+sys	0m0.150s
+( time timeout -t 602 ../gringo ham-path/160/ham-17-160.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	0m39.736s
+user	0m39.524s
+sys	0m0.216s
+( time timeout -t 602 ../gringo ham-path/160/ham-18-160.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	0m19.078s
+user	0m18.944s
+sys	0m0.138s
+( time timeout -t 602 ../gringo ham-path/160/ham-19-160.lp | ../fasp --mode=answer-set)
+Satisfied
+
+real	1m7.318s
+user	1m7.084s
+sys	0m0.242s
+( time timeout -t 602 ../gringo ham-path/160/ham-20-160.lp | ../fasp --mode=answer-set)
+INCOHERENT
+
+real	1m21.975s
+user	1m21.682s
+sys	0m0.314s

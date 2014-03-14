@@ -1,0 +1,1755 @@
+Stratified
+( time ../ffasp strat/strat_100.lp )
+Satisfiable.
+
+real	0m0.419s
+user	0m0.050s
+sys	0m0.027s
+( time ../ffasp strat/strat_110.lp )
+Satisfiable.
+
+real	0m0.068s
+user	0m0.051s
+sys	0m0.006s
+( time ../ffasp strat/strat_120.lp )
+Satisfiable.
+
+real	0m0.058s
+user	0m0.051s
+sys	0m0.005s
+( time ../ffasp strat/strat_130.lp )
+Satisfiable.
+
+real	0m0.061s
+user	0m0.053s
+sys	0m0.005s
+( time ../ffasp strat/strat_140.lp )
+Satisfiable.
+
+real	0m0.065s
+user	0m0.058s
+sys	0m0.005s
+( time ../ffasp strat/strat_150.lp )
+Satisfiable.
+
+real	0m0.071s
+user	0m0.063s
+sys	0m0.006s
+( time ../ffasp strat/strat_160.lp )
+Satisfiable.
+
+real	0m0.078s
+user	0m0.069s
+sys	0m0.007s
+( time ../ffasp strat/strat_170.lp )
+Satisfiable.
+
+real	0m0.094s
+user	0m0.085s
+sys	0m0.007s
+( time ../ffasp strat/strat_180.lp )
+Satisfiable.
+
+real	0m0.088s
+user	0m0.080s
+sys	0m0.007s
+( time ../ffasp strat/strat_190.lp )
+Satisfiable.
+
+real	0m0.099s
+user	0m0.089s
+sys	0m0.007s
+( time ../ffasp strat/strat_200.lp )
+Satisfiable.
+
+real	0m0.101s
+user	0m0.093s
+sys	0m0.006s
+( time ../ffasp strat/strat_210.lp )
+Satisfiable.
+
+real	0m0.111s
+user	0m0.102s
+sys	0m0.007s
+( time ../ffasp strat/strat_220.lp )
+Satisfiable.
+
+real	0m0.120s
+user	0m0.111s
+sys	0m0.007s
+( time ../ffasp strat/strat_230.lp )
+Satisfiable.
+
+real	0m0.121s
+user	0m0.111s
+sys	0m0.008s
+( time ../ffasp strat/strat_240.lp )
+Satisfiable.
+
+real	0m0.135s
+user	0m0.124s
+sys	0m0.008s
+( time ../ffasp strat/strat_250.lp )
+Satisfiable.
+
+real	0m0.155s
+user	0m0.132s
+sys	0m0.008s
+( time ../ffasp strat/strat_260.lp )
+Satisfiable.
+
+real	0m0.146s
+user	0m0.135s
+sys	0m0.008s
+( time ../ffasp strat/strat_270.lp )
+Satisfiable.
+
+real	0m0.155s
+user	0m0.145s
+sys	0m0.008s
+( time ../ffasp strat/strat_280.lp )
+Satisfiable.
+
+real	0m0.167s
+user	0m0.156s
+sys	0m0.009s
+( time ../ffasp strat/strat_290.lp )
+Satisfiable.
+
+real	0m0.173s
+user	0m0.161s
+sys	0m0.009s
+( time ../ffasp strat/strat_300.lp )
+Satisfiable.
+
+real	0m0.181s
+user	0m0.169s
+sys	0m0.009s
+( time ../ffasp strat/strat_310.lp )
+Satisfiable.
+
+real	0m0.192s
+user	0m0.180s
+sys	0m0.010s
+( time ../ffasp strat/strat_320.lp )
+Satisfiable.
+
+real	0m0.203s
+user	0m0.190s
+sys	0m0.010s
+( time ../ffasp strat/strat_330.lp )
+Satisfiable.
+
+real	0m0.213s
+user	0m0.201s
+sys	0m0.010s
+( time ../ffasp strat/strat_340.lp )
+Satisfiable.
+
+real	0m0.220s
+user	0m0.206s
+sys	0m0.010s
+( time ../ffasp strat/strat_350.lp )
+Satisfiable.
+
+real	0m0.235s
+user	0m0.220s
+sys	0m0.010s
+( time ../ffasp strat/strat_360.lp )
+Satisfiable.
+
+real	0m0.250s
+user	0m0.237s
+sys	0m0.010s
+( time ../ffasp strat/strat_370.lp )
+Satisfiable.
+
+real	0m0.248s
+user	0m0.236s
+sys	0m0.010s
+( time ../ffasp strat/strat_380.lp )
+Satisfiable.
+
+real	0m0.263s
+user	0m0.249s
+sys	0m0.011s
+( time ../ffasp strat/strat_390.lp )
+Satisfiable.
+
+real	0m0.273s
+user	0m0.258s
+sys	0m0.012s
+( time ../ffasp strat/strat_400.lp )
+Satisfiable.
+
+real	0m0.275s
+user	0m0.260s
+sys	0m0.011s
+( time ../ffasp strat/strat_410.lp )
+Satisfiable.
+
+real	0m0.317s
+user	0m0.302s
+sys	0m0.012s
+( time ../ffasp strat/strat_420.lp )
+Satisfiable.
+
+real	0m0.292s
+user	0m0.279s
+sys	0m0.010s
+( time ../ffasp strat/strat_430.lp )
+Satisfiable.
+
+real	0m0.311s
+user	0m0.294s
+sys	0m0.014s
+( time ../ffasp strat/strat_440.lp )
+Satisfiable.
+
+real	0m0.322s
+user	0m0.306s
+sys	0m0.013s
+( time ../ffasp strat/strat_450.lp )
+Satisfiable.
+
+real	0m0.359s
+user	0m0.343s
+sys	0m0.013s
+( time ../ffasp strat/strat_460.lp )
+Satisfiable.
+
+real	0m0.340s
+user	0m0.325s
+sys	0m0.012s
+( time ../ffasp strat/strat_470.lp )
+Satisfiable.
+
+real	0m0.355s
+user	0m0.340s
+sys	0m0.013s
+( time ../ffasp strat/strat_480.lp )
+Satisfiable.
+
+real	0m0.411s
+user	0m0.351s
+sys	0m0.014s
+( time ../ffasp strat/strat_490.lp )
+Satisfiable.
+
+real	0m0.409s
+user	0m0.366s
+sys	0m0.014s
+( time ../ffasp strat/strat_500.lp )
+Satisfiable.
+
+real	0m0.481s
+user	0m0.367s
+sys	0m0.015s
+( time ../ffasp strat/strat_510.lp )
+Satisfiable.
+
+real	0m0.446s
+user	0m0.398s
+sys	0m0.014s
+( time ../ffasp strat/strat_520.lp )
+Satisfiable.
+
+real	0m0.400s
+user	0m0.386s
+sys	0m0.012s
+( time ../ffasp strat/strat_530.lp )
+Satisfiable.
+
+real	0m0.420s
+user	0m0.405s
+sys	0m0.013s
+( time ../ffasp strat/strat_540.lp )
+Satisfiable.
+
+real	0m0.497s
+user	0m0.456s
+sys	0m0.019s
+( time ../ffasp strat/strat_550.lp )
+Satisfiable.
+
+real	0m0.489s
+user	0m0.469s
+sys	0m0.019s
+( time ../ffasp strat/strat_560.lp )
+Satisfiable.
+
+real	0m0.554s
+user	0m0.517s
+sys	0m0.017s
+( time ../ffasp strat/strat_570.lp )
+Satisfiable.
+
+real	0m0.499s
+user	0m0.481s
+sys	0m0.015s
+( time ../ffasp strat/strat_580.lp )
+Satisfiable.
+
+real	0m0.522s
+user	0m0.501s
+sys	0m0.017s
+( time ../ffasp strat/strat_590.lp )
+Satisfiable.
+
+real	0m0.495s
+user	0m0.477s
+sys	0m0.016s
+( time ../ffasp strat/strat_600.lp )
+Satisfiable.
+
+real	0m0.506s
+user	0m0.488s
+sys	0m0.015s
+( time ../ffasp strat/strat_610.lp )
+Satisfiable.
+
+real	0m0.570s
+user	0m0.545s
+sys	0m0.016s
+( time ../ffasp strat/strat_620.lp )
+Satisfiable.
+
+real	0m0.537s
+user	0m0.519s
+sys	0m0.015s
+( time ../ffasp strat/strat_630.lp )
+Satisfiable.
+
+real	0m0.611s
+user	0m0.541s
+sys	0m0.016s
+( time ../ffasp strat/strat_640.lp )
+Satisfiable.
+
+real	0m0.566s
+user	0m0.548s
+sys	0m0.016s
+( time ../ffasp strat/strat_650.lp )
+Satisfiable.
+
+real	0m0.602s
+user	0m0.582s
+sys	0m0.018s
+( time ../ffasp strat/strat_660.lp )
+Satisfiable.
+
+real	0m0.622s
+user	0m0.601s
+sys	0m0.019s
+( time ../ffasp strat/strat_670.lp )
+Satisfiable.
+
+real	0m0.641s
+user	0m0.623s
+sys	0m0.016s
+( time ../ffasp strat/strat_680.lp )
+Satisfiable.
+
+real	0m0.642s
+user	0m0.623s
+sys	0m0.016s
+( time ../ffasp strat/strat_690.lp )
+Satisfiable.
+
+real	0m0.642s
+user	0m0.622s
+sys	0m0.017s
+( time ../ffasp strat/strat_700.lp )
+Satisfiable.
+
+real	0m0.671s
+user	0m0.650s
+sys	0m0.018s
+( time ../ffasp strat/strat_710.lp )
+Satisfiable.
+
+real	0m0.731s
+user	0m0.708s
+sys	0m0.021s
+( time ../ffasp strat/strat_720.lp )
+Satisfiable.
+
+real	0m0.700s
+user	0m0.680s
+sys	0m0.017s
+( time ../ffasp strat/strat_730.lp )
+Satisfiable.
+
+real	0m0.716s
+user	0m0.695s
+sys	0m0.018s
+( time ../ffasp strat/strat_740.lp )
+Satisfiable.
+
+real	0m0.721s
+user	0m0.700s
+sys	0m0.018s
+( time ../ffasp strat/strat_750.lp )
+Satisfiable.
+
+real	0m0.786s
+user	0m0.747s
+sys	0m0.022s
+( time ../ffasp strat/strat_760.lp )
+Satisfiable.
+
+real	0m0.777s
+user	0m0.753s
+sys	0m0.022s
+( time ../ffasp strat/strat_770.lp )
+Satisfiable.
+
+real	0m0.789s
+user	0m0.767s
+sys	0m0.020s
+( time ../ffasp strat/strat_780.lp )
+Satisfiable.
+
+real	0m0.814s
+user	0m0.792s
+sys	0m0.019s
+( time ../ffasp strat/strat_790.lp )
+Satisfiable.
+
+real	0m0.813s
+user	0m0.792s
+sys	0m0.019s
+( time ../ffasp strat/strat_800.lp )
+Satisfiable.
+
+real	0m0.824s
+user	0m0.792s
+sys	0m0.019s
+( time ../ffasp strat/strat_810.lp )
+Satisfiable.
+
+real	0m0.877s
+user	0m0.855s
+sys	0m0.019s
+( time ../ffasp strat/strat_820.lp )
+Satisfiable.
+
+real	0m0.852s
+user	0m0.831s
+sys	0m0.018s
+( time ../ffasp strat/strat_830.lp )
+Satisfiable.
+
+real	0m0.864s
+user	0m0.843s
+sys	0m0.017s
+( time ../ffasp strat/strat_840.lp )
+Satisfiable.
+
+real	0m0.891s
+user	0m0.869s
+sys	0m0.019s
+( time ../ffasp strat/strat_850.lp )
+Satisfiable.
+
+real	0m0.901s
+user	0m0.880s
+sys	0m0.019s
+( time ../ffasp strat/strat_860.lp )
+Satisfiable.
+
+real	0m0.947s
+user	0m0.924s
+sys	0m0.021s
+( time ../ffasp strat/strat_870.lp )
+Satisfiable.
+
+real	0m0.971s
+user	0m0.945s
+sys	0m0.023s
+( time ../ffasp strat/strat_880.lp )
+Satisfiable.
+
+real	0m0.983s
+user	0m0.960s
+sys	0m0.021s
+( time ../ffasp strat/strat_890.lp )
+Satisfiable.
+
+real	0m1.095s
+user	0m1.067s
+sys	0m0.024s
+( time ../ffasp strat/strat_900.lp )
+Satisfiable.
+
+real	0m1.026s
+user	0m1.003s
+sys	0m0.021s
+( time ../ffasp strat/strat_910.lp )
+Satisfiable.
+
+real	0m1.072s
+user	0m1.048s
+sys	0m0.022s
+( time ../ffasp strat/strat_920.lp )
+Satisfiable.
+
+real	0m1.093s
+user	0m1.055s
+sys	0m0.021s
+( time ../ffasp strat/strat_930.lp )
+Satisfiable.
+
+real	0m1.103s
+user	0m1.079s
+sys	0m0.022s
+( time ../ffasp strat/strat_940.lp )
+Satisfiable.
+
+real	0m1.095s
+user	0m1.071s
+sys	0m0.021s
+( time ../ffasp strat/strat_950.lp )
+Satisfiable.
+
+real	0m1.606s
+user	0m1.341s
+sys	0m0.031s
+( time ../ffasp strat/strat_960.lp )
+Satisfiable.
+
+real	0m1.265s
+user	0m1.226s
+sys	0m0.026s
+( time ../ffasp strat/strat_970.lp )
+Satisfiable.
+
+real	0m1.172s
+user	0m1.129s
+sys	0m0.024s
+( time ../ffasp strat/strat_980.lp )
+Satisfiable.
+
+real	0m1.180s
+user	0m1.155s
+sys	0m0.023s
+( time ../ffasp strat/strat_990.lp )
+Satisfiable.
+
+real	0m1.207s
+user	0m1.182s
+sys	0m0.023s
+Odd
+( time ../ffasp odd/odd_100.lp )
+Satisfiable.
+
+real	0m0.031s
+user	0m0.022s
+sys	0m0.006s
+( time ../ffasp odd/odd_110.lp )
+Satisfiable.
+
+real	0m0.049s
+user	0m0.024s
+sys	0m0.006s
+( time ../ffasp odd/odd_120.lp )
+Satisfiable.
+
+real	0m0.029s
+user	0m0.021s
+sys	0m0.006s
+( time ../ffasp odd/odd_130.lp )
+Satisfiable.
+
+real	0m0.029s
+user	0m0.021s
+sys	0m0.006s
+( time ../ffasp odd/odd_140.lp )
+Satisfiable.
+
+real	0m0.032s
+user	0m0.024s
+sys	0m0.006s
+( time ../ffasp odd/odd_150.lp )
+Satisfiable.
+
+real	0m0.031s
+user	0m0.024s
+sys	0m0.006s
+( time ../ffasp odd/odd_160.lp )
+Satisfiable.
+
+real	0m0.033s
+user	0m0.025s
+sys	0m0.006s
+( time ../ffasp odd/odd_170.lp )
+Satisfiable.
+
+real	0m0.035s
+user	0m0.027s
+sys	0m0.006s
+( time ../ffasp odd/odd_180.lp )
+Satisfiable.
+
+real	0m0.040s
+user	0m0.032s
+sys	0m0.006s
+( time ../ffasp odd/odd_190.lp )
+Satisfiable.
+
+real	0m0.038s
+user	0m0.030s
+sys	0m0.006s
+( time ../ffasp odd/odd_200.lp )
+Satisfiable.
+
+real	0m0.040s
+user	0m0.032s
+sys	0m0.006s
+( time ../ffasp odd/odd_210.lp )
+Satisfiable.
+
+real	0m0.044s
+user	0m0.035s
+sys	0m0.007s
+( time ../ffasp odd/odd_220.lp )
+Satisfiable.
+
+real	0m0.044s
+user	0m0.036s
+sys	0m0.006s
+( time ../ffasp odd/odd_230.lp )
+Satisfiable.
+
+real	0m0.045s
+user	0m0.037s
+sys	0m0.006s
+( time ../ffasp odd/odd_240.lp )
+Satisfiable.
+
+real	0m0.048s
+user	0m0.039s
+sys	0m0.007s
+( time ../ffasp odd/odd_250.lp )
+Satisfiable.
+
+real	0m0.053s
+user	0m0.042s
+sys	0m0.008s
+( time ../ffasp odd/odd_260.lp )
+Satisfiable.
+
+real	0m0.054s
+user	0m0.044s
+sys	0m0.008s
+( time ../ffasp odd/odd_270.lp )
+Satisfiable.
+
+real	0m0.049s
+user	0m0.040s
+sys	0m0.007s
+( time ../ffasp odd/odd_280.lp )
+Satisfiable.
+
+real	0m0.058s
+user	0m0.047s
+sys	0m0.008s
+( time ../ffasp odd/odd_290.lp )
+Satisfiable.
+
+real	0m0.052s
+user	0m0.042s
+sys	0m0.007s
+( time ../ffasp odd/odd_300.lp )
+Satisfiable.
+
+real	0m0.055s
+user	0m0.045s
+sys	0m0.007s
+( time ../ffasp odd/odd_310.lp )
+Satisfiable.
+
+real	0m0.056s
+user	0m0.046s
+sys	0m0.008s
+( time ../ffasp odd/odd_320.lp )
+Satisfiable.
+
+real	0m0.057s
+user	0m0.047s
+sys	0m0.007s
+( time ../ffasp odd/odd_330.lp )
+Satisfiable.
+
+real	0m0.058s
+user	0m0.048s
+sys	0m0.007s
+( time ../ffasp odd/odd_340.lp )
+Satisfiable.
+
+real	0m0.059s
+user	0m0.050s
+sys	0m0.007s
+( time ../ffasp odd/odd_350.lp )
+Satisfiable.
+
+real	0m0.065s
+user	0m0.057s
+sys	0m0.007s
+( time ../ffasp odd/odd_360.lp )
+Satisfiable.
+
+real	0m0.062s
+user	0m0.053s
+sys	0m0.007s
+( time ../ffasp odd/odd_370.lp )
+Satisfiable.
+
+real	0m0.075s
+user	0m0.055s
+sys	0m0.007s
+( time ../ffasp odd/odd_380.lp )
+Satisfiable.
+
+real	0m0.069s
+user	0m0.060s
+sys	0m0.007s
+( time ../ffasp odd/odd_390.lp )
+Satisfiable.
+
+real	0m0.069s
+user	0m0.060s
+sys	0m0.008s
+( time ../ffasp odd/odd_400.lp )
+Satisfiable.
+
+real	0m0.067s
+user	0m0.059s
+sys	0m0.007s
+( time ../ffasp odd/odd_410.lp )
+Satisfiable.
+
+real	0m0.073s
+user	0m0.063s
+sys	0m0.008s
+( time ../ffasp odd/odd_420.lp )
+Satisfiable.
+
+real	0m0.070s
+user	0m0.061s
+sys	0m0.008s
+( time ../ffasp odd/odd_430.lp )
+Satisfiable.
+
+real	0m0.075s
+user	0m0.065s
+sys	0m0.008s
+( time ../ffasp odd/odd_440.lp )
+Satisfiable.
+
+real	0m0.073s
+user	0m0.064s
+sys	0m0.007s
+( time ../ffasp odd/odd_450.lp )
+Satisfiable.
+
+real	0m0.085s
+user	0m0.075s
+sys	0m0.008s
+( time ../ffasp odd/odd_460.lp )
+Satisfiable.
+
+real	0m0.077s
+user	0m0.067s
+sys	0m0.008s
+( time ../ffasp odd/odd_470.lp )
+Satisfiable.
+
+real	0m0.088s
+user	0m0.079s
+sys	0m0.008s
+( time ../ffasp odd/odd_480.lp )
+Satisfiable.
+
+real	0m0.081s
+user	0m0.072s
+sys	0m0.008s
+( time ../ffasp odd/odd_490.lp )
+Satisfiable.
+
+real	0m0.089s
+user	0m0.077s
+sys	0m0.009s
+( time ../ffasp odd/odd_500.lp )
+Satisfiable.
+
+real	0m0.092s
+user	0m0.081s
+sys	0m0.009s
+( time ../ffasp odd/odd_510.lp )
+Satisfiable.
+
+real	0m0.089s
+user	0m0.078s
+sys	0m0.009s
+( time ../ffasp odd/odd_520.lp )
+Satisfiable.
+
+real	0m0.088s
+user	0m0.077s
+sys	0m0.009s
+( time ../ffasp odd/odd_530.lp )
+Satisfiable.
+
+real	0m0.094s
+user	0m0.084s
+sys	0m0.009s
+( time ../ffasp odd/odd_540.lp )
+Satisfiable.
+
+real	0m0.090s
+user	0m0.079s
+sys	0m0.008s
+( time ../ffasp odd/odd_550.lp )
+Satisfiable.
+
+real	0m0.099s
+user	0m0.087s
+sys	0m0.010s
+( time ../ffasp odd/odd_560.lp )
+Satisfiable.
+
+real	0m0.096s
+user	0m0.086s
+sys	0m0.009s
+( time ../ffasp odd/odd_570.lp )
+Satisfiable.
+
+real	0m0.098s
+user	0m0.087s
+sys	0m0.009s
+( time ../ffasp odd/odd_580.lp )
+Satisfiable.
+
+real	0m0.107s
+user	0m0.094s
+sys	0m0.010s
+( time ../ffasp odd/odd_590.lp )
+Satisfiable.
+
+real	0m0.101s
+user	0m0.089s
+sys	0m0.010s
+( time ../ffasp odd/odd_600.lp )
+Satisfiable.
+
+real	0m0.145s
+user	0m0.096s
+sys	0m0.010s
+( time ../ffasp odd/odd_610.lp )
+Satisfiable.
+
+real	0m0.183s
+user	0m0.103s
+sys	0m0.010s
+( time ../ffasp odd/odd_620.lp )
+Satisfiable.
+
+real	0m0.106s
+user	0m0.095s
+sys	0m0.010s
+( time ../ffasp odd/odd_630.lp )
+Satisfiable.
+
+real	0m0.108s
+user	0m0.097s
+sys	0m0.010s
+( time ../ffasp odd/odd_640.lp )
+Satisfiable.
+
+real	0m0.121s
+user	0m0.109s
+sys	0m0.011s
+( time ../ffasp odd/odd_650.lp )
+Satisfiable.
+
+real	0m0.113s
+user	0m0.103s
+sys	0m0.009s
+( time ../ffasp odd/odd_660.lp )
+Satisfiable.
+
+real	0m0.114s
+user	0m0.103s
+sys	0m0.010s
+( time ../ffasp odd/odd_670.lp )
+Satisfiable.
+
+real	0m0.144s
+user	0m0.116s
+sys	0m0.010s
+( time ../ffasp odd/odd_680.lp )
+Satisfiable.
+
+real	0m0.117s
+user	0m0.107s
+sys	0m0.009s
+( time ../ffasp odd/odd_690.lp )
+Satisfiable.
+
+real	0m0.131s
+user	0m0.120s
+sys	0m0.010s
+( time ../ffasp odd/odd_700.lp )
+Satisfiable.
+
+real	0m0.127s
+user	0m0.116s
+sys	0m0.010s
+( time ../ffasp odd/odd_710.lp )
+Satisfiable.
+
+real	0m0.167s
+user	0m0.124s
+sys	0m0.010s
+( time ../ffasp odd/odd_720.lp )
+Satisfiable.
+
+real	0m0.122s
+user	0m0.111s
+sys	0m0.010s
+( time ../ffasp odd/odd_730.lp )
+Satisfiable.
+
+real	0m0.127s
+user	0m0.115s
+sys	0m0.011s
+( time ../ffasp odd/odd_740.lp )
+Satisfiable.
+
+real	0m0.127s
+user	0m0.117s
+sys	0m0.009s
+( time ../ffasp odd/odd_750.lp )
+Satisfiable.
+
+real	0m0.131s
+user	0m0.120s
+sys	0m0.010s
+( time ../ffasp odd/odd_760.lp )
+Satisfiable.
+
+real	0m0.141s
+user	0m0.130s
+sys	0m0.010s
+( time ../ffasp odd/odd_770.lp )
+Satisfiable.
+
+real	0m0.140s
+user	0m0.128s
+sys	0m0.011s
+( time ../ffasp odd/odd_780.lp )
+Satisfiable.
+
+real	0m0.134s
+user	0m0.122s
+sys	0m0.010s
+( time ../ffasp odd/odd_790.lp )
+Satisfiable.
+
+real	0m0.147s
+user	0m0.135s
+sys	0m0.011s
+( time ../ffasp odd/odd_800.lp )
+Satisfiable.
+
+real	0m0.137s
+user	0m0.125s
+sys	0m0.011s
+( time ../ffasp odd/odd_810.lp )
+Satisfiable.
+
+real	0m0.188s
+user	0m0.133s
+sys	0m0.011s
+( time ../ffasp odd/odd_820.lp )
+Satisfiable.
+
+real	0m0.301s
+user	0m0.153s
+sys	0m0.014s
+( time ../ffasp odd/odd_830.lp )
+Satisfiable.
+
+real	0m0.329s
+user	0m0.141s
+sys	0m0.021s
+( time ../ffasp odd/odd_840.lp )
+Satisfiable.
+
+real	0m0.177s
+user	0m0.148s
+sys	0m0.012s
+( time ../ffasp odd/odd_850.lp )
+Satisfiable.
+
+real	0m0.332s
+user	0m0.141s
+sys	0m0.018s
+( time ../ffasp odd/odd_860.lp )
+Satisfiable.
+
+real	0m0.193s
+user	0m0.144s
+sys	0m0.011s
+( time ../ffasp odd/odd_870.lp )
+Satisfiable.
+
+real	0m0.169s
+user	0m0.149s
+sys	0m0.011s
+( time ../ffasp odd/odd_880.lp )
+Satisfiable.
+
+real	0m0.186s
+user	0m0.156s
+sys	0m0.011s
+( time ../ffasp odd/odd_890.lp )
+Satisfiable.
+
+real	0m0.167s
+user	0m0.156s
+sys	0m0.011s
+( time ../ffasp odd/odd_900.lp )
+Satisfiable.
+
+real	0m0.160s
+user	0m0.148s
+sys	0m0.010s
+( time ../ffasp odd/odd_910.lp )
+Satisfiable.
+
+real	0m0.173s
+user	0m0.162s
+sys	0m0.012s
+( time ../ffasp odd/odd_920.lp )
+Satisfiable.
+
+real	0m0.256s
+user	0m0.190s
+sys	0m0.013s
+( time ../ffasp odd/odd_930.lp )
+Satisfiable.
+
+real	0m0.176s
+user	0m0.165s
+sys	0m0.011s
+( time ../ffasp odd/odd_940.lp )
+Satisfiable.
+
+real	0m0.191s
+user	0m0.160s
+sys	0m0.011s
+( time ../ffasp odd/odd_950.lp )
+Satisfiable.
+
+real	0m0.184s
+user	0m0.160s
+sys	0m0.012s
+( time ../ffasp odd/odd_960.lp )
+Satisfiable.
+
+real	0m0.288s
+user	0m0.191s
+sys	0m0.012s
+( time ../ffasp odd/odd_970.lp )
+Satisfiable.
+
+real	0m0.170s
+user	0m0.157s
+sys	0m0.012s
+( time ../ffasp odd/odd_980.lp )
+Satisfiable.
+
+real	0m0.183s
+user	0m0.171s
+sys	0m0.012s
+( time ../ffasp odd/odd_990.lp )
+Satisfiable.
+
+real	0m0.180s
+user	0m0.168s
+sys	0m0.012s
+graph-col
+Denom=20
+( time ../ffasp graph-col/20/col-10-20.lp )
+Satisfiable.
+
+real	0m1.506s
+user	0m1.411s
+sys	0m0.048s
+( time ../ffasp graph-col/20/col-20-20.lp )
+Satisfiable.
+
+real	0m1.625s
+user	0m1.558s
+sys	0m0.048s
+( time ../ffasp graph-col/20/col-30-20.lp )
+Satisfiable.
+
+real	0m1.707s
+user	0m1.643s
+sys	0m0.052s
+( time ../ffasp graph-col/20/col-40-20.lp )
+Satisfiable.
+
+real	0m2.083s
+user	0m2.001s
+sys	0m0.064s
+( time ../ffasp graph-col/20/col-50-20.lp )
+Satisfiable.
+
+real	0m2.083s
+user	0m1.981s
+sys	0m0.061s
+( time ../ffasp graph-col/20/col-60-20.lp )
+Satisfiable.
+
+real	0m2.293s
+user	0m2.209s
+sys	0m0.071s
+Denom=40
+( time ../ffasp graph-col/40/col-10-40.lp )
+Satisfiable.
+
+real	0m5.157s
+user	0m4.995s
+sys	0m0.139s
+( time ../ffasp graph-col/40/col-20-40.lp )
+Satisfiable.
+
+real	0m5.846s
+user	0m5.591s
+sys	0m0.171s
+( time ../ffasp graph-col/40/col-30-40.lp )
+Satisfiable.
+
+real	0m5.699s
+user	0m5.472s
+sys	0m0.152s
+( time ../ffasp graph-col/40/col-40-40.lp )
+Satisfiable.
+
+real	0m7.198s
+user	0m6.992s
+sys	0m0.185s
+( time ../ffasp graph-col/40/col-50-40.lp )
+Satisfiable.
+
+real	0m6.939s
+user	0m6.686s
+sys	0m0.176s
+( time ../ffasp graph-col/40/col-60-40.lp )
+Satisfiable.
+
+real	0m8.026s
+user	0m7.746s
+sys	0m0.206s
+Denom=60
+( time ../ffasp graph-col/60/col-10-60.lp )
+Satisfiable.
+
+real	0m11.355s
+user	0m11.032s
+sys	0m0.277s
+( time ../ffasp graph-col/60/col-20-60.lp )
+Satisfiable.
+
+real	0m12.628s
+user	0m12.215s
+sys	0m0.333s
+( time ../ffasp graph-col/60/col-30-60.lp )
+Satisfiable.
+
+real	0m12.446s
+user	0m12.062s
+sys	0m0.307s
+( time ../ffasp graph-col/60/col-40-60.lp )
+Satisfiable.
+
+real	0m15.657s
+user	0m15.270s
+sys	0m0.373s
+( time ../ffasp graph-col/60/col-50-60.lp )
+Satisfiable.
+
+real	0m16.055s
+user	0m15.618s
+sys	0m0.369s
+( time ../ffasp graph-col/60/col-60-60.lp )
+Satisfiable.
+
+real	0m17.730s
+user	0m17.223s
+sys	0m0.432s
+Denom=80
+( time ../ffasp graph-col/80/col-10-80.lp )
+Satisfiable.
+
+real	0m20.082s
+user	0m19.514s
+sys	0m0.489s
+( time ../ffasp graph-col/80/col-20-80.lp )
+Satisfiable.
+
+real	0m22.914s
+user	0m22.264s
+sys	0m0.548s
+( time ../ffasp graph-col/80/col-30-80.lp )
+Satisfiable.
+
+real	0m22.552s
+user	0m21.979s
+sys	0m0.504s
+( time ../ffasp graph-col/80/col-40-80.lp )
+Satisfiable.
+
+real	0m27.736s
+user	0m26.990s
+sys	0m0.646s
+( time ../ffasp graph-col/80/col-50-80.lp )
+Satisfiable.
+
+real	0m27.660s
+user	0m26.968s
+sys	0m0.615s
+( time ../ffasp graph-col/80/col-60-80.lp )
+Satisfiable.
+
+real	0m35.883s
+user	0m34.833s
+sys	0m0.855s
+Denom=100
+( time ../ffasp graph-col/100/col-10-100.lp )
+Satisfiable.
+
+real	0m32.262s
+user	0m31.436s
+sys	0m0.737s
+( time ../ffasp graph-col/100/col-20-100.lp )
+Satisfiable.
+
+real	0m38.501s
+user	0m37.543s
+sys	0m0.816s
+( time ../ffasp graph-col/100/col-30-100.lp )
+Satisfiable.
+
+real	0m37.654s
+user	0m36.639s
+sys	0m0.758s
+( time ../ffasp graph-col/100/col-40-100.lp )
+Satisfiable.
+
+real	0m44.447s
+user	0m43.385s
+sys	0m0.969s
+( time ../ffasp graph-col/100/col-50-100.lp )
+Satisfiable.
+
+real	0m44.153s
+user	0m43.084s
+sys	0m0.976s
+( time ../ffasp graph-col/100/col-60-100.lp )
+Satisfiable.
+
+real	0m50.139s
+user	0m48.974s
+sys	0m1.071s
+ham-path
+Denom=20
+( time ../ffasp ham-path/20/ham-11-20.lp )
+No answer set is found.
+
+real	0m14.079s
+user	0m13.702s
+sys	0m0.531s
+( time ../ffasp ham-path/20/ham-12-20.lp )
+Satisfiable.
+
+real	0m0.254s
+user	0m0.230s
+sys	0m0.012s
+( time ../ffasp ham-path/20/ham-13-20.lp )
+No answer set is found.
+
+real	0m13.076s
+user	0m12.817s
+sys	0m0.503s
+( time ../ffasp ham-path/20/ham-14-20.lp )
+Satisfiable.
+
+real	0m0.264s
+user	0m0.236s
+sys	0m0.012s
+( time ../ffasp ham-path/20/ham-15-20.lp )
+Satisfiable.
+
+real	0m0.245s
+user	0m0.220s
+sys	0m0.012s
+( time ../ffasp ham-path/20/ham-16-20.lp )
+Satisfiable.
+
+real	0m0.286s
+user	0m0.270s
+sys	0m0.013s
+( time ../ffasp ham-path/20/ham-17-20.lp )
+No answer set is found.
+
+real	0m15.785s
+user	0m15.515s
+sys	0m0.525s
+( time ../ffasp ham-path/20/ham-18-20.lp )
+Satisfiable.
+
+real	0m0.269s
+user	0m0.244s
+sys	0m0.013s
+( time ../ffasp ham-path/20/ham-19-20.lp )
+Satisfiable.
+
+real	0m0.274s
+user	0m0.259s
+sys	0m0.013s
+( time ../ffasp ham-path/20/ham-20-20.lp )
+Satisfiable.
+
+real	0m0.271s
+user	0m0.255s
+sys	0m0.014s
+Denom=40
+( time ../ffasp ham-path/40/ham-11-40.lp )
+No answer set is found.
+
+real	0m5.332s
+user	0m5.158s
+sys	0m0.197s
+( time ../ffasp ham-path/40/ham-12-40.lp )
+Satisfiable.
+
+real	0m0.896s
+user	0m0.858s
+sys	0m0.036s
+( time ../ffasp ham-path/40/ham-13-40.lp )
+No answer set is found.
+
+real	0m4.663s
+user	0m4.524s
+sys	0m0.174s
+( time ../ffasp ham-path/40/ham-14-40.lp )
+Satisfiable.
+
+real	0m0.982s
+user	0m0.943s
+sys	0m0.038s
+( time ../ffasp ham-path/40/ham-15-40.lp )
+Satisfiable.
+
+real	0m0.910s
+user	0m0.864s
+sys	0m0.035s
+( time ../ffasp ham-path/40/ham-16-40.lp )
+Satisfiable.
+
+real	0m1.236s
+user	0m1.184s
+sys	0m0.047s
+( time ../ffasp ham-path/40/ham-17-40.lp )
+No answer set is found.
+
+real	0m5.268s
+user	0m5.102s
+sys	0m0.191s
+( time ../ffasp ham-path/40/ham-18-40.lp )
+Satisfiable.
+
+real	0m1.031s
+user	0m0.991s
+sys	0m0.039s
+( time ../ffasp ham-path/40/ham-19-40.lp )
+Satisfiable.
+
+real	0m1.068s
+user	0m1.025s
+sys	0m0.040s
+( time ../ffasp ham-path/40/ham-20-40.lp )
+No answer set is found.
+
+real	0m8.492s
+user	0m8.297s
+sys	0m0.204s
+Denom=60
+( time ../ffasp ham-path/60/ham-11-60.lp )
+No answer set is found.
+
+real	0m2.117s
+user	0m2.028s
+sys	0m0.076s
+( time ../ffasp ham-path/60/ham-12-60.lp )
+Satisfiable.
+
+real	0m2.289s
+user	0m2.206s
+sys	0m0.082s
+( time ../ffasp ham-path/60/ham-13-60.lp )
+No answer set is found.
+
+real	0m2.005s
+user	0m1.928s
+sys	0m0.076s
+( time ../ffasp ham-path/60/ham-14-60.lp )
+Satisfiable.
+
+real	0m2.572s
+user	0m2.462s
+sys	0m0.087s
+( time ../ffasp ham-path/60/ham-15-60.lp )
+Satisfiable.
+
+real	0m2.107s
+user	0m2.019s
+sys	0m0.079s
+( time ../ffasp ham-path/60/ham-16-60.lp )
+Satisfiable.
+
+real	0m2.827s
+user	0m2.701s
+sys	0m0.103s
+( time ../ffasp ham-path/60/ham-17-60.lp )
+No answer set is found.
+
+real	0m2.354s
+user	0m2.251s
+sys	0m0.085s
+( time ../ffasp ham-path/60/ham-18-60.lp )
+Satisfiable.
+
+real	0m2.462s
+user	0m2.363s
+sys	0m0.082s
+( time ../ffasp ham-path/60/ham-19-60.lp )
+No answer set is found.
+
+real	0m3.291s
+user	0m3.201s
+sys	0m0.088s
+( time ../ffasp ham-path/60/ham-20-60.lp )
+No answer set is found.
+
+real	0m3.708s
+user	0m3.602s
+sys	0m0.094s
+Denom=80
+( time ../ffasp ham-path/80/ham-11-80.lp )
+No answer set is found.
+
+real	0m4.072s
+user	0m3.908s
+sys	0m0.149s
+( time ../ffasp ham-path/80/ham-12-80.lp )
+Satisfiable.
+
+real	0m4.318s
+user	0m4.169s
+sys	0m0.150s
+( time ../ffasp ham-path/80/ham-13-80.lp )
+No answer set is found.
+
+real	0m3.824s
+user	0m3.680s
+sys	0m0.143s
+( time ../ffasp ham-path/80/ham-14-80.lp )
+Satisfiable.
+
+real	0m5.173s
+user	0m4.976s
+sys	0m0.167s
+( time ../ffasp ham-path/80/ham-15-80.lp )
+Satisfiable.
+
+real	0m4.078s
+user	0m3.913s
+sys	0m0.152s
+( time ../ffasp ham-path/80/ham-16-80.lp )
+Satisfiable.
+
+real	0m4.981s
+user	0m4.795s
+sys	0m0.172s
+( time ../ffasp ham-path/80/ham-17-80.lp )
+No answer set is found.
+
+real	0m4.293s
+user	0m4.131s
+sys	0m0.150s
+( time ../ffasp ham-path/80/ham-18-80.lp )
+Satisfiable.
+
+real	0m4.526s
+user	0m4.370s
+sys	0m0.157s
+( time ../ffasp ham-path/80/ham-19-80.lp )
+No answer set is found.
+
+real	0m6.286s
+user	0m6.104s
+sys	0m0.174s
+( time ../ffasp ham-path/80/ham-20-80.lp )
+No answer set is found.
+
+real	0m7.353s
+user	0m7.176s
+sys	0m0.167s
+Denom=100
+( time ../ffasp ham-path/100/ham-11-100.lp )
+No answer set is found.
+
+real	0m7.347s
+user	0m7.101s
+sys	0m0.238s
+( time ../ffasp ham-path/100/ham-12-100.lp )
+Satisfiable.
+
+real	0m7.163s
+user	0m6.893s
+sys	0m0.258s
+( time ../ffasp ham-path/100/ham-13-100.lp )
+No answer set is found.
+
+real	0m6.384s
+user	0m6.154s
+sys	0m0.234s
+( time ../ffasp ham-path/100/ham-14-100.lp )
+Satisfiable.
+
+real	0m7.151s
+user	0m6.876s
+sys	0m0.260s
+( time ../ffasp ham-path/100/ham-15-100.lp )
+Satisfiable.
+
+real	0m6.595s
+user	0m6.337s
+sys	0m0.243s
+( time ../ffasp ham-path/100/ham-16-100.lp )
+Satisfiable.
+
+real	0m8.113s
+user	0m7.822s
+sys	0m0.280s
+( time ../ffasp ham-path/100/ham-17-100.lp )
+No answer set is found.
+
+real	0m7.215s
+user	0m6.952s
+sys	0m0.254s
+( time ../ffasp ham-path/100/ham-18-100.lp )
+Satisfiable.
+
+real	0m7.632s
+user	0m7.358s
+sys	0m0.266s
+( time ../ffasp ham-path/100/ham-19-100.lp )
+Satisfiable.
+
+real	0m8.945s
+user	0m8.663s
+sys	0m0.282s
+( time ../ffasp ham-path/100/ham-20-100.lp )
+No answer set is found.
+
+real	0m12.745s
+user	0m12.443s
+sys	0m0.287s
+ham-path
+( time  ../ffasp ham-path/120/ham-11-120.lp )
+No answer set is found.
+
+real	0m11.452s
+user	0m10.661s
+sys	0m0.421s
+( time  ../ffasp ham-path/120/ham-12-120.lp )
+Satisfiable.
+
+real	0m10.144s
+user	0m9.743s
+sys	0m0.390s
+( time  ../ffasp ham-path/120/ham-13-120.lp )
+No answer set is found.
+
+real	0m9.843s
+user	0m9.401s
+sys	0m0.386s
+( time  ../ffasp ham-path/120/ham-14-120.lp )
+Satisfiable.
+
+real	0m10.667s
+user	0m10.256s
+sys	0m0.409s
+( time  ../ffasp ham-path/120/ham-15-120.lp )
+Satisfiable.
+
+real	0m9.850s
+user	0m9.493s
+sys	0m0.362s
+( time  ../ffasp ham-path/120/ham-16-120.lp )
+Satisfiable.
+
+real	0m12.131s
+user	0m11.655s
+sys	0m0.463s
+( time  ../ffasp ham-path/120/ham-17-120.lp )
+No answer set is found.
+
+real	0m11.609s
+user	0m11.205s
+sys	0m0.381s
+( time  ../ffasp ham-path/120/ham-18-120.lp )
+Satisfiable.
+
+real	0m11.767s
+user	0m11.310s
+sys	0m0.454s
+( time  ../ffasp ham-path/120/ham-19-120.lp )
+Satisfiable.
+
+real	0m15.543s
+user	0m14.979s
+sys	0m0.479s
+( time  ../ffasp ham-path/120/ham-20-120.lp )
+No answer set is found.
+
+real	0m23.014s
+user	0m22.492s
+sys	0m0.477s
+( time  ../ffasp ham-path/140/ham-11-140.lp )
+No answer set is found.
+
+real	0m15.604s
+user	0m14.889s
+sys	0m0.621s
+( time  ../ffasp ham-path/140/ham-12-140.lp )
+Satisfiable.
+
+real	0m16.179s
+user	0m15.623s
+sys	0m0.534s
+( time  ../ffasp ham-path/140/ham-13-140.lp )
+No answer set is found.
+
+real	0m14.096s
+user	0m13.590s
+sys	0m0.502s
+( time  ../ffasp ham-path/140/ham-14-140.lp )
+Satisfiable.
+
+real	0m15.760s
+user	0m15.222s
+sys	0m0.549s
+( time  ../ffasp ham-path/140/ham-15-140.lp )
+Satisfiable.
+
+real	0m13.934s
+user	0m13.409s
+sys	0m0.512s
+( time  ../ffasp ham-path/140/ham-16-140.lp )
+Satisfiable.
+
+real	0m17.944s
+user	0m17.262s
+sys	0m0.663s
+( time  ../ffasp ham-path/140/ham-17-140.lp )
+No answer set is found.
+
+real	0m16.489s
+user	0m15.662s
+sys	0m0.581s
+( time  ../ffasp ham-path/140/ham-18-140.lp )
+Satisfiable.
+
+real	0m18.032s
+user	0m17.407s
+sys	0m0.619s
+( time  ../ffasp ham-path/140/ham-19-140.lp )
+Satisfiable.
+
+real	0m16.933s
+user	0m16.237s
+sys	0m0.635s
+( time  ../ffasp ham-path/140/ham-20-140.lp )
+No answer set is found.
+
+real	0m27.665s
+user	0m26.964s
+sys	0m0.671s
+( time  ../ffasp ham-path/160/ham-11-160.lp )
+No answer set is found.
+
+real	0m22.457s
+user	0m21.566s
+sys	0m0.820s
+( time  ../ffasp ham-path/160/ham-12-160.lp )
+Satisfiable.
+
+real	0m21.511s
+user	0m20.508s
+sys	0m0.871s
+( time  ../ffasp ham-path/160/ham-13-160.lp )
+No answer set is found.
+
+real	0m19.551s
+user	0m18.708s
+sys	0m0.755s
+( time  ../ffasp ham-path/160/ham-14-160.lp )
+Satisfiable.
+
+real	0m21.193s
+user	0m20.448s
+sys	0m0.737s
+( time  ../ffasp ham-path/160/ham-15-160.lp )
+Satisfiable.
+
+real	0m19.398s
+user	0m18.679s
+sys	0m0.718s
+( time  ../ffasp ham-path/160/ham-16-160.lp )
+Satisfiable.
+
+real	0m23.225s
+user	0m22.451s
+sys	0m0.784s
+( time  ../ffasp ham-path/160/ham-17-160.lp )
+No answer set is found.
+
+real	0m21.423s
+user	0m20.753s
+sys	0m0.682s
+( time  ../ffasp ham-path/160/ham-18-160.lp )
+Satisfiable.
+
+real	0m23.406s
+user	0m22.673s
+sys	0m0.744s
+( time  ../ffasp ham-path/160/ham-19-160.lp )
+Satisfiable.
+
+real	0m23.380s
+user	0m22.654s
+sys	0m0.732s
+( time  ../ffasp ham-path/160/ham-20-160.lp )
+No answer set is found.
+
+real	0m41.304s
+user	0m40.485s
+sys	0m0.790s

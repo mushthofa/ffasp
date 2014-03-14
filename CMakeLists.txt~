@@ -1,5 +1,0 @@
-project(ffasp)
-
-add_executable(ffasp main.cpp)
-
-install(TARGETS ffasp RUNTIME DESTINATION bin)

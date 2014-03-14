@@ -48,13 +48,13 @@ void ASPEval::doSolve()
 			delete tr;
 			std::ostringstream oserr;
 			oserr<<"Error translating program for k = "<<  k  << ": "
-					<<std::endl<< err.getErrorMsg();
+				<<std::endl<< err.getErrorMsg();
 			throw FatalError(oserr.str());
 		}
 
 		try
 		{
-				solver->callSolver(tr->getProgram(), k);
+			solver->callSolver(tr->getProgram(), k);
 		}
 		catch(GeneralError& e)
 		{
