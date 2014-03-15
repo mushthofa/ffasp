@@ -124,7 +124,8 @@ int main(int argc, char *argv[])
         delete rw;
 
         //std::cout<<"done rewriting.."<<std::endl;
-        //std::cout<<"program after rewritten : "<<rewp<<std::endl;
+        //std::cout<<"program after rewritten : "<<std::endl<<rewp<<std::endl;
+	//return 0;
         /* If called with --trans=<n> option, just translate and return immediately
          *
          */

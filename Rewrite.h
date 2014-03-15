@@ -65,6 +65,7 @@ protected:
 	 */
 	bool checkRuleConstant(Program::iterator);
 	bool checkRuleBodyOp(Program::iterator);
+	bool checkRule2BodyNeg(Program::iterator);
 	bool checkRuleHeadOp(Program::iterator);
 	bool checkHeadCompBodyNeg(Program::iterator);
 	bool checkHeadBodyComp(Program::iterator);

@@ -144,12 +144,60 @@ bool Rewrite::checkRuleConstant(Program::iterator pit)
 }
 
 /* check for the condition when rule is of the form
+ * H <- not a op not b
+ * 
+ * Must have no variables and no infix predicates since the body is all negative
+ * rewrite into
+ * H <- p1 op p2
+ * p1 <- not a
+ * p2 <- not b
+ */
+
+bool Rewrite::checkRule2BodyNeg(Program::iterator pit )
+{
+	RulePtr r = *pit;
+	BodyExpr_t body = r->getBody();
+	HeadExpr_t head = r->getHead();
+
+	BodyList_t b = body.first;
+
+	if(b.size() != 2 || !(b[0]->isNAF()) || !(b[1]->isNAF()) ) 
+		return false;
+	AtomPtr p1 (new Atom(Program::genNextPred(), Tuple()));
+	AtomPtr p2 (new Atom(Program::genNextPred(), Tuple()));
+	
+	BodyList_t b1, b2;
+	b1.push_back(b[0]);
+	b2.push_back(b[1]);
+	
+	HeadList_t h1, h2;
+	h1.push_back(p1);
+	h2.push_back(p2);
+	
+	RulePtr rnew1(new Rule(std::make_pair(h1, TNORM), std::make_pair<>(b1, TNORM), "_NEW_", 0));
+	RulePtr rnew2(new Rule(std::make_pair(h2, TNORM), std::make_pair<>(b2, TNORM), "_NEW_", 0));
+	rules.addRule(rnew1, true);
+	rules.addRule(rnew2, true);
+	
+	BodyList_t bnew;
+	LiteralPtr lp1 (new Literal(p1));
+	LiteralPtr lp2 (new Literal(p2));
+	
+	bnew.push_back(lp1);
+	bnew.push_back(lp2);
+	RulePtr rrep (new Rule(head, std::make_pair<>(bnew, body.second), "_NEW_", 0));
+	rules.addRule(rrep, true);
+	
+	return true;
+	
+}
+
+/* check for the condition when rule is of the form
  * H <- b1 op b2 op .. op bn
  * infix predicates are ignored
  * NAF literals must be rewritten first
  *
  */
-
 bool Rewrite::checkRuleBodyOp(Program::iterator pit)
 {
 	RulePtr r = *pit;
@@ -485,8 +533,19 @@ void Rewrite::doRewrite()
 				change++;
 			}
 		}
-
 		it = rules.begin();
+		
+		while(it!=rules.end())
+		{
+			Program::iterator cur = it++;
+			if(checkRule2BodyNeg(cur))
+			{
+				rules.deleteRule(cur);
+				change++;
+			}
+		}
+		it = rules.begin();
+		
 		while(it!=rules.end())
 		{
 			Program::iterator cur = it++;
