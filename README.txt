@@ -25,6 +25,7 @@ $ clingo
 
 3) Go to the 'build/release' directory in 'ffasp', and run
 
+$ cmake ../../
 $ make
 
 Compilation will proceed and an executable named 'ffasp' will be created.
