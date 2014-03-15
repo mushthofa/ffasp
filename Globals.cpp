@@ -36,7 +36,7 @@
 #include "Globals.h"
 
 #define MAXDENOM 100
-#define MAXK 200
+#define MAXK 100
 #define MAXT 600
 #define REP 0
 

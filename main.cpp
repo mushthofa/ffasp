@@ -43,19 +43,21 @@
 
 void showUsage(char* prog)
 {
-		std::cout<<std::endl<<"USAGE: \t"<<prog<<" [options] [<input-file>]"<<std::endl<<std::endl;
-		std::cout<<"E.g.: \t"<<prog<<" --maxk=200 -c program.lp"<<std::endl<<std::endl;
-		std::cout<<"Options are:"<<std::endl;
-		std::cout<<"--maxk=<n> \t= find k-answer sets up to k=<n> (default <n>=100)."<<std::endl;
-		std::cout<<"--maxt=<t> \t= stop after computation exceeds <t> seconds, approximately (default <t>=600 s)."<<std::endl;
-		std::cout<<"--trans=<k> \t= only perform translation with k=<k> and print the result to <STDOUT>."<<std::endl;
-		std::cout<<"--rnd=<d> \t= only perform rewriting of the program and rounding the constants "<<std::endl
-				 <<"\t\t  in the program to rational numbers with denominator=<d>."<<std::endl;
-		std::cout<<"-c/--check \t= only check for satisfiability/consistency, no answer set is printed."<<std::endl;
-		std::cout<<"-h/--help  \t= show this help and exit."<<std::endl<<std::endl;
-		std::cout<<"If no <input-file> is given, input is read from <STDIN>"<<std::endl;
+	std::cout<<"FFASP -- A finite-valued fuzzy answer set solver -- "<<std::endl;
+	std::cout<<"build 03/2014"<<std::endl;
+	std::cout<<"(c) Ghent University, BE"<<std::endl;
+	std::cout<<std::endl<<"USAGE: \t"<<prog<<" [options] [<input-file>]"<<std::endl<<std::endl;
+	std::cout<<"E.g.: \t"<<prog<<" --maxk=200 -c program.lp"<<std::endl<<std::endl;
+	std::cout<<"Options are:"<<std::endl;
+	std::cout<<"--maxk=<n> \t= find k-answer sets up to k=<n> (default <n>=100)."<<std::endl;
+	std::cout<<"--maxt=<t> \t= stop after computation exceeds <t> seconds, approximately (default <t>=600 s)."<<std::endl;
+	std::cout<<"--trans=<k> \t= only perform translation with k=<k> and print the result to <STDOUT>."<<std::endl;
+	std::cout<<"--rnd=<d> \t= only perform rewriting of the program and rounding the constants "<<std::endl
+				<<"\t\t  in the program to rational numbers with denominator=<d>."<<std::endl;
+	std::cout<<"-c/--check \t= only check for satisfiability/consistency, no answer set is printed."<<std::endl;
+	std::cout<<"-h/--help  \t= show this help and exit."<<std::endl;
+	std::cout<<"If no <input-file> is given, input is read from <STDIN>"<<std::endl<<std::endl;
 
-        std::cout << std::endl;
 }
 
 int main(int argc, char *argv[])
@@ -131,26 +133,26 @@ int main(int argc, char *argv[])
         if(trans_k>0)
         {
         	ASPTranslate* tr;
-			try
-			{
-				tr = new ASPTranslate(rewp, trans_k);
-			}
-			catch(GeneralError& err)
-			{
+		try
+		{
+			tr = new ASPTranslate(rewp, trans_k);
+		}
+		catch(GeneralError& err)
+		{
 
-				std::ostringstream oserr;
-				oserr<<"Error translating program for k = "<<  trans_k  << ": "
-						<<std::endl<< err.getErrorMsg();
-				std::cout<<oserr.str()<<std::endl;
-				//throw FatalError(oserr.str());
-				//delete tr;
-				return 1;
-			}
+			std::ostringstream oserr;
+			oserr<<"Error translating program for k = "<<  trans_k  << ": "
+					<<std::endl<< err.getErrorMsg();
+			std::cout<<oserr.str()<<std::endl;
+			//throw FatalError(oserr.str());
+			//delete tr;
+			return 1;
+		}
 
-			std::string trans = tr->getProgram();
-			std::cout<<trans<<std::endl;
-			delete tr;
-			return 0;
+		std::string trans = tr->getProgram();
+		std::cout<<trans<<std::endl;
+		delete tr;
+		return 0;
         }
 
         /* Get evaluation options */

@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/creep/projects/ffasp/ASPEval.cpp
-ASPEval.h
-/home/creep/projects/ffasp/ASPEval.h
-
 /home/creep/projects/ffasp/ASPEval.h
 Eval.h
 /home/creep/projects/ffasp/Eval.h
@@ -67,6 +63,26 @@ vector
 -
 Atom.h
 /home/creep/projects/ffasp/Atom.h
+
+/home/creep/projects/ffasp/CLSolver.h
+ASPSolver.h
+/home/creep/projects/ffasp/ASPSolver.h
+ProcessBuff.h
+/home/creep/projects/ffasp/ProcessBuff.h
+sstream
+-
+set
+-
+
+/home/creep/projects/ffasp/DLVASPSolver.h
+ASPSolver.h
+/home/creep/projects/ffasp/ASPSolver.h
+ProcessBuff.h
+/home/creep/projects/ffasp/ProcessBuff.h
+sstream
+-
+set
+-
 
 /home/creep/projects/ffasp/Error.h
 string
@@ -164,6 +180,20 @@ boost/ptr_container/indirect_fun.hpp
 Rule.h
 /home/creep/projects/ffasp/Rule.h
 
+/home/creep/projects/ffasp/ProgramParser.h
+iostream
+-
+fstream
+-
+Program.h
+/home/creep/projects/ffasp/Program.h
+Globals.h
+/home/creep/projects/ffasp/Globals.h
+
+/home/creep/projects/ffasp/Rewrite.h
+Program.h
+/home/creep/projects/ffasp/Program.h
+
 /home/creep/projects/ffasp/Rule.h
 boost/ptr_container/indirect_fun.hpp
 -
@@ -175,6 +205,22 @@ Literal.h
 /home/creep/projects/ffasp/Literal.h
 Globals.h
 /home/creep/projects/ffasp/Globals.h
+
+/home/creep/projects/ffasp/SafetyChecker.h
+Program.h
+/home/creep/projects/ffasp/Program.h
+
+/home/creep/projects/ffasp/SpiritProgramParser.h
+boost/spirit/home/classic/core.hpp
+-
+boost/spirit/home/classic/tree/ast.hpp
+-
+logic_grammar.h
+/home/creep/projects/ffasp/logic_grammar.h
+ProgramParser.h
+/home/creep/projects/ffasp/ProgramParser.h
+SafetyChecker.h
+/home/creep/projects/ffasp/SafetyChecker.h
 
 /home/creep/projects/ffasp/Term.h
 iostream
@@ -189,4 +235,28 @@ map
 -
 Error.h
 /home/creep/projects/ffasp/Error.h
+
+/home/creep/projects/ffasp/logic_grammar.h
+
+/home/creep/projects/ffasp/main.cpp
+config.h
+-
+iostream
+-
+cstdlib
+-
+DLVASPSolver.h
+/home/creep/projects/ffasp/DLVASPSolver.h
+SpiritProgramParser.h
+/home/creep/projects/ffasp/SpiritProgramParser.h
+ASPEval.h
+/home/creep/projects/ffasp/ASPEval.h
+DLVASPSolver.h
+/home/creep/projects/ffasp/DLVASPSolver.h
+CLSolver.h
+/home/creep/projects/ffasp/CLSolver.h
+Rewrite.h
+/home/creep/projects/ffasp/Rewrite.h
+ctime
+-
 

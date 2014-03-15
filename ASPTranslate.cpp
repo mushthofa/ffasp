@@ -1,3 +1,22 @@
+/***************************************************************************
+*   Copyright (C) 2014 by Mushthofa                                        *
+*   Mushthofa.Mushthofa@Ugent.be                                           *
+*                                                                         *
+*   This program is free software; you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation; either version 2 of the License, or     *
+*   (at your option) any later version.                                   *
+*                                                                         *
+*   This program is distributed in the hope that it will be useful,       *
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+*   GNU General Public License for more details.                          *
+*                                                                         *
+*   You should have received a copy of the GNU General Public License     *
+*   along with this program; if not, write to the                         *
+*   Free Software Foundation, Inc.,                                       *
+*   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+***************************************************************************/
 /*
  * ASPTranslate.cpp
  *
@@ -6,6 +25,8 @@
  */
 
 #include "ASPTranslate.h"
+#include <boost/concept_check.hpp>
+#include <boost/lexical_cast.hpp>
 
 void ASPTranslate::doTranslate()
 {
@@ -475,10 +496,137 @@ void ASPTranslate::translateHTNORM(RulePtr  r)
 	HeadList_t hl = head.first;
 	BodyList_t bl = body.first;
 	if(hl.size()!=2 || head.second!= TNORM)
-		throw FatalError("translateHCOTNORM: wrong rule type!");
+		throw FatalError("translateHTNORM: wrong rule type!");
 	int i,j;
 
+	std::sort(bl.begin(), bl.end());
 
+	LiteralPtr blitpred1 = bl[bl.size()-1];
+	AtomPtr bptr1 = blitpred1->getAtom();
+
+	// store the infixes
+	BodyList_t infix;
+	for(i=0; i<bl.size()-1; i++)	// up to before the last one
+		infix.push_back(bl[i]);
+	
+
+	Tuple args1;
+	args1.push_back(Term(Program::genNextPred(), Term::SYMBOL));
+	std::set<std::string> vars;
+	for(i=0; i<bl.size(); i++)
+	{
+		AtomPtr aptr = bl[0]->getAtom();
+		std::set<std::string> myvars = aptr->getVariables();
+		vars.insert(myvars.begin(), myvars.end());
+	}
+	std::set<std::string>::iterator vit;
+	for(vit=vars.begin(); vit!=vars.end(); ++vit)
+	{
+		args1.push_back(Term(*vit, Term::VARIABLE));
+	}
+	
+	AtomPtr newb (new Atom(args1));
+	
+	/*
+	 * 	newb(X1...Xn, i) <-  aptr1(...,i), infixs.
+	 * 
+	 */
+	Atom h, hprev;
+	for(i=1; i<=k; i++)
+	{
+		if(i>1)
+			hprev = h;
+		h = *newb;
+		Atom b (*bptr1);
+		h.addTerm(i);
+		b.addTerm(i);
+		os << h <<" :- "<<b<<"."<<std::endl;
+		if(i>1)
+			os<<hprev<<" :- "<<h<<"."<<std::endl;
+	}
+	
+	/* Create new atoms newp_i_j(VAR1,...,VARn)
+	 *  1<=i,j<=k
+	 */
+	
+	Atom newp[k+2][k+2];
+	std::string newpstr = Program::genNextPred();
+	for(i=1; i<=k; i++)
+	{
+		for(j=1; j<=k; j++)
+		{
+			Tuple args2;
+			std::string predname (newpstr + "_" + boost::lexical_cast<std::string>(i)
+					      +"_"+boost::lexical_cast<std::string>(j));
+			args2.push_back(Term(predname, Term::STRING));
+			for(vit=vars.begin(); vit!=vars.end(); ++vit)
+			{
+				args2.push_back(Term(*vit, Term::VARIABLE));
+			}
+			newp[i][j] = Atom(args2);
+		}
+	}
+	
+	/* newp_k,i v newp_k-1,i+1 v .... newp_i_k <- newb_i 
+	 * 1 <= i <= k
+	 */
+	
+	for(i=1; i<=k; i++)
+	{
+		for(j=i; j<=k; j++)
+		{
+			if(j>i)
+				os<<" | ";
+			os<<newp[j][k-j+i];
+		}
+		Atom b (*newb);
+		b.addTerm(i);
+		os<<" :- "<<b<<"."<<std::endl;
+	}
+	
+	/*
+	 * a_i <- newp_i_j.
+	 * b_j <- newp_i_j.
+	 * 
+	 */
+	Atom h1,h2;
+	h1 = *hl[0];
+	h2 = *hl[1];
+	
+	for(i=1; i<=k; i++)
+	{
+		for(j=1; j<=k; j++)
+		{
+			h1.addTerm(i);
+			h2.addTerm(j);
+			os << h1 << " :- "<<newp[i][j]<<"."<<std::endl;
+			os << h2 << " :- "<<newp[i][j]<<"."<<std::endl;
+			h1.popTerm();
+			h2.popTerm();
+		}
+	}
+	
+	
+	for(i=1; i<=k; i++)
+	{
+		for(j=2; j<=k; j++)
+		{
+			h1.addTerm(j);
+			os <<newp[j][i] <<" :- "<<newp[j-1][i]<<", "<<h1<<"."<<std::endl;
+			h1.popTerm();
+		}
+	}
+	
+	for(i=1; i<=k; i++)
+	{
+		for(j=2; j<=k; j++)
+		{
+			h2.addTerm(j);
+			os <<newp[i][j] <<" :- "<<newp[i][j-1]<<", "<<h2<<"."<<std::endl;
+			h2.popTerm();
+		}
+	}
+	
 	/*
 	LiteralPtr nafb1 (new Literal(hl[0], true));
 	LiteralPtr nafb2 (new Literal(hl[1], true));
@@ -514,8 +662,144 @@ void ASPTranslate::translateHCOTNORM(RulePtr r)
 	BodyList_t bl = body.first;
 	if(hl.size()!=2 || head.second!=CO_TNORM)
 		throw FatalError("translateHCOTNORM: wrong rule type!");
-	//int i,j;
+	int i,j;
 
+	std::sort(bl.begin(), bl.end());
+
+	LiteralPtr blitpred1 = bl[bl.size()-1];
+	AtomPtr bptr1 = blitpred1->getAtom();
+
+	// store the infixes
+	BodyList_t infix;
+	for(i=0; i<bl.size()-1; i++)	// up to before the last one
+		infix.push_back(bl[i]);
+	
+
+	Tuple args1;
+	args1.push_back(Term(Program::genNextPred(), Term::SYMBOL));
+	std::set<std::string> vars;
+	for(i=0; i<bl.size(); i++)
+	{
+		AtomPtr aptr = bl[0]->getAtom();
+		std::set<std::string> myvars = aptr->getVariables();
+		vars.insert(myvars.begin(), myvars.end());
+	}
+	std::set<std::string>::iterator vit;
+	for(vit=vars.begin(); vit!=vars.end(); ++vit)
+	{
+		args1.push_back(Term(*vit, Term::VARIABLE));
+	}
+	
+	AtomPtr newb (new Atom(args1));
+	
+	/*
+	 * 	newb(X1...Xn, i) <-  aptr1(...,i), infixs.
+	 * 
+	 */
+	Atom h, hprev;
+	for(i=1; i<=k; i++)
+	{
+		if(i>1)
+			hprev = h;
+		h = *newb;
+		Atom b (*bptr1);
+		h.addTerm(i);
+		b.addTerm(i);
+		os << h <<" :- "<<b<<"."<<std::endl;
+		if(i>1)
+			os<<hprev<<" :- "<<h<<"."<<std::endl;
+	}
+	
+	/* Create new atoms newp_i_j(VAR1,...,VARn)
+	 *  0<=i,j<=k
+	 */
+	
+	Atom newp[k+2][k+2];
+	std::string newpstr = Program::genNextPred();
+	for(i=0; i<=k; i++)
+	{
+		for(j=0; j<=k; j++)
+		{
+			Tuple args2;
+			std::string predname (newpstr + "_" + boost::lexical_cast<std::string>(i)
+					      +"_"+boost::lexical_cast<std::string>(j));
+			args2.push_back(Term(predname, Term::STRING));
+			for(vit=vars.begin(); vit!=vars.end(); ++vit)
+			{
+				args2.push_back(Term(*vit, Term::VARIABLE));
+			}
+			newp[i][j] = Atom(args2);
+		}
+	}
+	
+	/* newp_0,i v newp_1,i-1 v .... newp_i_0 <- newb_i 
+	 * 1 <= i <= k
+	 */
+	
+	for(i=1; i<=k; i++)
+	{
+		for(j=0; j<=i; j++)
+		{
+			if(j>0)
+				os<<" | ";
+			os<<newp[j][i-j];
+		}
+		Atom b (*newb);
+		b.addTerm(i);
+		os<<" :- "<<b<<"."<<std::endl;
+	}
+	
+	/*
+	 * a_i <- newp_i_j.
+	 * b_j <- newp_i_j.
+	 * 
+	 */
+	Atom h1,h2;
+	h1 = *hl[0];
+	h2 = *hl[1];
+	
+	for(i=0; i<=k; i++)
+	{
+		for(j=0; j<=k; j++)
+		{
+			
+			if(i>0)
+			{
+				h1.addTerm(i);
+				os << h1 << " :- "<<newp[i][j]<<"."<<std::endl;
+				h1.popTerm();
+			}
+			if(j>0)
+			{
+				h2.addTerm(j);
+				os << h2 << " :- "<<newp[i][j]<<"."<<std::endl;
+				h2.popTerm();
+			}
+		}
+	}
+	
+	
+	for(i=0; i<=k; i++)
+	{
+		for(j=1; j<=k; j++)
+		{
+			h1.addTerm(j);
+			os <<newp[j][i] <<" :- "<<newp[j-1][i]<<", "<<h1<<"."<<std::endl;
+			h1.popTerm();
+		}
+	}
+	
+	for(i=0; i<=k; i++)
+	{
+		for(j=1; j<=k; j++)
+		{
+			h2.addTerm(j);
+			os <<newp[i][j] <<" :- "<<newp[i][j-1]<<", "<<h2<<"."<<std::endl;
+			h2.popTerm();
+		}
+	}
+
+	/*
 	LiteralPtr nafb1 (new Literal(hl[0], true));
 	LiteralPtr nafb2 (new Literal(hl[1], true));
 
@@ -538,6 +822,7 @@ void ASPTranslate::translateHCOTNORM(RulePtr r)
 
 	translateBTNORM(r1);
 	translateBTNORM(r2);
+	*/
 }
 
 void ASPTranslate::translateHMAX(RulePtr r)

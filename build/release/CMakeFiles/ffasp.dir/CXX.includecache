@@ -50,10 +50,6 @@ ASPTranslate.h
 Program.h
 /home/creep/projects/ffasp/Program.h
 
-/home/creep/projects/ffasp/Atom.cpp
-Atom.h
-/home/creep/projects/ffasp/Atom.h
-
 /home/creep/projects/ffasp/Atom.h
 string
 -
@@ -70,28 +66,12 @@ Term.h
 Number.h
 /home/creep/projects/ffasp/Number.h
 
-/home/creep/projects/ffasp/AtomSet.cpp
-AtomSet.h
-/home/creep/projects/ffasp/AtomSet.h
-algorithm
--
-
 /home/creep/projects/ffasp/AtomSet.h
 vector
 -
 Atom.h
 /home/creep/projects/ffasp/Atom.h
 
-/home/creep/projects/ffasp/CLSolver.cpp
-CLSolver.h
-/home/creep/projects/ffasp/CLSolver.h
-boost/tokenizer.hpp
--
-boost/algorithm/string/trim.hpp
--
-boost/lexical_cast.hpp
--
-
 /home/creep/projects/ffasp/CLSolver.h
 ASPSolver.h
 /home/creep/projects/ffasp/ASPSolver.h
@@ -100,16 +80,6 @@ ProcessBuff.h
 sstream
 -
 set
--
-
-/home/creep/projects/ffasp/DLVASPSolver.cpp
-DLVASPSolver.h
-/home/creep/projects/ffasp/DLVASPSolver.h
-DLVResultParser.h
-/home/creep/projects/ffasp/DLVResultParser.h
-boost/tokenizer.hpp
--
-boost/algorithm/string/trim.hpp
 -
 
 /home/creep/projects/ffasp/DLVASPSolver.h
@@ -121,32 +91,6 @@ sstream
 -
 set
 -
-
-/home/creep/projects/ffasp/DLVResultParser.cpp
-DLVResultParser.h
-/home/creep/projects/ffasp/DLVResultParser.h
-boost/algorithm/string/trim.hpp
--
-
-/home/creep/projects/ffasp/DLVResultParser.h
-ASPResultParser.h
-/home/creep/projects/ffasp/ASPResultParser.h
-DLVResult_grammar.h
-/home/creep/projects/ffasp/DLVResult_grammar.h
-AtomSet.h
-/home/creep/projects/ffasp/AtomSet.h
-
-/home/creep/projects/ffasp/DLVResult_grammar.h
-boost/spirit/home/classic/core.hpp
--
-boost/spirit/home/classic/tree/ast.hpp
--
-
-/home/creep/projects/ffasp/Error.cpp
-sstream
--
-Error.h
-/home/creep/projects/ffasp/Error.h
 
 /home/creep/projects/ffasp/Error.h
 string
@@ -159,10 +103,6 @@ stdexcept
 /home/creep/projects/ffasp/Eval.h
 Program.h
 /home/creep/projects/ffasp/Program.h
-FAnswerSet.h
-/home/creep/projects/ffasp/FAnswerSet.h
-
-/home/creep/projects/ffasp/FAnswerSet.cpp
 FAnswerSet.h
 /home/creep/projects/ffasp/FAnswerSet.h
 
@@ -196,14 +136,6 @@ fstream
 iostream
 -
 
-/home/creep/projects/ffasp/Globals.cpp
-config.h
-/home/creep/projects/ffasp/config.h
-boost/algorithm/string/trim.hpp
--
-Globals.h
-/home/creep/projects/ffasp/Globals.h
-
 /home/creep/projects/ffasp/Globals.h
 map
 -
@@ -211,10 +143,6 @@ string
 -
 GetPot.h
 /home/creep/projects/ffasp/GetPot.h
-
-/home/creep/projects/ffasp/Literal.cpp
-Literal.h
-/home/creep/projects/ffasp/Literal.h
 
 /home/creep/projects/ffasp/Literal.h
 Atom.h
@@ -234,26 +162,6 @@ iostream
 Globals.h
 /home/creep/projects/ffasp/Globals.h
 
-/home/creep/projects/ffasp/ProcessBuff.cpp
-ProcessBuff.h
-/home/creep/projects/ffasp/ProcessBuff.h
-iostream
--
-sstream
--
-cerrno
--
-cstdio
--
-csignal
--
-unistd.h
--
-sys/types.h
--
-sys/wait.h
--
-
 /home/creep/projects/ffasp/ProcessBuff.h
 iostream
 -
@@ -266,12 +174,6 @@ string
 cstdlib
 -
 cstring
--
-
-/home/creep/projects/ffasp/Program.cpp
-Program.h
-/home/creep/projects/ffasp/Program.h
-sstream
 -
 
 /home/creep/projects/ffasp/Program.h
@@ -296,17 +198,9 @@ Program.h
 Globals.h
 /home/creep/projects/ffasp/Globals.h
 
-/home/creep/projects/ffasp/Rewrite.cpp
-Rewrite.h
-/home/creep/projects/ffasp/Rewrite.h
-
 /home/creep/projects/ffasp/Rewrite.h
 Program.h
 /home/creep/projects/ffasp/Program.h
-
-/home/creep/projects/ffasp/Rule.cpp
-Rule.h
-/home/creep/projects/ffasp/Rule.h
 
 /home/creep/projects/ffasp/Rule.h
 boost/ptr_container/indirect_fun.hpp
@@ -320,27 +214,9 @@ Literal.h
 Globals.h
 /home/creep/projects/ffasp/Globals.h
 
-/home/creep/projects/ffasp/SafetyChecker.cpp
-SafetyChecker.h
-/home/creep/projects/ffasp/SafetyChecker.h
-
 /home/creep/projects/ffasp/SafetyChecker.h
 Program.h
 /home/creep/projects/ffasp/Program.h
-
-/home/creep/projects/ffasp/SpiritProgramParser.cpp
-SpiritProgramParser.h
-/home/creep/projects/ffasp/SpiritProgramParser.h
-fstream
--
-iostream
--
-algorithm
--
-boost/algorithm/string/trim.hpp
--
-boost/lexical_cast.hpp
--
 
 /home/creep/projects/ffasp/SpiritProgramParser.h
 boost/spirit/home/classic/core.hpp
@@ -353,14 +229,6 @@ ProgramParser.h
 /home/creep/projects/ffasp/ProgramParser.h
 SafetyChecker.h
 /home/creep/projects/ffasp/SafetyChecker.h
-
-/home/creep/projects/ffasp/Term.cpp
-cstdlib
--
-Term.h
-/home/creep/projects/ffasp/Term.h
-Error.h
-/home/creep/projects/ffasp/Error.h
 
 /home/creep/projects/ffasp/Term.h
 iostream

@@ -32,7 +32,7 @@ void ASPEval::doSolve()
 	int maxk = stop.first;
 	time_t maxtime = stop.second, dur;
 	time_t start = time(0);
-	int k = step;
+	int k = std::max(step, 2);	// start search from k=2
 	do
 	{
 
