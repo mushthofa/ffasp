@@ -6,23 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/Users/mush/Documents/workspace/ffasp/svn/ASPEval.cpp
+/home/creep/projects/ffasp/ASPEval.cpp
 ASPEval.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPEval.h
+/home/creep/projects/ffasp/ASPEval.h
 
-/Users/mush/Documents/workspace/ffasp/svn/ASPEval.h
+/home/creep/projects/ffasp/ASPEval.h
 Eval.h
-/Users/mush/Documents/workspace/ffasp/svn/Eval.h
+/home/creep/projects/ffasp/Eval.h
 ASPSolver.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPSolver.h
+/home/creep/projects/ffasp/ASPSolver.h
 ASPTranslate.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPTranslate.h
+/home/creep/projects/ffasp/ASPTranslate.h
 
-/Users/mush/Documents/workspace/ffasp/svn/ASPResultParser.h
+/home/creep/projects/ffasp/ASPResultParser.h
 AtomSet.h
-/Users/mush/Documents/workspace/ffasp/svn/AtomSet.h
+/home/creep/projects/ffasp/AtomSet.h
 
-/Users/mush/Documents/workspace/ffasp/svn/ASPSolver.h
+/home/creep/projects/ffasp/ASPSolver.h
 iostream
 -
 string
@@ -30,35 +30,35 @@ string
 vector
 -
 ProcessBuff.h
-/Users/mush/Documents/workspace/ffasp/svn/ProcessBuff.h
+/home/creep/projects/ffasp/ProcessBuff.h
 Error.h
-/Users/mush/Documents/workspace/ffasp/svn/Error.h
+/home/creep/projects/ffasp/Error.h
 Globals.h
-/Users/mush/Documents/workspace/ffasp/svn/Globals.h
+/home/creep/projects/ffasp/Globals.h
 AtomSet.h
-/Users/mush/Documents/workspace/ffasp/svn/AtomSet.h
+/home/creep/projects/ffasp/AtomSet.h
 Program.h
-/Users/mush/Documents/workspace/ffasp/svn/Program.h
+/home/creep/projects/ffasp/Program.h
 ASPResultParser.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPResultParser.h
+/home/creep/projects/ffasp/ASPResultParser.h
 
-/Users/mush/Documents/workspace/ffasp/svn/ASPTranslate.cpp
+/home/creep/projects/ffasp/ASPTranslate.cpp
 ASPTranslate.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPTranslate.h
+/home/creep/projects/ffasp/ASPTranslate.h
 boost/concept_check.hpp
 -
 boost/lexical_cast.hpp
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/ASPTranslate.h
+/home/creep/projects/ffasp/ASPTranslate.h
 Program.h
-/Users/mush/Documents/workspace/ffasp/svn/Program.h
+/home/creep/projects/ffasp/Program.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Atom.cpp
+/home/creep/projects/ffasp/Atom.cpp
 Atom.h
-/Users/mush/Documents/workspace/ffasp/svn/Atom.h
+/home/creep/projects/ffasp/Atom.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Atom.h
+/home/creep/projects/ffasp/Atom.h
 string
 -
 iostream
@@ -70,25 +70,25 @@ set
 boost/shared_ptr.hpp
 -
 Term.h
-/Users/mush/Documents/workspace/ffasp/svn/Term.h
+/home/creep/projects/ffasp/Term.h
 Number.h
-/Users/mush/Documents/workspace/ffasp/svn/Number.h
+/home/creep/projects/ffasp/Number.h
 
-/Users/mush/Documents/workspace/ffasp/svn/AtomSet.cpp
+/home/creep/projects/ffasp/AtomSet.cpp
 AtomSet.h
-/Users/mush/Documents/workspace/ffasp/svn/AtomSet.h
+/home/creep/projects/ffasp/AtomSet.h
 algorithm
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/AtomSet.h
+/home/creep/projects/ffasp/AtomSet.h
 vector
 -
 Atom.h
-/Users/mush/Documents/workspace/ffasp/svn/Atom.h
+/home/creep/projects/ffasp/Atom.h
 
-/Users/mush/Documents/workspace/ffasp/svn/CLSolver.cpp
+/home/creep/projects/ffasp/CLSolver.cpp
 CLSolver.h
-/Users/mush/Documents/workspace/ffasp/svn/CLSolver.h
+/home/creep/projects/ffasp/CLSolver.h
 boost/tokenizer.hpp
 -
 boost/algorithm/string/trim.hpp
@@ -96,63 +96,63 @@ boost/algorithm/string/trim.hpp
 boost/lexical_cast.hpp
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/CLSolver.h
+/home/creep/projects/ffasp/CLSolver.h
 ASPSolver.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPSolver.h
+/home/creep/projects/ffasp/ASPSolver.h
 ProcessBuff.h
-/Users/mush/Documents/workspace/ffasp/svn/ProcessBuff.h
+/home/creep/projects/ffasp/ProcessBuff.h
 sstream
 -
 set
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/DLVASPSolver.cpp
+/home/creep/projects/ffasp/DLVASPSolver.cpp
 DLVASPSolver.h
-/Users/mush/Documents/workspace/ffasp/svn/DLVASPSolver.h
+/home/creep/projects/ffasp/DLVASPSolver.h
 DLVResultParser.h
-/Users/mush/Documents/workspace/ffasp/svn/DLVResultParser.h
+/home/creep/projects/ffasp/DLVResultParser.h
 boost/tokenizer.hpp
 -
 boost/algorithm/string/trim.hpp
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/DLVASPSolver.h
+/home/creep/projects/ffasp/DLVASPSolver.h
 ASPSolver.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPSolver.h
+/home/creep/projects/ffasp/ASPSolver.h
 ProcessBuff.h
-/Users/mush/Documents/workspace/ffasp/svn/ProcessBuff.h
+/home/creep/projects/ffasp/ProcessBuff.h
 sstream
 -
 set
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/DLVResultParser.cpp
+/home/creep/projects/ffasp/DLVResultParser.cpp
 DLVResultParser.h
-/Users/mush/Documents/workspace/ffasp/svn/DLVResultParser.h
+/home/creep/projects/ffasp/DLVResultParser.h
 boost/algorithm/string/trim.hpp
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/DLVResultParser.h
+/home/creep/projects/ffasp/DLVResultParser.h
 ASPResultParser.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPResultParser.h
+/home/creep/projects/ffasp/ASPResultParser.h
 DLVResult_grammar.h
-/Users/mush/Documents/workspace/ffasp/svn/DLVResult_grammar.h
+/home/creep/projects/ffasp/DLVResult_grammar.h
 AtomSet.h
-/Users/mush/Documents/workspace/ffasp/svn/AtomSet.h
+/home/creep/projects/ffasp/AtomSet.h
 
-/Users/mush/Documents/workspace/ffasp/svn/DLVResult_grammar.h
+/home/creep/projects/ffasp/DLVResult_grammar.h
 boost/spirit/home/classic/core.hpp
 -
 boost/spirit/home/classic/tree/ast.hpp
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/Error.cpp
+/home/creep/projects/ffasp/Error.cpp
 sstream
 -
 Error.h
-/Users/mush/Documents/workspace/ffasp/svn/Error.h
+/home/creep/projects/ffasp/Error.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Error.h
+/home/creep/projects/ffasp/Error.h
 string
 -
 iostream
@@ -160,23 +160,23 @@ iostream
 stdexcept
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/Eval.h
+/home/creep/projects/ffasp/Eval.h
 Program.h
-/Users/mush/Documents/workspace/ffasp/svn/Program.h
+/home/creep/projects/ffasp/Program.h
 FAnswerSet.h
-/Users/mush/Documents/workspace/ffasp/svn/FAnswerSet.h
+/home/creep/projects/ffasp/FAnswerSet.h
 
-/Users/mush/Documents/workspace/ffasp/svn/FAnswerSet.cpp
+/home/creep/projects/ffasp/FAnswerSet.cpp
 FAnswerSet.h
-/Users/mush/Documents/workspace/ffasp/svn/FAnswerSet.h
+/home/creep/projects/ffasp/FAnswerSet.h
 
-/Users/mush/Documents/workspace/ffasp/svn/FAnswerSet.h
+/home/creep/projects/ffasp/FAnswerSet.h
 Atom.h
-/Users/mush/Documents/workspace/ffasp/svn/Atom.h
+/home/creep/projects/ffasp/Atom.h
 sstream
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/GetPot.h
+/home/creep/projects/ffasp/GetPot.h
 ctype.h
 -
 stdio.h
@@ -200,29 +200,29 @@ fstream
 iostream
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/Globals.cpp
+/home/creep/projects/ffasp/Globals.cpp
 config.h
-/Users/mush/Documents/workspace/ffasp/svn/config.h
+/home/creep/projects/ffasp/config.h
 boost/algorithm/string/trim.hpp
 -
 Globals.h
-/Users/mush/Documents/workspace/ffasp/svn/Globals.h
+/home/creep/projects/ffasp/Globals.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Globals.h
+/home/creep/projects/ffasp/Globals.h
 map
 -
 string
 -
 GetPot.h
-/Users/mush/Documents/workspace/ffasp/svn/GetPot.h
+/home/creep/projects/ffasp/GetPot.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Literal.cpp
+/home/creep/projects/ffasp/Literal.cpp
 Literal.h
-/Users/mush/Documents/workspace/ffasp/svn/Literal.h
+/home/creep/projects/ffasp/Literal.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Literal.h
+/home/creep/projects/ffasp/Literal.h
 Atom.h
-/Users/mush/Documents/workspace/ffasp/svn/Atom.h
+/home/creep/projects/ffasp/Atom.h
 set
 -
 boost/ptr_container/indirect_fun.hpp
@@ -230,17 +230,17 @@ boost/ptr_container/indirect_fun.hpp
 boost/shared_ptr.hpp
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/Number.h
+/home/creep/projects/ffasp/Number.h
 vector
 -
 iostream
 -
 Globals.h
-/Users/mush/Documents/workspace/ffasp/svn/Globals.h
+/home/creep/projects/ffasp/Globals.h
 
-/Users/mush/Documents/workspace/ffasp/svn/ProcessBuff.cpp
+/home/creep/projects/ffasp/ProcessBuff.cpp
 ProcessBuff.h
-/Users/mush/Documents/workspace/ffasp/svn/ProcessBuff.h
+/home/creep/projects/ffasp/ProcessBuff.h
 iostream
 -
 sstream
@@ -258,7 +258,7 @@ sys/types.h
 sys/wait.h
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/ProcessBuff.h
+/home/creep/projects/ffasp/ProcessBuff.h
 iostream
 -
 streambuf
@@ -272,13 +272,13 @@ cstdlib
 cstring
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/Program.cpp
+/home/creep/projects/ffasp/Program.cpp
 Program.h
-/Users/mush/Documents/workspace/ffasp/svn/Program.h
+/home/creep/projects/ffasp/Program.h
 sstream
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/Program.h
+/home/creep/projects/ffasp/Program.h
 set
 -
 sstream
@@ -288,31 +288,31 @@ boost/shared_ptr.hpp
 boost/ptr_container/indirect_fun.hpp
 -
 Rule.h
-/Users/mush/Documents/workspace/ffasp/svn/Rule.h
+/home/creep/projects/ffasp/Rule.h
 
-/Users/mush/Documents/workspace/ffasp/svn/ProgramParser.h
+/home/creep/projects/ffasp/ProgramParser.h
 iostream
 -
 fstream
 -
 Program.h
-/Users/mush/Documents/workspace/ffasp/svn/Program.h
+/home/creep/projects/ffasp/Program.h
 Globals.h
-/Users/mush/Documents/workspace/ffasp/svn/Globals.h
+/home/creep/projects/ffasp/Globals.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Rewrite.cpp
+/home/creep/projects/ffasp/Rewrite.cpp
 Rewrite.h
-/Users/mush/Documents/workspace/ffasp/svn/Rewrite.h
+/home/creep/projects/ffasp/Rewrite.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Rewrite.h
+/home/creep/projects/ffasp/Rewrite.h
 Program.h
-/Users/mush/Documents/workspace/ffasp/svn/Program.h
+/home/creep/projects/ffasp/Program.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Rule.cpp
+/home/creep/projects/ffasp/Rule.cpp
 Rule.h
-/Users/mush/Documents/workspace/ffasp/svn/Rule.h
+/home/creep/projects/ffasp/Rule.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Rule.h
+/home/creep/projects/ffasp/Rule.h
 boost/ptr_container/indirect_fun.hpp
 -
 sstream
@@ -320,21 +320,21 @@ sstream
 cmath
 -
 Literal.h
-/Users/mush/Documents/workspace/ffasp/svn/Literal.h
+/home/creep/projects/ffasp/Literal.h
 Globals.h
-/Users/mush/Documents/workspace/ffasp/svn/Globals.h
+/home/creep/projects/ffasp/Globals.h
 
-/Users/mush/Documents/workspace/ffasp/svn/SafetyChecker.cpp
+/home/creep/projects/ffasp/SafetyChecker.cpp
 SafetyChecker.h
-/Users/mush/Documents/workspace/ffasp/svn/SafetyChecker.h
+/home/creep/projects/ffasp/SafetyChecker.h
 
-/Users/mush/Documents/workspace/ffasp/svn/SafetyChecker.h
+/home/creep/projects/ffasp/SafetyChecker.h
 Program.h
-/Users/mush/Documents/workspace/ffasp/svn/Program.h
+/home/creep/projects/ffasp/Program.h
 
-/Users/mush/Documents/workspace/ffasp/svn/SpiritProgramParser.cpp
+/home/creep/projects/ffasp/SpiritProgramParser.cpp
 SpiritProgramParser.h
-/Users/mush/Documents/workspace/ffasp/svn/SpiritProgramParser.h
+/home/creep/projects/ffasp/SpiritProgramParser.h
 fstream
 -
 iostream
@@ -346,27 +346,27 @@ boost/algorithm/string/trim.hpp
 boost/lexical_cast.hpp
 -
 
-/Users/mush/Documents/workspace/ffasp/svn/SpiritProgramParser.h
+/home/creep/projects/ffasp/SpiritProgramParser.h
 boost/spirit/home/classic/core.hpp
 -
 boost/spirit/home/classic/tree/ast.hpp
 -
 logic_grammar.h
-/Users/mush/Documents/workspace/ffasp/svn/logic_grammar.h
+/home/creep/projects/ffasp/logic_grammar.h
 ProgramParser.h
-/Users/mush/Documents/workspace/ffasp/svn/ProgramParser.h
+/home/creep/projects/ffasp/ProgramParser.h
 SafetyChecker.h
-/Users/mush/Documents/workspace/ffasp/svn/SafetyChecker.h
+/home/creep/projects/ffasp/SafetyChecker.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Term.cpp
+/home/creep/projects/ffasp/Term.cpp
 cstdlib
 -
 Term.h
-/Users/mush/Documents/workspace/ffasp/svn/Term.h
+/home/creep/projects/ffasp/Term.h
 Error.h
-/Users/mush/Documents/workspace/ffasp/svn/Error.h
+/home/creep/projects/ffasp/Error.h
 
-/Users/mush/Documents/workspace/ffasp/svn/Term.h
+/home/creep/projects/ffasp/Term.h
 iostream
 -
 string
@@ -378,11 +378,11 @@ vector
 map
 -
 Error.h
-/Users/mush/Documents/workspace/ffasp/svn/Error.h
+/home/creep/projects/ffasp/Error.h
 
-/Users/mush/Documents/workspace/ffasp/svn/logic_grammar.h
+/home/creep/projects/ffasp/logic_grammar.h
 
-/Users/mush/Documents/workspace/ffasp/svn/main.cpp
+/home/creep/projects/ffasp/main.cpp
 config.h
 -
 iostream
@@ -390,17 +390,17 @@ iostream
 cstdlib
 -
 DLVASPSolver.h
-/Users/mush/Documents/workspace/ffasp/svn/DLVASPSolver.h
+/home/creep/projects/ffasp/DLVASPSolver.h
 SpiritProgramParser.h
-/Users/mush/Documents/workspace/ffasp/svn/SpiritProgramParser.h
+/home/creep/projects/ffasp/SpiritProgramParser.h
 ASPEval.h
-/Users/mush/Documents/workspace/ffasp/svn/ASPEval.h
+/home/creep/projects/ffasp/ASPEval.h
 DLVASPSolver.h
-/Users/mush/Documents/workspace/ffasp/svn/DLVASPSolver.h
+/home/creep/projects/ffasp/DLVASPSolver.h
 CLSolver.h
-/Users/mush/Documents/workspace/ffasp/svn/CLSolver.h
+/home/creep/projects/ffasp/CLSolver.h
 Rewrite.h
-/Users/mush/Documents/workspace/ffasp/svn/Rewrite.h
+/home/creep/projects/ffasp/Rewrite.h
 ctime
 -
 
