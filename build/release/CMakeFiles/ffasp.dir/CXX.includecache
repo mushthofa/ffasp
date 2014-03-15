@@ -45,6 +45,10 @@ ASPResultParser.h
 /home/creep/projects/ffasp/ASPTranslate.cpp
 ASPTranslate.h
 /home/creep/projects/ffasp/ASPTranslate.h
+boost/concept_check.hpp
+-
+boost/lexical_cast.hpp
+-
 
 /home/creep/projects/ffasp/ASPTranslate.h
 Program.h
@@ -135,6 +139,14 @@ fstream
 -
 iostream
 -
+
+/home/creep/projects/ffasp/Globals.cpp
+config.h
+/home/creep/projects/ffasp/config.h
+boost/algorithm/string/trim.hpp
+-
+Globals.h
+/home/creep/projects/ffasp/Globals.h
 
 /home/creep/projects/ffasp/Globals.h
 map

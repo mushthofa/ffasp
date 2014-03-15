@@ -549,7 +549,7 @@ void ASPTranslate::translateHTNORM(RulePtr  r)
 	 *  1<=i,j<=k
 	 */
 	
-	Atom newp[k+2][k+2];
+	std::vector<std::vector<Atom> > newp (k+2, std::vector<Atom>(k+2, Atom()));
 	std::string newpstr = Program::genNextPred();
 	for(i=1; i<=k; i++)
 	{
@@ -714,7 +714,8 @@ void ASPTranslate::translateHCOTNORM(RulePtr r)
 	 *  0<=i,j<=k
 	 */
 	
-	Atom newp[k+2][k+2];
+	std::vector<std::vector<Atom> > newp (k+2, std::vector<Atom>(k+2, Atom()));
+	
 	std::string newpstr = Program::genNextPred();
 	for(i=0; i<=k; i++)
 	{
@@ -799,6 +800,7 @@ void ASPTranslate::translateHCOTNORM(RulePtr r)
 		}
 	}
 
+	
 	/*
 	LiteralPtr nafb1 (new Literal(hl[0], true));
 	LiteralPtr nafb2 (new Literal(hl[1], true));
