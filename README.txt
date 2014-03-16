@@ -23,8 +23,10 @@ Make sure it can be called using the following command
 $ clingo
 
 
-3) Go to the 'release/' directory in 'ffasp', and run
+3) Run the following commands in the directory ffasp :
 
+$ mkdir build
+$ cd build
 $ cmake ../
 $ make
 
