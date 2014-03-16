@@ -41,7 +41,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 CMAKE_SOURCE_DIR = /home/creep/projects/ffasp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/creep/projects/ffasp/build
+CMAKE_BINARY_DIR = /home/creep/projects/ffasp/release
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ffasp.dir/depend.make
@@ -54,7 +54,7 @@ include CMakeFiles/ffasp.dir/flags.make
 
 CMakeFiles/ffasp.dir/Term.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/Term.o: ../Term.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/Term.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/Term.o -c /home/creep/projects/ffasp/Term.cpp
 
@@ -77,7 +77,7 @@ CMakeFiles/ffasp.dir/Term.o.provides.build: CMakeFiles/ffasp.dir/Term.o
 
 CMakeFiles/ffasp.dir/SpiritProgramParser.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/SpiritProgramParser.o: ../SpiritProgramParser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/SpiritProgramParser.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/SpiritProgramParser.o -c /home/creep/projects/ffasp/SpiritProgramParser.cpp
 
@@ -100,7 +100,7 @@ CMakeFiles/ffasp.dir/SpiritProgramParser.o.provides.build: CMakeFiles/ffasp.dir/
 
 CMakeFiles/ffasp.dir/SafetyChecker.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/SafetyChecker.o: ../SafetyChecker.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/SafetyChecker.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/SafetyChecker.o -c /home/creep/projects/ffasp/SafetyChecker.cpp
 
@@ -123,7 +123,7 @@ CMakeFiles/ffasp.dir/SafetyChecker.o.provides.build: CMakeFiles/ffasp.dir/Safety
 
 CMakeFiles/ffasp.dir/Rule.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/Rule.o: ../Rule.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/Rule.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/Rule.o -c /home/creep/projects/ffasp/Rule.cpp
 
@@ -146,7 +146,7 @@ CMakeFiles/ffasp.dir/Rule.o.provides.build: CMakeFiles/ffasp.dir/Rule.o
 
 CMakeFiles/ffasp.dir/Rewrite.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/Rewrite.o: ../Rewrite.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/Rewrite.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/Rewrite.o -c /home/creep/projects/ffasp/Rewrite.cpp
 
@@ -169,7 +169,7 @@ CMakeFiles/ffasp.dir/Rewrite.o.provides.build: CMakeFiles/ffasp.dir/Rewrite.o
 
 CMakeFiles/ffasp.dir/Program.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/Program.o: ../Program.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/Program.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/Program.o -c /home/creep/projects/ffasp/Program.cpp
 
@@ -192,7 +192,7 @@ CMakeFiles/ffasp.dir/Program.o.provides.build: CMakeFiles/ffasp.dir/Program.o
 
 CMakeFiles/ffasp.dir/ProcessBuff.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/ProcessBuff.o: ../ProcessBuff.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/ProcessBuff.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/ProcessBuff.o -c /home/creep/projects/ffasp/ProcessBuff.cpp
 
@@ -215,7 +215,7 @@ CMakeFiles/ffasp.dir/ProcessBuff.o.provides.build: CMakeFiles/ffasp.dir/ProcessB
 
 CMakeFiles/ffasp.dir/Literal.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/Literal.o: ../Literal.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/Literal.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/Literal.o -c /home/creep/projects/ffasp/Literal.cpp
 
@@ -238,7 +238,7 @@ CMakeFiles/ffasp.dir/Literal.o.provides.build: CMakeFiles/ffasp.dir/Literal.o
 
 CMakeFiles/ffasp.dir/Globals.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/Globals.o: ../Globals.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/Globals.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/Globals.o -c /home/creep/projects/ffasp/Globals.cpp
 
@@ -261,7 +261,7 @@ CMakeFiles/ffasp.dir/Globals.o.provides.build: CMakeFiles/ffasp.dir/Globals.o
 
 CMakeFiles/ffasp.dir/FAnswerSet.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/FAnswerSet.o: ../FAnswerSet.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/FAnswerSet.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/FAnswerSet.o -c /home/creep/projects/ffasp/FAnswerSet.cpp
 
@@ -284,7 +284,7 @@ CMakeFiles/ffasp.dir/FAnswerSet.o.provides.build: CMakeFiles/ffasp.dir/FAnswerSe
 
 CMakeFiles/ffasp.dir/Error.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/Error.o: ../Error.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/Error.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/Error.o -c /home/creep/projects/ffasp/Error.cpp
 
@@ -307,7 +307,7 @@ CMakeFiles/ffasp.dir/Error.o.provides.build: CMakeFiles/ffasp.dir/Error.o
 
 CMakeFiles/ffasp.dir/DLVResultParser.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/DLVResultParser.o: ../DLVResultParser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/DLVResultParser.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/DLVResultParser.o -c /home/creep/projects/ffasp/DLVResultParser.cpp
 
@@ -330,7 +330,7 @@ CMakeFiles/ffasp.dir/DLVResultParser.o.provides.build: CMakeFiles/ffasp.dir/DLVR
 
 CMakeFiles/ffasp.dir/DLVASPSolver.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/DLVASPSolver.o: ../DLVASPSolver.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/DLVASPSolver.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/DLVASPSolver.o -c /home/creep/projects/ffasp/DLVASPSolver.cpp
 
@@ -353,7 +353,7 @@ CMakeFiles/ffasp.dir/DLVASPSolver.o.provides.build: CMakeFiles/ffasp.dir/DLVASPS
 
 CMakeFiles/ffasp.dir/CLSolver.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/CLSolver.o: ../CLSolver.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/CLSolver.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/CLSolver.o -c /home/creep/projects/ffasp/CLSolver.cpp
 
@@ -376,7 +376,7 @@ CMakeFiles/ffasp.dir/CLSolver.o.provides.build: CMakeFiles/ffasp.dir/CLSolver.o
 
 CMakeFiles/ffasp.dir/AtomSet.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/AtomSet.o: ../AtomSet.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/AtomSet.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/AtomSet.o -c /home/creep/projects/ffasp/AtomSet.cpp
 
@@ -399,7 +399,7 @@ CMakeFiles/ffasp.dir/AtomSet.o.provides.build: CMakeFiles/ffasp.dir/AtomSet.o
 
 CMakeFiles/ffasp.dir/Atom.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/Atom.o: ../Atom.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/Atom.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/Atom.o -c /home/creep/projects/ffasp/Atom.cpp
 
@@ -422,7 +422,7 @@ CMakeFiles/ffasp.dir/Atom.o.provides.build: CMakeFiles/ffasp.dir/Atom.o
 
 CMakeFiles/ffasp.dir/ASPTranslate.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/ASPTranslate.o: ../ASPTranslate.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/ASPTranslate.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/ASPTranslate.o -c /home/creep/projects/ffasp/ASPTranslate.cpp
 
@@ -445,7 +445,7 @@ CMakeFiles/ffasp.dir/ASPTranslate.o.provides.build: CMakeFiles/ffasp.dir/ASPTran
 
 CMakeFiles/ffasp.dir/ASPEval.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/ASPEval.o: ../ASPEval.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/ASPEval.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/ASPEval.o -c /home/creep/projects/ffasp/ASPEval.cpp
 
@@ -468,7 +468,7 @@ CMakeFiles/ffasp.dir/ASPEval.o.provides.build: CMakeFiles/ffasp.dir/ASPEval.o
 
 CMakeFiles/ffasp.dir/main.o: CMakeFiles/ffasp.dir/flags.make
 CMakeFiles/ffasp.dir/main.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/build/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/creep/projects/ffasp/release/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ffasp.dir/main.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ffasp.dir/main.o -c /home/creep/projects/ffasp/main.cpp
 
@@ -568,6 +568,6 @@ CMakeFiles/ffasp.dir/clean:
 .PHONY : CMakeFiles/ffasp.dir/clean
 
 CMakeFiles/ffasp.dir/depend:
-	cd /home/creep/projects/ffasp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/creep/projects/ffasp /home/creep/projects/ffasp /home/creep/projects/ffasp/build /home/creep/projects/ffasp/build /home/creep/projects/ffasp/build/CMakeFiles/ffasp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/creep/projects/ffasp/release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/creep/projects/ffasp /home/creep/projects/ffasp /home/creep/projects/ffasp/release /home/creep/projects/ffasp/release /home/creep/projects/ffasp/release/CMakeFiles/ffasp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ffasp.dir/depend
 

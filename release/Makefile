@@ -45,7 +45,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 CMAKE_SOURCE_DIR = /home/creep/projects/ffasp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/creep/projects/ffasp/build
+CMAKE_BINARY_DIR = /home/creep/projects/ffasp/release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -113,9 +113,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/creep/projects/ffasp/build/CMakeFiles /home/creep/projects/ffasp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/creep/projects/ffasp/release/CMakeFiles /home/creep/projects/ffasp/release/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/creep/projects/ffasp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/creep/projects/ffasp/release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
