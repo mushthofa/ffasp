@@ -30,7 +30,7 @@ void ASPEval::doSolve()
 {
 
 	int maxk = stop.first;
-	time_t maxtime = stop.second, dur;
+	time_t maxtime = stop.second, dur = 0;
 	time_t start = time(0);
 	int k = std::max(step, 2);	// start search from k=2
 	do
@@ -69,7 +69,7 @@ void ASPEval::doSolve()
 
 		delete tr;
 		time_t end = time(0);
-		dur = end-start;
+		dur += end-start;
 		k += step;
 	}
 	while(!found && k<=maxk && dur<=maxtime);
