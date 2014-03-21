@@ -54,7 +54,7 @@ void ASPEval::doSolve()
 
 		try
 		{
-			solver->callSolver(tr->getProgram(), k);
+			solver->callSolver(tr->getProgram(), k, maxtime-dur);
 		}
 		catch(GeneralError& e)
 		{

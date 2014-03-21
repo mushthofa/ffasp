@@ -39,7 +39,7 @@ class CLSolver : public ASPSolver
                 CLSolver(std::set<std::string> filter, bool checkOnly);
                 //DLVASPSolver(ASPResultParser*);
                 ~CLSolver();
-                void callSolver(std::string program, int k);
+                void callSolver(std::string program, int k, int time);
                 //AtomSet getNextAnswerSet();
                 void getNextAnswerSet();
                 //unsigned numAnswerSets();

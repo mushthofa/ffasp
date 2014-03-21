@@ -64,7 +64,7 @@ class ASPSolver
                 *
                 *
                 */
-                virtual void callSolver(std::string program, int) = 0;
+                virtual void callSolver(std::string program, int, int) = 0;
 
                 /**
                  * @brief Retrieves an Answer set, incrementing the internal result pointer.

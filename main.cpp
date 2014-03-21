@@ -32,10 +32,8 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "DLVASPSolver.h"
 #include "SpiritProgramParser.h"
 #include "ASPEval.h"
-#include "DLVASPSolver.h"
 #include "CLSolver.h"
 #include "Rewrite.h"
 

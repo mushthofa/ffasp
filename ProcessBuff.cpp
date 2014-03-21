@@ -67,9 +67,9 @@ ProcessBuf::ProcessBuf()
 
 ProcessBuf::ProcessBuf(const ProcessBuf& sb)
 	: std::streambuf(),
-				  process(sb.process),
-						status(sb.status),
-							  bufsize(sb.bufsize)
+	process(sb.process),
+	status(sb.status),
+	bufsize(sb.bufsize)
 {
 	::memcpy(inpipes, sb.inpipes, 2);
 	::memcpy(outpipes, sb.outpipes, 2);
@@ -117,14 +117,14 @@ void ProcessBuf::open(const std::vector<std::string>& av)
 	//std::cout<<"pb open"<<std::endl;
 	if (::pipe(outpipes) < 0)
 	{
-			::perror("pipes");
-			return;
+		::perror("pipes");
+		return;
 	}
 
 	if (::pipe(inpipes) < 0)
 	{
-			::perror("pipes");
-			return;
+		::perror("pipes");
+		return;
 	}
 
   // create a new process

@@ -43,11 +43,7 @@ CLSolver::CLSolver(std::set<std::string> filter, bool co)
         	lpargs.push_back("-q");
         else
         	lpargs.push_back("-n 1");
-        int maxt = Globals::Instance()->intOption("maxt");
-        std::ostringstream osstime;
-        osstime<<"--time-limit="<<maxt;
-        std::string timelim = osstime.str();
-        lpargs.push_back(timelim);
+        
         lpargs.push_back("-W");
         lpargs.push_back("no-atom-undefined");
         lpargs.push_back("-W");
@@ -58,6 +54,7 @@ CLSolver::CLSolver(std::set<std::string> filter, bool co)
         lpargs.push_back("no-nonmonotone-aggregate");
         lpargs.push_back("-W");
         lpargs.push_back("no-term-undefined");
+	lpargs.push_back("dummy");
 
         /*
          * TODO : No filter definition yet for clingo!
@@ -82,7 +79,7 @@ CLSolver::CLSolver(std::set<std::string> filter, bool co)
         {
                 lpargs.push_back(*args_it);
         }
-		*/
+	*/
 
 
         pb = new ProcessBuf();
@@ -95,7 +92,7 @@ CLSolver::~CLSolver()
         delete pb;
 }
 
-void CLSolver::callSolver(std::string program, int k)
+void CLSolver::callSolver(std::string program, int k, int time_limit)
 {
 
         int retcode = 0;
@@ -104,6 +101,11 @@ void CLSolver::callSolver(std::string program, int k)
 
         try
         {
+		lpargs.pop_back();
+		std::ostringstream osstime;
+		osstime<<"--time-limit="<<time_limit;
+		std::string timelim = osstime.str();
+		lpargs.push_back(timelim);
                 pb->open(lpargs);
 
                 std::iostream iopipe(pb);
@@ -131,12 +133,13 @@ void CLSolver::callSolver(std::string program, int k)
                 if(checkOnly)
                 {
 
-                		std::string sat("SATISFIABLE");
-                		std::string unsat("UNSATISFIABLE");
+			std::string sat("SATISFIABLE");
+			std::string unsat("UNSATISFIABLE");
+			std::string timelimit("*** Info : (clingo): INTERRUPTED by signal!");
                         std::getline(iopipe, outputline);
                         if(outputline==sat)
                                 checkSatisfy = true;
-                        else if(outputline==unsat)
+                        else if(outputline==unsat || outputline==timelimit)
                                 checkSatisfy = false;
                         else
                         	throw FatalError("Unknown result from clingo: "+outputline);
@@ -144,14 +147,25 @@ void CLSolver::callSolver(std::string program, int k)
                 else
                 {
 
-                		std::string sat("SATISFIABLE");
-                	    std::string unsat("UNSATISFIABLE");
-                	    std::getline(iopipe, outputline);
-                        if(outputline!=sat && outputline != unsat )
+			std::string sat("SATISFIABLE");
+			std::string unsat("UNSATISFIABLE");
+			std::string timelimit("*** Info : (clingo): INTERRUPTED by signal!");
+			std::getline(iopipe, outputline);
+                        if(outputline!=sat && outputline != unsat && outputline!=timelimit )
                         {
 
-                        	 	 processAS(outputline, k);
-                                 answersetsleft = true;
+				try
+				{
+					processAS(outputline, k);
+				}
+				catch(const boost::bad_lexical_cast& e)
+				{
+					std::ostringstream ostr;
+					ostr<<"Error processing output from clingo: "<<std::endl;
+					ostr<<outputline<<std::endl;
+					throw FatalError(ostr.str()); 
+				}
+				answersetsleft = true;
                         }
                         else
                         {
@@ -163,7 +177,7 @@ void CLSolver::callSolver(std::string program, int k)
 
 
                 }
-                //retcode = pb.close();
+                retcode = pb->close();
 
         }
         catch(FatalError& e)
