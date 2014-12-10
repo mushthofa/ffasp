@@ -49,7 +49,7 @@ CLSolver::CLSolver(std::set<std::string> filter, bool co)
         lpargs.push_back("-W");
         lpargs.push_back("no-define-cyclic");
         lpargs.push_back("-W");
-        lpargs.push_back("no-define-redfinition");
+        lpargs.push_back("no-define-redefinition");
         lpargs.push_back("-W");
         lpargs.push_back("no-nonmonotone-aggregate");
         lpargs.push_back("-W");
