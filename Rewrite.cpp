@@ -42,7 +42,7 @@ bool Rewrite::checkRuleConstant(Program::iterator pit)
 	HeadList_t h = head.first;
 	BodyList_t b = body.first;
 
-	if(h.size()==1 && b.size() == 1) return false;
+	if(h.size()==1 && b.size() == 1 && !b[0]->isNAF()) return false;
 
 	int idx = 0;
 
