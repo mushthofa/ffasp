@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                             *
- *   Mushthofa.Mushthofa@Ugent.be                                                                         *
+ *   Copyright (C) 2009 by Mushthofa   								*
+ *   unintendedchoice@gmail.com  									*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,58 +17,29 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-/*
 
-* Eval.h
- *
- *  Created on: Feb, 2014
- *      Author: mush
- */
 
-#ifndef EVAL_H_
-#define EVAL_H_
+#include "ComponentFinder.h"
 
-#include "Program.h"
-#include "FAnswerSet.h"
-
-typedef std::pair<int, time_t> stop_t;
-
-class Eval
+void ComponentFinder::dumpAssignment(const ComponentList& cl, std::ostream& out) const
 {
-public:
-	Eval(int k, int s)
-	:curr_k(k), step(s), asleft(false)
-	{}
-
-	Eval(const Program& p, stop_t st, int k, int s)
-	: curr_k(k), step(s), stop(st),  program(p), asleft(false)
+	for (unsigned ci = 0; ci < cl.size(); ++ci)
 	{
+		out << ci << ": ";
+
+		for (Vertices::const_iterator vi = cl[ci].begin();
+				   vi != cl[ci].end();
+				   ++vi)
+		{
+			if (vi != cl[ci].begin())
+				out << ", ";
+
+			out << *vi;
+		}
+
+		out << std::endl;
 	}
+}
 
-	virtual ~Eval()
-	{}
+// end
 
-	virtual std::string getNextAnswerSet() = 0;
-
-	virtual bool answersetsLeft() = 0;
-
-
-	virtual bool doSolve() = 0;
-
-
-
-protected:
-	int curr_k;
-	int step ;
-	stop_t stop;
-	Program program;
-	std::vector<std::string> as;
-	/*
-	std::set<FAnswerSet> fas_set;
-	std::vector<FAnswerSet> fas;
-	*/
-	bool asleft;
-};
-
-
-#endif /* EVAL_H_ */

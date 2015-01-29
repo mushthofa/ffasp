@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                             *
- *   Mushthofa.Mushthofa@Ugent.be                                                                         *
+ *   Copyright (C) 2009 by Mushthofa   								*
+ *   unintendedchoice@gmail.com   									*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,58 +17,64 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-/*
-
-* Eval.h
- *
- *  Created on: Feb, 2014
- *      Author: mush
+/**
+ * @file   AtomFactory.h
+ * @author Roman Schindlauer
+ * @date   Sat Feb  4 19:09:02 CET 2006
+ * 
+ * @brief  Singleton class for storing atoms.
+ * 
+ * 
  */
 
-#ifndef EVAL_H_
-#define EVAL_H_
+#ifndef _ATOMFACTORY_H
+#define _ATOMFACTORY_H
 
-#include "Program.h"
-#include "FAnswerSet.h"
+#include <vector>
 
-typedef std::pair<int, time_t> stop_t;
+#include "Atom.h"
+#include "AtomSet.h"
 
-class Eval
+/**
+ * @brief The Factory stores all (ground) atoms that emerge in the course of
+ *  			solving the program.
+ */
+
+class AtomFactory
 {
-public:
-	Eval(int k, int s)
-	:curr_k(k), step(s), asleft(false)
-	{}
+	public:
 
-	Eval(const Program& p, stop_t st, int k, int s)
-	: curr_k(k), step(s), stop(st),  program(p), asleft(false)
-	{
-	}
+    		/**
+	 * @brief Get (unique) instance of the static factory class.
+		 */
+		static AtomFactory* Instance();
 
-	virtual ~Eval()
-	{}
+    		/**
+		 * @brief Inserts an Atom into the Factory.
+		 *
+		 * 
+		 */
+		AtomPtr insert(Atom*);
 
-	virtual std::string getNextAnswerSet() = 0;
+    		/**
+		 * @brief Clears the Factory
+		 */
+		void reset();
 
-	virtual bool answersetsLeft() = 0;
+	protected:
 
+		AtomFactory()
+		{ }
 
-	virtual bool doSolve() = 0;
+		~AtomFactory();
 
+	private:
 
+		AtomSet::atomset_t atoms;
 
-protected:
-	int curr_k;
-	int step ;
-	stop_t stop;
-	Program program;
-	std::vector<std::string> as;
-	/*
-	std::set<FAnswerSet> fas_set;
-	std::vector<FAnswerSet> fas;
-	*/
-	bool asleft;
+		static AtomFactory* _instance;
 };
 
+#endif
 
-#endif /* EVAL_H_ */
+// end

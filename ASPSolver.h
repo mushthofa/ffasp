@@ -80,6 +80,10 @@ class ASPSolver
 
                 virtual bool answerSetsLeft() const = 0;
 
+                std::vector<std::string> getlines() const
+				{
+					return aslines;
+				}
 
         protected:
 
@@ -98,7 +102,9 @@ class ASPSolver
                  * @brief Internal result
                  */
 
-                AtomSet currentAnswer;
+                //AtomSet currentAnswer;
+
+                std::vector<std::string> aslines;
 
                 /* Is there any answers left */
                 bool answersetsleft;

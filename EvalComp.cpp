@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                             *
- *   Mushthofa.Mushthofa@Ugent.be                                                                         *
+ *   Copyright (C) 2009 by Mushthofa   								*
+ *   unintendedchoice@gmail.com  									*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,58 +17,85 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-/*
 
-* Eval.h
+/**
+ * @file   EvalComp.cpp
+ * @author Mushthofa
  *
- *  Created on: Feb, 2014
- *      Author: mush
+ * 
+ * @brief  Evaluation of one component
+ * 
+ * 
  */
 
-#ifndef EVAL_H_
-#define EVAL_H_
+#include "EvalComp.h"
+#include "ASPEval.h"
+#include "CLSolver.h"
 
-#include "Program.h"
-#include "FAnswerSet.h"
-
-typedef std::pair<int, time_t> stop_t;
-
-class Eval
+unsigned c = 0;
+EvalEmpty::EvalEmpty()
+	:EvalComp()
 {
-public:
-	Eval(int k, int s)
-	:curr_k(k), step(s), asleft(false)
-	{}
+}
 
-	Eval(const Program& p, stop_t st, int k, int s)
-	: curr_k(k), step(s), stop(st),  program(p), asleft(false)
+EvalEmpty::~EvalEmpty()
+{
+}
+
+void EvalEmpty::setInput(const Program& p, const FAnswerSet& f)
+{
+	/* FFASP: Assume facts are always consistent
+	if(f.isConsistent())
 	{
+		currentAnswerSet = f;
+		answersetsleft = true;
 	}
-
-	virtual ~Eval()
-	{}
-
-	virtual std::string getNextAnswerSet() = 0;
-
-	virtual bool answersetsLeft() = 0;
-
-
-	virtual bool doSolve() = 0;
-
-
-
-protected:
-	int curr_k;
-	int step ;
-	stop_t stop;
-	Program program;
-	std::vector<std::string> as;
-	/*
-	std::set<FAnswerSet> fas_set;
-	std::vector<FAnswerSet> fas;
+	else
+		answersetsleft = false;
 	*/
-	bool asleft;
-};
+
+	currentAnswerSet = f;
+	answersetsleft = true;
+}
+
+void EvalEmpty::doEval()
+{
+	answersetsleft = false;
+}
+
+void EvalEmpty::clearInput()
+{
+	answersetsleft = true;
+}
 
 
-#endif /* EVAL_H_ */
+
+EvalDirect::EvalDirect(ASPSolverEngine* se)
+:solverEngine(se)
+{}
+
+EvalDirect::~EvalDirect()
+{
+	//std::cout<<"deleting solver"<<std::endl;
+	//delete solver;
+}
+
+void EvalDirect::setInput(const Program& p, const FAnswerSet& f)
+{
+	IDB = p;
+	EDB = f;
+	doEval();
+}
+
+void EvalDirect::doEval()
+{
+
+}
+
+void EvalDirect::clearInput()
+{
+	answersetsleft = false;
+}
+
+//End
+

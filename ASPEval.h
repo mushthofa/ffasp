@@ -31,34 +31,17 @@
 #include "Eval.h"
 #include "ASPSolver.h"
 #include "ASPTranslate.h"
+#include "FAnswerSet.h"
 
 class ASPEval : public Eval
 {
 public:
-	ASPEval(ASPSolverEngine* eng, const Program& prog, stop_t stop, int st)
-	:Eval(prog, stop), step(st)
+	ASPEval(ASPSolverEngine* eng, const Program& prog, stop_t stop, int k, int st)
+	:Eval(prog, stop, k, st), as_idx(0)
 	{
-		/* Get filters from the programs's predicate signature
-		 * However these still contain p_NEW_'s from ASPTranslate
-		 * so these need to be excluded
-		 *
-		 // TODO: No filter definition in clingo found!!!
-		 //	These are for DLV style filter definition
-
-		MapSign_t predsign = program.getPredicates();
-		MapSign_t::iterator pit;
-		std::set<std::string> filter;
-		for(pit=predsign.begin(); pit!=predsign.end(); ++pit)
-		{
-			std::string predname (pit->first);
-			if(predname.find(NEW_PRED)==std::string::npos)
-				filter.insert(predname);
-		}
-		*/
-
 		bool checkonly = Globals::Instance()->boolOption("check");
 		solver = eng->createSolver(checkonly);
-		doSolve();
+		//doSolve();
 	}
 
 
@@ -67,13 +50,28 @@ public:
 		delete solver;
 	}
 
-	virtual void doSolve();
+	virtual bool doSolve();
 
-	//void processAS(AtomSet as, int k);
+	void processAS(std::string as);
+
+	virtual std::string getNextAnswerSet()
+	{
+
+		if(!answersetsLeft())
+		{
+			throw FatalError("No more answer sets to return!");
+		}
+
+		return as[as_idx++];
+	}
+
+	virtual bool answersetsLeft();
 
 protected:
-	int step;
+	//int step;
 	ASPSolver* solver;
+	int as_idx;
+
 };
 
 #endif /* ASPEVAL_H_ */

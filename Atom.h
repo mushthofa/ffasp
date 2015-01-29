@@ -206,6 +206,33 @@ class InfixAtom: public Atom
                 //void accept(BaseVisitor& e) const;
 };
 
+class DummyAtom : public Atom
+{
+	public:
+		DummyAtom(): Atom(Tuple(1, Term()))
+		{}
+		virtual const Term& getPredicate() const
+		{
+				return arguments.front();
+		}
+
+		virtual bool unifiesWith(const AtomPtr&) const
+		{
+				return false;
+		}
+
+		virtual bool operator== (const Atom&) const
+		{
+				return false;
+		}
+
+		bool operator< (const Atom&) const
+		{
+				return true;
+		}
+
+};
+
 /*
 class boolAtom : public Atom
 {

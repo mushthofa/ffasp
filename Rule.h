@@ -98,6 +98,16 @@ class Rule
                                 return true;
                         return false;
                 }
+
+                bool isFact() const
+                {
+                	HeadList_t hl = head.first;
+                	BodyList_t bl = body.first;
+                	return (hl.size() == 1 && bl.size() == 1
+                			&& typeid(*bl[0]->getAtom()) == typeid(ConstantAtom));
+                }
+
+
         protected:
                 HeadExpr_t head;
                 BodyExpr_t body;

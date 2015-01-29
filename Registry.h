@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                             *
- *   Mushthofa.Mushthofa@Ugent.be                                                                         *
+ *   Copyright (C) 2009 by Mushthofa   								*
+ *   unintendedchoice@gmail.com   									*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,58 +17,56 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-/*
 
-* Eval.h
- *
- *  Created on: Feb, 2014
- *      Author: mush
+
+/**
+ * 	@brief The Registry class is a sort of mediator that inserts objects into factory classes.
+ * 	@author Roman Schindlauer, Mushthofa		
  */
 
-#ifndef EVAL_H_
-#define EVAL_H_
 
-#include "Program.h"
-#include "FAnswerSet.h"
+/* This code is mostly unchanged from DLVHEX */
 
-typedef std::pair<int, time_t> stop_t;
+#ifndef _REGISTRY_H
+#define _REGISTRY_H
 
-class Eval
+
+#include "Atom.h"
+#include "AtomFactory.h"
+
+
+class Registry
 {
-public:
-	Eval(int k, int s)
-	:curr_k(k), step(s), asleft(false)
-	{}
+	public:
 
-	Eval(const Program& p, stop_t st, int k, int s)
-	: curr_k(k), step(s), stop(st),  program(p), asleft(false)
-	{
-	}
+    		/**
+	 * @brief Get (unique) instance of the static registry class.
+		 */
+		static Registry* Instance();
 
-	virtual ~Eval()
-	{}
+    		/**
+		 * @brief Stores an Atom.
+		 *
+		 * Using boost::shared_ptr, the ownership over a is transferred to the
+		 * shared pointer. The pointer Atom* must not be deleted after this call.
+		 * This method is supposed to be used for storing ground atoms.
+		 * The Atom is stored in the singleton instance of AtomFactory, which
+		 * maintains a set of Atoms, taking care of uniqueness of its members and
+		 * therefore optimal memory management. 
+		 */
+		AtomPtr storeAtom(Atom*);
 
-	virtual std::string getNextAnswerSet() = 0;
+	protected:
 
-	virtual bool answersetsLeft() = 0;
+		Registry()
+		{ };
 
+	private:
 
-	virtual bool doSolve() = 0;
-
-
-
-protected:
-	int curr_k;
-	int step ;
-	stop_t stop;
-	Program program;
-	std::vector<std::string> as;
-	/*
-	std::set<FAnswerSet> fas_set;
-	std::vector<FAnswerSet> fas;
-	*/
-	bool asleft;
+		static Registry* _instance;
 };
 
+#endif /* _REGISTRY_H */
 
-#endif /* EVAL_H_ */
+// end
+

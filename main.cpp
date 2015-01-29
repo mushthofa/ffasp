@@ -36,6 +36,9 @@
 #include "ASPEval.h"
 #include "CLSolver.h"
 #include "Rewrite.h"
+#include "GraphBuilder.h"
+#include "BoostComponentFinder.h"
+#include "DependencyGraph.h"
 
 #include <ctime>
 
@@ -69,9 +72,6 @@ int main(int argc, char *argv[])
                 showUsage(argv[0]);
                 return 0;
         }
-
-
-
         Program p;
 
         /* Read and parse input */
@@ -82,7 +82,6 @@ int main(int argc, char *argv[])
                 parser = new SpiritProgramParser();
                 //EDB = parser->getEDB();
                 p = parser->getRules();
-
 
         }
         catch(GeneralError& e)
@@ -103,6 +102,8 @@ int main(int argc, char *argv[])
         	return 0;
         }
 
+
+
         /* Rewrite the program
 		*
 		*/
@@ -121,9 +122,77 @@ int main(int argc, char *argv[])
 
         delete rw;
 
+
         //std::cout<<"done rewriting.."<<std::endl;
         //std::cout<<"program after rewritten : "<<std::endl<<rewp<<std::endl;
-	//return 0;
+        //return 0
+
+        /*
+        GraphBuilder gb;
+
+		NodeGraph nodegraph;
+
+		try
+		{
+				// Build the graph of dependency between atoms
+				gb.run(rewp, nodegraph);
+		}
+		catch (GeneralError& e)
+		{
+				std::cerr << e.getErrorMsg() << std::endl << std::endl;
+
+				return EXIT_FAILURE;
+		}
+
+
+
+		//gb.dumpGraph(nodegraph, std::cout);
+		//return EXIT_SUCCESS;
+
+
+		ComponentFinder* cf;
+
+		//
+		// The DependencyGraph identifies and creates the graph components that will
+		// be processed by the GraphProcessor.
+		//
+		DependencyGraph* dg;
+
+		try
+		{
+				cf = new BoostComponentFinder();
+
+				//
+				// Initializing the DependencyGraph. Its constructor uses the
+				// ComponentFinder to find relevant graph
+				// properties for the subsequent processing stage.
+				//
+				dg = new DependencyGraph(nodegraph, cf);
+		}
+		catch (GeneralError &e)
+		{
+				std::cerr << e.getErrorMsg() << std::endl << std::endl;
+
+				delete cf;
+				delete dg;
+				return EXIT_FAILURE;
+		}
+
+
+		std::cout<<"Program Components: "<<std::endl;
+		std::vector<Component*> comps = dg->getComponents();
+		std::vector<Component*>::iterator cit;
+		for(cit = comps.begin(); cit!=comps.end(); ++cit)
+		{
+			if((*cit)->getBottom().size() > 0)
+				(*cit)->dump(std::cout);
+		}
+
+		delete cf; delete dg;
+		return EXIT_SUCCESS;
+		*/
+
+
         /* If called with --trans=<n> option, just translate and return immediately
          *
          */
@@ -132,29 +201,33 @@ int main(int argc, char *argv[])
         if(trans_k>0)
         {
         	ASPTranslate* tr;
-		try
-		{
-			tr = new ASPTranslate(rewp, trans_k);
-		}
-		catch(GeneralError& err)
-		{
+			try
+			{
+				tr = new ASPTranslate(rewp, trans_k);
+			}
+			catch(GeneralError& err)
+			{
 
-			std::ostringstream oserr;
-			oserr<<"Error translating program for k = "<<  trans_k  << ": "
-					<<std::endl<< err.getErrorMsg();
-			std::cout<<oserr.str()<<std::endl;
-			//throw FatalError(oserr.str());
-			//delete tr;
-			return 1;
-		}
+				std::ostringstream oserr;
+				oserr<<"Error translating program for k = "<<  trans_k  << ": "
+						<<std::endl<< err.getErrorMsg();
+				std::cout<<oserr.str()<<std::endl;
+				//throw FatalError(oserr.str());
+				//delete tr;
+				return 1;
+			}
 
-		std::string trans = tr->getProgram();
-		std::cout<<trans<<std::endl;
-		delete tr;
-		return 0;
+
+
+			std::string trans = tr->getProgram();
+			std::cout<<trans<<std::endl;
+			delete tr;
+			return EXIT_SUCCESS;
         }
 
-        /* Get evaluation options */
+
+
+        // Get evaluation options
         int maxk = Globals::Instance()->intOption("maxk");
         int maxtime = Globals::Instance()->intOption("maxt");
         //bool printAS = !Globals::Instance()->boolOption("check");
@@ -167,7 +240,7 @@ int main(int argc, char *argv[])
 
         try
         {
-        	eval  = new ASPEval(eng, rewp, stop,  step);
+        	eval  = new ASPEval(eng, rewp, stop, step, step);
         }
         catch(GeneralError& err)
         {
@@ -179,12 +252,16 @@ int main(int argc, char *argv[])
         }
 
 
-        if(eval->isConsistent())
-        	std::cout<<"Satisfiable."<<std::endl;
+        while(eval->answersetsLeft())
+        {
+        	std::string as = eval->getNextAnswerSet();
+        	std::cout<<as<<endl;
+        }
 
 
         delete eval;
         delete eng;
 
-        return 0;
+
+        return EXIT_SUCCESS;
 }

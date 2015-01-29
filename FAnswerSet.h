@@ -29,6 +29,7 @@
 #define FANSWERSET_H_
 
 #include "Atom.h"
+#include "Program.h"
 #include <sstream>
 
 typedef std::map<AtomPtr, Rational> Inter_t;
@@ -55,6 +56,11 @@ public:
 			as.erase(it);
 	}
 
+	void clear()
+	{
+		as.clear();
+	}
+
 	Rational operator[](AtomPtr a)
 	{
 		return as[a];
@@ -77,9 +83,53 @@ public:
 		return os.str();
 	}
 
+	/* Translate any interpretation into a set of fuzzy facts
+	 * a[x], b[y], ....
+	 * into
+	 * a <- #x.
+	 * b <- #y.
+	 * ....
+	 */
+
+
+	Program getFacts() const
+	{
+		Inter_t::const_iterator it;
+		Program result;
+		int c=0;
+		for(it=as.begin(); it!=as.end(); ++it)
+		{
+			HeadList_t hl;
+			hl.push_back(it->first);
+			AtomPtr b(new ConstantAtom(it->second));
+			LiteralPtr lptr (new Literal (b));
+			BodyList_t bl;
+			bl.push_back(lptr);
+			RulePtr rr(new
+				Rule(std::make_pair(hl, MAX), std::make_pair(bl, MAX), "_NEW_", c++));
+			result.addRule(rr);
+		}
+		return result;
+	}
+
+	bool operator<(const FAnswerSet& x) const
+	{
+		Inter_t::const_iterator it, itfind;
+		for(it=as.begin(); it!=as.end(); ++it)
+		{
+			itfind = x.as.find(it->first);
+			if(itfind==x.as.end() || itfind->second < it->second)
+				return false;
+		}
+		return true;
+	}
+
+
 protected:
 	Inter_t as;
 };
+
+
 
 std::ostream& operator<<(std::ostream& os, const FAnswerSet& as);
 

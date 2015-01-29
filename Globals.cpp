@@ -35,8 +35,8 @@
 #include <boost/algorithm/string/trim.hpp>
 #include "Globals.h"
 
-#define MAXDENOM 100
-#define MAXK 100
+#define MAXDENOM 10
+#define MAXK 10
 #define MAXT 600
 #define REP 0
 

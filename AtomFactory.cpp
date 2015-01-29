@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                             *
- *   Mushthofa.Mushthofa@Ugent.be                                                                         *
+ *   Copyright (C) 2009 by Mushthofa   								*
+ *   unintendedchoice@gmail.com  									*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,58 +17,73 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-/*
 
-* Eval.h
- *
- *  Created on: Feb, 2014
- *      Author: mush
+
+/**
+ * @file   AtomFactory.cpp
+ * @author Roman Schindlauer
+ * @date   Sat Feb  4 19:09:02 CET 2006
+ * 
+ * @brief  Singleton class for storing atoms.
+ * 
+ * 
  */
 
-#ifndef EVAL_H_
-#define EVAL_H_
 
-#include "Program.h"
-#include "FAnswerSet.h"
+#include "AtomFactory.h"
 
-typedef std::pair<int, time_t> stop_t;
 
-class Eval
+//
+// initialize static variable:
+//
+AtomFactory* AtomFactory::_instance = 0;
+
+
+AtomFactory* AtomFactory::Instance()
 {
-public:
-	Eval(int k, int s)
-	:curr_k(k), step(s), asleft(false)
-	{}
-
-	Eval(const Program& p, stop_t st, int k, int s)
-	: curr_k(k), step(s), stop(st),  program(p), asleft(false)
+	if (_instance == 0)
 	{
+		_instance = new AtomFactory;
 	}
 
-	virtual ~Eval()
-	{}
-
-	virtual std::string getNextAnswerSet() = 0;
-
-	virtual bool answersetsLeft() = 0;
+	return _instance;
+}
 
 
-	virtual bool doSolve() = 0;
-
-
-
-protected:
-	int curr_k;
-	int step ;
-	stop_t stop;
-	Program program;
-	std::vector<std::string> as;
-	/*
-	std::set<FAnswerSet> fas_set;
-	std::vector<FAnswerSet> fas;
-	*/
-	bool asleft;
+struct NullDeleter
+{
+	void operator() (Atom*) {} // don't delete managed Atom object
 };
 
 
-#endif /* EVAL_H_ */
+
+AtomPtr AtomFactory::insert(Atom* ap)
+{
+	AtomPtr a(ap, NullDeleter());
+
+	AtomSet::atomset_t::const_iterator it = atoms.find(a);
+
+	if (it == atoms.end())
+	{
+		AtomPtr x(ap);
+		atoms.insert(x);
+		return x;
+	}
+
+	delete ap;
+
+	return *it;
+
+}
+
+
+void AtomFactory::reset()
+{
+	atoms.clear();
+}
+
+
+AtomFactory::~AtomFactory()
+{
+}
+// end

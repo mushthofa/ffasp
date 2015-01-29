@@ -28,8 +28,7 @@
 
 #include "CLSolver.h"
 #include <boost/tokenizer.hpp>
-#include <boost/algorithm/string/trim.hpp>
-#include <boost/lexical_cast.hpp>
+
 
 CLSolver::CLSolver(std::set<std::string> filter, bool co)
         :checkOnly(co), checkSatisfy(false)
@@ -42,19 +41,19 @@ CLSolver::CLSolver(std::set<std::string> filter, bool co)
         if(checkOnly)
         	lpargs.push_back("-q");
         else
-        	lpargs.push_back("-n 1");
+        	lpargs.push_back("-n 0");
         
         lpargs.push_back("-W");
         lpargs.push_back("no-atom-undefined");
         lpargs.push_back("-W");
         lpargs.push_back("no-define-cyclic");
         lpargs.push_back("-W");
-        lpargs.push_back("no-define-redefinition");
+        lpargs.push_back("no-define-redfinition");
         lpargs.push_back("-W");
         lpargs.push_back("no-nonmonotone-aggregate");
         lpargs.push_back("-W");
         lpargs.push_back("no-term-undefined");
-	lpargs.push_back("dummy");
+        lpargs.push_back("dummy");
 
         /*
          * TODO : No filter definition yet for clingo!
@@ -96,88 +95,95 @@ void CLSolver::callSolver(std::string program, int k, int time_limit)
 {
 
         int retcode = 0;
+        aslines.clear();
         if(pb->isOpen())
                 retcode = pb->close();
 
         try
         {
-		lpargs.pop_back();
-		std::ostringstream osstime;
-		osstime<<"--time-limit="<<time_limit;
-		std::string timelim = osstime.str();
-		lpargs.push_back(timelim);
-                pb->open(lpargs);
+			lpargs.pop_back();
+			std::ostringstream osstime;
+			osstime<<"--time-limit="<<time_limit;
+			std::string timelim = osstime.str();
+			lpargs.push_back(timelim);
+			pb->open(lpargs);
 
-                std::iostream iopipe(pb);
-                iopipe.exceptions(std::ios_base::badbit);
-                try
-                {
+			std::iostream iopipe(pb);
+			iopipe.exceptions(std::ios_base::badbit);
+			try
+			{
 
-                        iopipe<<program<<std::endl;
-                }
-                catch(std::ios_base::failure e)
-                {
-                        std::ostringstream oserr;
-                        oserr << "Error executing command ";
-                        for(std::vector<std::string>::iterator it = lpargs.begin(); it!=lpargs.end(); ++it)
-                                oserr<<*it<<" ";
-                        std::cout<<"I/O stream failure: "<<e.what()<<std::endl;
-                        oserr<<"Program is "<<std::endl<<program<<std::endl;
-                        throw FatalError(oserr.str());
-                }
+					iopipe<<program<<std::endl;
+			}
+			catch(std::ios_base::failure e)
+			{
+					std::ostringstream oserr;
+					oserr << "Error executing command ";
+					for(std::vector<std::string>::iterator it = lpargs.begin(); it!=lpargs.end(); ++it)
+							oserr<<*it<<" ";
+					std::cout<<"I/O stream failure: "<<e.what()<<std::endl;
+					oserr<<"Program is "<<std::endl<<program<<std::endl;
+					throw FatalError(oserr.str());
+			}
 
-                pb->endoffile();
+			pb->endoffile();
 
-                std::string outputline;
+			std::string outputline;
 
-                if(checkOnly)
-                {
+			if(checkOnly)
+			{
 
-			std::string sat("SATISFIABLE");
-			std::string unsat("UNSATISFIABLE");
-			std::string timelimit("*** Info : (clingo): INTERRUPTED by signal!");
-                        std::getline(iopipe, outputline);
-                        if(outputline==sat)
-                                checkSatisfy = true;
-                        else if(outputline==unsat || outputline==timelimit)
-                                checkSatisfy = false;
-                        else
-                        	throw FatalError("Unknown result from clingo: "+outputline);
-                }
-                else
-                {
-
-			std::string sat("SATISFIABLE");
-			std::string unsat("UNSATISFIABLE");
-			std::string timelimit("*** Info : (clingo): INTERRUPTED by signal!");
-			std::getline(iopipe, outputline);
-                        if(outputline!=sat && outputline != unsat && outputline!=timelimit )
-                        {
-
-				try
+				std::string sat("SATISFIABLE");
+				std::string unsat("UNSATISFIABLE");
+				std::string timelimit("*** Info : (clingo): INTERRUPTED by signal!");
+				std::getline(iopipe, outputline);
+				if(outputline==sat)
+					checkSatisfy = true;
+				else if(outputline==unsat || outputline==timelimit)
+					checkSatisfy = false;
+				else
+					throw FatalError("Unknown result from clingo: "+outputline);
+			}
+			else
+			{
+				std::string sat("SATISFIABLE");
+				std::string unsat("UNSATISFIABLE");
+				std::string timelimit("*** Info : (clingo): INTERRUPTED by signal!");
+				std::getline(iopipe, outputline);
+				if(outputline!=sat && outputline != unsat && outputline!=timelimit )
 				{
-					processAS(outputline, k);
+					aslines.push_back(outputline);
+					//std::cout<<outputline<<std::endl;
+					try
+					{
+						while(std::getline(iopipe, outputline))
+						{
+							//std::cout<<outputline<<std::endl;
+							if(outputline!=sat && outputline != unsat && outputline!=timelimit )
+								aslines.push_back(outputline);
+						}
+					}
+					catch(const std::exception& e)
+					{
+						std::ostringstream ostr;
+						ostr<<"Error processing output from clingo: "<<std::endl;
+						ostr<<outputline<<std::endl;
+						ostr<<e.what()<<std::endl;
+						throw FatalError(ostr.str());
+					}
+					answersetsleft = true;
 				}
-				catch(const boost::bad_lexical_cast& e)
+				else
 				{
-					std::ostringstream ostr;
-					ostr<<"Error processing output from clingo: "<<std::endl;
-					ostr<<outputline<<std::endl;
-					throw FatalError(ostr.str()); 
+					 if(outputline == sat)
+						 answersetsleft = true;
+					 else
+						 answersetsleft = false;
 				}
-				answersetsleft = true;
-                        }
-                        else
-                        {
-                        	 if(outputline == sat)
-                        		 answersetsleft = true;
-                        	 else
-                        		 answersetsleft = false;
-                        }
 
+			}
 
-                }
-                retcode = pb->close();
+			retcode = pb->close();
 
         }
         catch(FatalError& e)
@@ -199,10 +205,11 @@ void CLSolver::callSolver(std::string program, int k, int time_limit)
 
 }
 
+/*
 void CLSolver::processAS(std::string as, int k)
 {
-	std::map<std::string, int> acc;
-	std::map<std::string, int>::iterator acc_it;
+	std::map<AtomPtr, int> acc;
+	std::map<AtomPtr, int>::iterator acc_it;
 	typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
 	boost::char_separator<char> sp(" ");
 	tokenizer tok(as, sp);
@@ -224,6 +231,15 @@ void CLSolver::processAS(std::string as, int k)
 			atomv.push_back(*itp);
 		}
 
+		int sz = atomv.size();
+		Tuple args;
+		for(int i=0; i<sz-1; i++)
+		{
+			boost::trim(atomv[i]);
+			args.push_back(Term(atomv[i], Term::SYMBOL ));
+		}
+		AtomPtr atom (new Atom(args, false));
+
 		std::ostringstream os;
 		int sz = atomv.size();
 		os << atomv[0];
@@ -235,11 +251,21 @@ void CLSolver::processAS(std::string as, int k)
 				os<<", "<<atomv[i];
 			os<<")";
 		}
+
+
+
 		int a = boost::lexical_cast<int> (atomv[sz-1]);
 
-		acc_it = acc.find(os.str());
-		if(acc_it == acc.end() || acc[os.str()] < a)
-			acc[os.str()] = a;
+
+		acc_it = acc.find(atom);
+		if(acc_it == acc.end() || acc[atom] < a)
+			acc[atom] = a;
+	}
+
+
+	for(acc_it = acc.begin(); acc_it!=acc.end(); ++acc_it)
+	{
+		fas.addAnswer(acc_it->first, Rational(acc_it->second, k));
 	}
 
 
@@ -251,15 +277,18 @@ void CLSolver::processAS(std::string as, int k)
 		if(acc_it->second > 0)
 		{
 			float tv = (float) acc_it->second/k;
-			std::cout<<acc_it->first<<"["<<tv<<"]";
+			std::cout<<*(acc_it->first)<<"["<<tv<<"]";
+
+
 			if(i<acc.size())
-				std::cout<<", ";
+				std::cout<<", "<<std::endl;
 		}
 
 	}
 	std::cout<<"}"<<std::endl;
-}
 
+}
+*/
 
 void CLSolver::getNextAnswerSet()
 {

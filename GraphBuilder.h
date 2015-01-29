@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                             *
- *   Mushthofa.Mushthofa@Ugent.be                                                                         *
+ *   Copyright (C) 2009 by Mushthofa   								*
+ *   unintendedchoice@gmail.com   									*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,58 +17,51 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-/*
 
-* Eval.h
- *
- *  Created on: Feb, 2014
- *      Author: mush
+
+/**
+ * @file   GraphBuilder.h
+ * @author Roman Schindlauer, Mushthofa
+ * 
+ * @brief Class to provide methods for generating the dependency graph
+ * 
+ * 
  */
 
-#ifndef EVAL_H_
-#define EVAL_H_
 
+#ifndef GRAPH_BUILDER_H
+#define GRAPH_BUILDER_H
+
+#include "Component.h"
 #include "Program.h"
-#include "FAnswerSet.h"
 
-typedef std::pair<int, time_t> stop_t;
 
-class Eval
+class GraphBuilder
 {
-public:
-	Eval(int k, int s)
-	:curr_k(k), step(s), asleft(false)
-	{}
+	public:
 
-	Eval(const Program& p, stop_t st, int k, int s)
-	: curr_k(k), step(s), stop(st),  program(p), asleft(false)
-	{
-	}
+    	/**
+	 * @brief Takes a set of rules and builds the according node graph.
+	 *
+	 * This nodegraph will contain the entire dependency graph of the program,
+	 * including any artificial nodes that had to be created for auxiliary
+	 * rules, e.g., for external atoms with variable input parameters.
+	 */
+		void run(const Program&, NodeGraph&);
+	
+	/**
+		 * @brief Debug dump.
+	 */
+		void dumpGraph(const NodeGraph&, std::ostream&) const;
 
-	virtual ~Eval()
-	{}
+	private:
 
-	virtual std::string getNextAnswerSet() = 0;
+//    void
+//    addDep(AtomNode*, AtomNode*, Dependency::Type);
 
-	virtual bool answersetsLeft() = 0;
-
-
-	virtual bool doSolve() = 0;
-
-
-
-protected:
-	int curr_k;
-	int step ;
-	stop_t stop;
-	Program program;
-	std::vector<std::string> as;
-	/*
-	std::set<FAnswerSet> fas_set;
-	std::vector<FAnswerSet> fas;
-	*/
-	bool asleft;
 };
 
+#endif
 
-#endif /* EVAL_H_ */
+//end
+

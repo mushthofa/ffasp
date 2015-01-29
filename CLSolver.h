@@ -30,6 +30,7 @@
 
 #include "ASPSolver.h"
 #include "ProcessBuff.h"
+//#include "FAnswerSet.h"
 #include <sstream>
 #include <set>
 
@@ -45,11 +46,14 @@ class CLSolver : public ASPSolver
                 //unsigned numAnswerSets();
                 bool answerSetsLeft() const;
 
+
+
         private:
                 ProcessBuf* pb;
                 bool checkOnly;
                 bool checkSatisfy;
-                void processAS(std::string, int k);
+                //void processAS(std::string, int k);
+                //std::vector<std::string> aslines;
 
 };
 

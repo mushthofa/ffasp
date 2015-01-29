@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                             *
- *   Mushthofa.Mushthofa@Ugent.be                                                                         *
+ *   Copyright (C) 2009 by Mushthofa   								*
+ *   unintendedchoice@gmail.com  									*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,58 +17,33 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-/*
 
-* Eval.h
- *
- *  Created on: Feb, 2014
- *      Author: mush
+/**
+ * 	@brief The Registry class is a sort of mediator that inserts objects into factory classes.
+ * 	@author Roman Schindlauer, Mushthofa		
  */
 
-#ifndef EVAL_H_
-#define EVAL_H_
 
-#include "Program.h"
-#include "FAnswerSet.h"
 
-typedef std::pair<int, time_t> stop_t;
+#include "Registry.h"
 
-class Eval
+
+Registry* Registry::_instance = 0;
+
+
+Registry* Registry::Instance()
 {
-public:
-	Eval(int k, int s)
-	:curr_k(k), step(s), asleft(false)
-	{}
-
-	Eval(const Program& p, stop_t st, int k, int s)
-	: curr_k(k), step(s), stop(st),  program(p), asleft(false)
+	if (_instance == 0)
 	{
+		_instance = new Registry;
 	}
 
-	virtual ~Eval()
-	{}
-
-	virtual std::string getNextAnswerSet() = 0;
-
-	virtual bool answersetsLeft() = 0;
+	return _instance;
+}
 
 
-	virtual bool doSolve() = 0;
+AtomPtr Registry::storeAtom(Atom* a)
+{
+	return AtomFactory::Instance()->insert(a);
+}
 
-
-
-protected:
-	int curr_k;
-	int step ;
-	stop_t stop;
-	Program program;
-	std::vector<std::string> as;
-	/*
-	std::set<FAnswerSet> fas_set;
-	std::vector<FAnswerSet> fas;
-	*/
-	bool asleft;
-};
-
-
-#endif /* EVAL_H_ */
