@@ -44,7 +44,7 @@ EvalEmpty::~EvalEmpty()
 
 void EvalEmpty::setInput(const Program& p, const FAnswerSet& f)
 {
-	/* FFASP: Assume facts are always consistent
+	 /*FFASP: Assume facts are always consistent
 	if(f.isConsistent())
 	{
 		currentAnswerSet = f;

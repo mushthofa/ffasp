@@ -51,13 +51,14 @@ class EvalComp
 			return answersetsleft;
 		}
 		
-		FAnswerSet getNextAnswerSet()
+		virtual FAnswerSet getNextAnswerSet() = 0;
+		/*
 		{
 			FAnswerSet result = currentAnswerSet;
 			doEval();
 			return result;	
 		}
-		
+		*/
 		
 	protected:
 		virtual void doEval() = 0;
@@ -65,8 +66,8 @@ class EvalComp
 		Program IDB;
 		FAnswerSet EDB;
 		FAnswerSet currentAnswerSet;
+		std::set<std::string> strAS;
 		bool answersetsleft;
-		
 
 };
 

@@ -28,6 +28,7 @@
 #ifndef EVAL_H_
 #define EVAL_H_
 
+
 #include "Program.h"
 #include "FAnswerSet.h"
 
@@ -48,7 +49,7 @@ public:
 	virtual ~Eval()
 	{}
 
-	virtual std::string getNextAnswerSet() = 0;
+	virtual FAnswerSet getNextAnswerSet() = 0;
 
 	virtual bool answersetsLeft() = 0;
 
@@ -62,11 +63,9 @@ protected:
 	int step ;
 	stop_t stop;
 	Program program;
-	std::vector<std::string> as;
-	/*
-	std::set<FAnswerSet> fas_set;
+	std::set<std::string> strAS;
 	std::vector<FAnswerSet> fas;
-	*/
+
 	bool asleft;
 };
 

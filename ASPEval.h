@@ -54,15 +54,16 @@ public:
 
 	void processAS(std::string as);
 
-	virtual std::string getNextAnswerSet()
+	virtual FAnswerSet getNextAnswerSet()
 	{
 
-		if(!answersetsLeft())
+		if(fas.size() == 0 || as_idx >= fas.size())
 		{
 			throw FatalError("No more answer sets to return!");
 		}
+		//std::cout<<"fas is now "<<fas.size()<<" elements"<<std::endl;
 
-		return as[as_idx++];
+		return fas[as_idx++];
 	}
 
 	virtual bool answersetsLeft();

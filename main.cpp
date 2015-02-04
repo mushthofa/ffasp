@@ -252,10 +252,11 @@ int main(int argc, char *argv[])
         }
 
 
+
         while(eval->answersetsLeft())
         {
-        	std::string as = eval->getNextAnswerSet();
-        	std::cout<<as<<endl;
+        	FAnswerSet as = eval->getNextAnswerSet();
+        	std::cout<<as;
         }
 
 

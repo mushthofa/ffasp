@@ -29,10 +29,11 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/tokenizer.hpp>
 
+
 void ASPEval::processAS(std::string asline)
 {
-	std::map<std::string, int> acc;
-	std::map<std::string, int>::iterator acc_it;
+	std::map<AtomPtr, int> acc;
+	std::map<AtomPtr, int>::iterator acc_it;
 	typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
 	boost::char_separator<char> sp(" ");
 	tokenizer tok(asline, sp);
@@ -56,8 +57,6 @@ void ASPEval::processAS(std::string asline)
 
 		int sz = atomv.size();
 		assert(sz>=2);
-
-		/*
 		Tuple args;
 		for(int i=0; i<sz-1; i++)
 		{
@@ -74,7 +73,7 @@ void ASPEval::processAS(std::string asline)
 		acc_it = acc.find(atom);
 		if(acc_it == acc.end() || acc[atom] < a)
 			acc[atom] = a;
-			*/
+		/*
 		std::ostringstream os;
 		os << atomv[0];
 		if(sz > 2)
@@ -90,8 +89,10 @@ void ASPEval::processAS(std::string asline)
 		acc_it = acc.find(os.str());
 		if(acc_it == acc.end() || acc[os.str()] < a)
 				acc[os.str()] = a;
+		*/
 	}
 
+	/*
 	std::ostringstream os;
 	os<<"{";
 	int i=0;
@@ -109,15 +110,22 @@ void ASPEval::processAS(std::string asline)
 	}
 	os<<"}"<<std::endl;
 	as.push_back(os.str());
-	/*
+	*/
+
+
 	FAnswerSet curr_as;
 	for(acc_it = acc.begin(); acc_it!=acc.end(); ++acc_it)
 	{
 		curr_as.addAnswer(acc_it->first, Rational(acc_it->second, curr_k));
 	}
 
-	fas_set.insert(curr_as);
-	*/
+	if(strAS.find(curr_as.getStr())==strAS.end())
+	{
+		fas.push_back(curr_as);
+		strAS.insert(curr_as.getStr());
+	}
+
+
 }
 
 
@@ -132,7 +140,7 @@ bool ASPEval::doSolve()
 	do
 	{
 
-		std::cout<<"k="<<curr_k<<std::endl;
+		//std::cout<<"k="<<curr_k<<std::endl;
 		ASPTranslate* tr;
 		try
 		{
@@ -162,8 +170,8 @@ bool ASPEval::doSolve()
 		{
 
 			//fas.clear();
-			as.clear();
 			std::vector<std::string> aslines = solver->getlines();
+			//std::cout<<"Found "<<aslines.size()<<std::endl;
 			for(std::vector<std::string>::iterator it=aslines.begin();
 					it!=aslines.end(); ++it)
 			{
@@ -171,8 +179,7 @@ bool ASPEval::doSolve()
 			}
 
 			//std::copy(fas_set.begin(), fas_set.end(), std::back_inserter(fas));
-
-			std::cout<<"Found "<<as.size()<<std::endl;
+			//std::cout<<"Found "<<as.size()<<std::endl;
 			found = true;
 		}
 
@@ -183,6 +190,7 @@ bool ASPEval::doSolve()
 	}
 	while(!found && curr_k<=maxk && dur<=maxtime);
 
+	//std::cout<<"found is "<<found<<endl;
 	return found;
 	/*
 	if(!found)
@@ -192,11 +200,13 @@ bool ASPEval::doSolve()
 
 bool ASPEval::answersetsLeft()
 {
-	if(as_idx < as.size())
+	if(as_idx < fas.size())
 		return true;
 	else if(curr_k <= stop.first)
 	{
 		as_idx = 0;
+		fas.clear();
+		//strAS.clear();
 		return doSolve();
 	}
 	return false;
