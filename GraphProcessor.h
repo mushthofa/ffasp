@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                             *
- *   Mushthofa.Mushthofa@Ugent.be                                                                         *
+ *   Copyright (C) 2014 by Mushthofa   								*
+ *   unintendedchoice@gmail.com   									*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,62 +17,60 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-/*
 
- * ASPEval.h
+
+
+/** 
+ *	@brief GraphProcessor.h
+ * 		Provides a class to perform evaluation along the components dep. graph
+ * 		Assuming that the components is already given in a topological ordering
  *
- *  Created on: Feb 2014
- *      Author: mush
+ *	@author Mushthofa
  */
 
-#ifndef ASPEVAL_H_
-#define ASPEVAL_H_
 
-#include "Eval.h"
-#include "ASPSolver.h"
-#include "ASPTranslate.h"
-#include "FAnswerSet.h"
+#ifndef _GRAPH_PROCESSOR_H
+#define _GRAPH_PROCESSOR_H
 
-class ASPEval : public Eval
+#include <map>
+
+#include "Component.h"
+#include "ASPEval.h"
+#include "CLSolver.h"
+#include "DependencyGraph.h"
+
+
+
+class GraphProcessor
 {
-public:
-	ASPEval(ASPSolverEngine* eng, const Program& prog, stop_t stop, int k, int st)
-	:Eval(prog, stop, k, st), as_idx(0)
-	{
-		bool checkonly = Globals::Instance()->boolOption("check");
-		solver = eng->createSolver(checkonly);
-		//doSolve();
-	}
-
-
-	virtual ~ASPEval()
-	{
-		delete solver;
-	}
-
-	virtual bool doSolve();
-
-	bool processAS(std::string as);
-
-	virtual FAnswerSet getNextAnswerSet()
-	{
-
-		if(fas.size() == 0 || as_idx >= fas.size())
+	public: 
+		GraphProcessor(DependencyGraph*);//, ASPSolverEngine*);
+		
+		~GraphProcessor();
+		void run()
 		{
-			throw FatalError("No more answer sets to return!");
+			std::cout<<"Running evaluation on "<<components.size()<<" components"<<std::endl;
+			eval(0);
 		}
-		//std::cout<<"fas is now "<<fas.size()<<" elements"<<std::endl;
+	private:
+		void eval(unsigned);
+		
+		/* Get all input needed for a component */
+		FAnswerSet getInput(unsigned);
+		
+		/* map to store globalAS data */
+		std::map<Component*, FAnswerSet> globalAS;
+		
+		/* the components */
+		std::vector<Component*> components;
+		
+		/* Initial input EDB */
 
-		return fas[as_idx++];
-	}
-
-	virtual bool answersetsLeft();
-
-protected:
-	//int step;
-	ASPSolver* solver;
-	int as_idx;
-
+		//ASPSolverEngine* solver_engine;
+		//Eval* ev;
+		//int step;
 };
 
-#endif /* ASPEVAL_H_ */
+#endif
+//end 
+

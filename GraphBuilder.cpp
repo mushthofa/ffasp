@@ -73,8 +73,8 @@ void GraphBuilder::run(const Program& program, NodeGraph& nodegraph)
 			//
 			// go through all head atoms that were alreay created for this rule
 			//
-			// FFASP: We don't need dependencies between head atoms
-			/*
+
+
 			for (std::vector<AtomNodePtr>::iterator currhead = currentHeadNodes.begin();
 						  currhead != currentHeadNodes.end();
 						  ++currhead)
@@ -85,7 +85,7 @@ void GraphBuilder::run(const Program& program, NodeGraph& nodegraph)
 				Dependency::addDep(*r, hn, *currhead, Dependency::DISJUNCTIVE);
 				Dependency::addDep(*r, *currhead, hn, Dependency::DISJUNCTIVE);
 			}
-			*/
+
 			//
 			// add this atom to current head
 			//

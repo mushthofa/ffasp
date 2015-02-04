@@ -43,6 +43,7 @@ void ASPTranslate::addConsRule()
 	// p_i <- p_{i+1}
 	//
 
+	//std::cout<<"addConsRule():"<<std::endl;
 	MapSign_t predsign = program.getPredicates();
 	MapSign_t::iterator it;
 	for(it=predsign.begin(); it!=predsign.end(); ++it)
@@ -72,7 +73,10 @@ void ASPTranslate::addConsRule()
 				os<<"VAR_"<<varid++<<", "; // fill with variables
 			os<<i+1<<")."<<std::endl;
 		}
+		//std::cout<<os.str()<<std::endl;
 	}
+
+	//std::cout<<"done.."<<std::endl;
 }
 
 void ASPTranslate::translateFACT(RulePtr r)

@@ -71,7 +71,7 @@ class Dependency
 			//UNIFYING = 0x1,
    			PRECEDING = 0x2,
    			NEG_PRECEDING = 0x4,
-   			//DISJUNCTIVE = 0x8
+   			DISJUNCTIVE = 0x8
 		} Type;
 
 		/// Ctor.

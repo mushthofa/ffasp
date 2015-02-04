@@ -30,8 +30,9 @@
 #include <boost/tokenizer.hpp>
 
 
-void ASPEval::processAS(std::string asline)
+bool ASPEval::processAS(std::string asline)
 {
+	bool found = false;
 	std::map<AtomPtr, int> acc;
 	std::map<AtomPtr, int>::iterator acc_it;
 	typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
@@ -41,8 +42,11 @@ void ASPEval::processAS(std::string asline)
 	for(as_it=tok.begin(); as_it!=tok.end(); ++as_it)
 	{
 		std::string curp = *as_it;
+		/*
 		if(curp.find("_NEW_")!=string::npos)
 			continue;
+		*/
+
 
 		//std::cout<<curp<<std::endl;
 
@@ -56,7 +60,9 @@ void ASPEval::processAS(std::string asline)
 		}
 
 		int sz = atomv.size();
-		assert(sz>=2);
+
+		if(sz<2) continue; // For the _NEW_ predicates that has no arguments
+
 		Tuple args;
 		for(int i=0; i<sz-1; i++)
 		{
@@ -123,9 +129,9 @@ void ASPEval::processAS(std::string asline)
 	{
 		fas.push_back(curr_as);
 		strAS.insert(curr_as.getStr());
+		found = true;
 	}
-
-
+	return found;
 }
 
 
@@ -137,6 +143,9 @@ bool ASPEval::doSolve()
 	time_t start = time(0);
 	//int k = std::max(step, 2);	// start search from k=2
 	bool found = false;
+
+	//std::cout<<"doSolve(): "<<std::endl;
+	//std::cout<<program<<std::endl;
 	do
 	{
 
@@ -158,6 +167,8 @@ bool ASPEval::doSolve()
 
 		try
 		{
+			//std::cout<<"Translated program "<<std::endl;
+			//std::cout<<tr->getProgram()<<std::endl;
 			solver->callSolver(tr->getProgram(), curr_k, maxtime-dur);
 		}
 		catch(GeneralError& e)
@@ -175,12 +186,16 @@ bool ASPEval::doSolve()
 			for(std::vector<std::string>::iterator it=aslines.begin();
 					it!=aslines.end(); ++it)
 			{
-				processAS(*it);
+				bool curfound = processAS(*it);
+				found = found || curfound;
+				/*
+				if(curfound)
+					std::cout<<"Store "<<*it<<" when curr_k = "<<curr_k<<std::endl;
+				else
+					std::cout<<"No store "<<*it<<" when curr_k = "<<curr_k<<std::endl;
+				 */
 			}
 
-			//std::copy(fas_set.begin(), fas_set.end(), std::back_inserter(fas));
-			//std::cout<<"Found "<<as.size()<<std::endl;
-			found = true;
 		}
 
 		delete tr;
@@ -190,23 +205,18 @@ bool ASPEval::doSolve()
 	}
 	while(!found && curr_k<=maxk && dur<=maxtime);
 
-	//std::cout<<"found is "<<found<<endl;
 	return found;
-	/*
-	if(!found)
-		std::cout<<"No k-answer set is found until k = "<<k-step<<" and time = "<<dur<<" s"<<std::endl;
-	*/
 }
 
 bool ASPEval::answersetsLeft()
 {
+	//std::cout<<"as_idx = "<<as_idx<<", fas = "<<fas.size()<<std::endl;
 	if(as_idx < fas.size())
 		return true;
 	else if(curr_k <= stop.first)
 	{
 		as_idx = 0;
 		fas.clear();
-		//strAS.clear();
 		return doSolve();
 	}
 	return false;

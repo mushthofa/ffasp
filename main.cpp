@@ -39,6 +39,7 @@
 #include "GraphBuilder.h"
 #include "BoostComponentFinder.h"
 #include "DependencyGraph.h"
+#include "GraphProcessor.h"
 
 #include <ctime>
 
@@ -127,7 +128,7 @@ int main(int argc, char *argv[])
         //std::cout<<"program after rewritten : "<<std::endl<<rewp<<std::endl;
         //return 0
 
-        /*
+
         GraphBuilder gb;
 
 		NodeGraph nodegraph;
@@ -179,6 +180,8 @@ int main(int argc, char *argv[])
 		}
 
 
+
+		/*
 		std::cout<<"Program Components: "<<std::endl;
 		std::vector<Component*> comps = dg->getComponents();
 		std::vector<Component*>::iterator cit;
@@ -188,9 +191,11 @@ int main(int argc, char *argv[])
 				(*cit)->dump(std::cout);
 		}
 
-		delete cf; delete dg;
-		return EXIT_SUCCESS;
 		*/
+
+		//delete cf;
+		//return EXIT_SUCCESS;
+
 
 
         /* If called with --trans=<n> option, just translate and return immediately
@@ -200,10 +205,11 @@ int main(int argc, char *argv[])
         int trans_k = Globals::Instance()->intOption("trans");
         if(trans_k>0)
         {
-        	ASPTranslate* tr;
+        	ASPTranslate* tr;//, *tr1;
 			try
 			{
 				tr = new ASPTranslate(rewp, trans_k);
+				//tr1 = new ASPTranslate(rewp, trans_k);
 			}
 			catch(GeneralError& err)
 			{
@@ -220,6 +226,7 @@ int main(int argc, char *argv[])
 
 
 			std::string trans = tr->getProgram();
+			//trans = tr1->getProgram();
 			std::cout<<trans<<std::endl;
 			delete tr;
 			return EXIT_SUCCESS;
@@ -227,6 +234,7 @@ int main(int argc, char *argv[])
 
 
 
+        /*
         // Get evaluation options
         int maxk = Globals::Instance()->intOption("maxk");
         int maxtime = Globals::Instance()->intOption("maxt");
@@ -262,7 +270,25 @@ int main(int argc, char *argv[])
 
         delete eval;
         delete eng;
+        */
 
+        //ASPSolverEngine* eng = new CLSolverEngine();
 
+    	GraphProcessor* gp;
+    	gp = new GraphProcessor(dg);//, eng);
+
+    	try
+    	{
+    		gp->run();
+    	}
+    	catch(GeneralError& err)
+    	{
+    		std::cout<<"Error evaluating component "<<std::endl;
+    		std::cout<<err.getErrorMsg()<<std::endl;
+    		delete cf; delete dg; delete gp;
+    		return EXIT_FAILURE;
+    	}
+
+    	delete cf; delete dg; delete gp;
         return EXIT_SUCCESS;
 }

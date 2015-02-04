@@ -32,7 +32,7 @@
 unsigned Component::labelCounter = 0;
 
 Component::Component()
-	: evaluated(false), compLabel(labelCounter++)
+	: evaluated(false), compLabel(labelCounter++), issrcf(true)
 {
 }
 
@@ -104,8 +104,8 @@ ProgramComponent::ProgramComponent(const std::vector<AtomNodePtr>& nodes)
 		addAtomNode(*node++);
 
 	//
-    	// find incoming nodes: nodes that depend on a node that does not belong to
-    	// the component
+	// find incoming nodes: nodes that depend on a node that does not belong to
+	// the component
 	//
     
 	std::vector<AtomNodePtr>::const_iterator ni = atomnodes.begin();
@@ -135,6 +135,18 @@ ProgramComponent::ProgramComponent(const std::vector<AtomNodePtr>& nodes)
 			++di;
 		}
 		++ni;
+	}
+
+	Program bottom = getBottom();
+	for(Program::iterator it=bottom.begin(); it!=bottom.end(); ++it)
+	{
+		BodyExpr_t body = (*it)->getBody();
+		FuzzyOp_t op = body.second;
+		if(op==CO_TNORM)
+		{
+			issrcf = false;
+			break;
+		}
 	}
 }
 
@@ -167,6 +179,8 @@ void ProgramComponent::dump(std::ostream& out) const
 
 	std::cout<<bottom<<std::endl;
 
+
+
 	/*
 	PrintVisitor rpv(out);
 
@@ -178,6 +192,10 @@ void ProgramComponent::dump(std::ostream& out) const
 	}
 
 	 */
+	if(issrcf)
+		out <<"SRCF"<<std::endl;
+	else
+		out <<"Non-SRCF"<<std::endl;
 	out << "ProgramComponent-object end ----------------------------" << std::endl;
 
 //    out << std::endl;

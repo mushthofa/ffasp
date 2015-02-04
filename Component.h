@@ -102,6 +102,10 @@ class Component
 			return compLabel;
 		}
 		
+		bool isSRCF() const
+		{
+			return issrcf;
+		}
 		
 	protected:
 		Component();
@@ -127,6 +131,7 @@ class Component
 		
 		unsigned compLabel;
 		static unsigned labelCounter;
+		bool issrcf;
 
 };
 

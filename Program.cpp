@@ -65,8 +65,12 @@ void Program::addRule(RulePtr r, bool withPredicate)
         rules.insert(r);
         /* Update the predicate set */
 
+        /*
         if(!withPredicate)
                 return;
+        */
+
+
         HeadExpr_t currentHead = r->getHead();
         BodyExpr_t currentBody = r->getBody();
 

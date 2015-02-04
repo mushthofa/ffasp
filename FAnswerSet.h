@@ -76,12 +76,34 @@ public:
 
 			if(it!=as.begin())
 				os<<", ";
-			double ratfloat = it->second.getFloat();
-			os<<*(it->first)<<"["<<ratfloat<<"]";
+			int num = it->second.getNom();
+			int denom = it->second.getDenom();
+			os<<*(it->first)<<"["<<num<<"/"<<denom<<"]";
 		}
 		os<<"}";
 		return os.str();
 	}
+
+	std::string getStrClean() const
+	{
+		Inter_t::const_iterator it;
+		std::ostringstream os;
+		os<<"{";
+		for(it=as.begin(); it!=as.end(); ++it)
+		{
+			std::string predName = it->first->getPredicateName();
+
+			if(predName.find("_NEW_")!=string::npos)
+						continue;
+			if(it!=as.begin())
+				os<<", ";
+			float truthval = it->second.getFloat();
+			os<<*(it->first)<<"["<<truthval<<"]";
+		}
+		os<<"}";
+		return os.str();
+	}
+
 
 	/* Translate any interpretation into a set of fuzzy facts
 	 * a[x], b[y], ....
@@ -125,6 +147,33 @@ public:
 	}
 
 
+	/* Merge two answer sets into one, finding the largest truth value I(a) from both
+	 *
+	 */
+
+	FAnswerSet merge(const FAnswerSet& other) const
+	{
+		Inter_t o = other.as;
+		Inter_t res = as;
+		for(Inter_t::iterator it = o.begin(); it!= o.end(); ++it)
+		{
+			if(res.find(it->first) == res.end() || res[it->first] < it->second )
+				res[it->first] = it->second;
+		}
+
+		return FAnswerSet(res);
+	}
+
+
+	int getDenomLCM() const
+	{
+		Inter_t::const_iterator it;
+		int res = 1;
+		for(it=as.begin(); it!=as.end(); ++it)
+			res = lcm(res, it->second.getDenom());
+
+		return res;
+	}
 protected:
 	Inter_t as;
 };
