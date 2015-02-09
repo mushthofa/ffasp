@@ -85,6 +85,17 @@ public:
 	ASPTranslate(const Program& p, int kk)
 	:program(p), k(kk)
 	{
+
+		// Compute all non-SRCF Atoms
+		getNonSRCFAtoms();
+		// Do shift for disj rules with SRCF atoms
+		/*std::cout<<"Non SRCF = "<<nonSRCFAtoms.size()<<std::endl;
+		std::set<AtomPtr>::iterator it;
+		for(it=nonSRCFAtoms.begin(); it!=nonSRCFAtoms.end(); ++it)
+			std::cout<<*(*it)<<std::endl;
+		*/
+		doShift();
+
 		doTranslate(); // translate rules
 		addConsRule(); // add rules p_0 <- , p_i <- p_{i+1}
 	}
@@ -103,6 +114,150 @@ protected:
 	 * addConsRule() adds the auxiliary rules a_i <- a_i+1}
 	 * translateXYX() are rules that perform translation for rules of type XYZ
 	 */
+
+
+	void getNonSRCFAtoms()
+	{
+		// Get all the non-SRCF Atoms;
+		// by finding all atoms that are disjunct in the head
+		// and disjunct in the body as well.
+
+		std::set<AtomPtr> headDisj;
+		std::set<AtomPtr> bodyDisj;
+
+		Program::const_iterator it;
+		for(it=program.begin(); it!=program.end(); ++it)
+		{
+			HeadExpr_t head = (*it)->getHead();
+			BodyExpr_t body = (*it)->getBody();
+
+			HeadList_t hl = head.first;
+			BodyList_t bl = body.first;
+			if(hl.size()==2 && head.second == CO_TNORM)
+			{
+
+				//
+				//if(hl[0]->getPredicateName().find("_NEW_") == std::string::npos)
+					headDisj.insert(hl[0]);
+				//if(hl[1]->getPredicateName().find("_NEW_") == std::string::npos)
+					headDisj.insert(hl[1]);
+			}
+
+			if(bl.size() == 2 && body.second == CO_TNORM)
+			{
+
+				//
+				//if(bl[0]->getAtom()->getPredicateName().find("_NEW_") == std::string::npos)
+					bodyDisj.insert(bl[0]->getAtom());
+				//if(bl[1]->getAtom()->getPredicateName().find("_NEW_") == std::string::npos)
+					bodyDisj.insert(bl[1]->getAtom());
+			}
+		}
+
+		// Take intersection;
+
+		std::set_intersection(headDisj.begin(), headDisj.end(), bodyDisj.begin(), bodyDisj.end(),
+				std::inserter(nonSRCFAtoms, nonSRCFAtoms.begin()));
+
+	}
+
+
+
+	void doShift()
+	{
+		/*
+		 * Do shifting on all disjunctive rules
+		 */
+
+		//std::cout<<"Do shifting "<<std::endl;
+		Program::iterator it = program.begin();
+
+		while(it!=program.end())
+		{
+			Program::iterator now = it++;
+			HeadExpr_t head = (*now)->getHead();
+
+			BodyExpr_t body = (*now)->getBody();
+
+			HeadList_t hl = head.first;
+			BodyList_t bl = body.first;
+
+			//cout<<"Rule "<<(*(*now))<<std::endl;
+			//cout<<"Head size "<<hl.size()<<" operator = "<<head.second<<std::endl;
+			// Check if disjunctive rule
+			if(hl.size()!=2 || head.second!=CO_TNORM)
+				continue;
+
+			if(nonSRCFAtoms.find(hl[0])!=nonSRCFAtoms.end()
+				|| nonSRCFAtoms.find(hl[1])!=nonSRCFAtoms.end())
+				continue;
+
+			// Replace a+b <- c
+			// into
+			// a <- c x p1
+			// b <- c x p2
+			// p1 <- not b
+			// p2 <- not a
+
+			AtomPtr p1 (new Atom(Program::genNextPred(), Tuple()));
+			AtomPtr p2 (new Atom(Program::genNextPred(), Tuple()));
+
+			AtomPtr a = hl[0];
+			AtomPtr b = hl[1];
+
+			// Create new body lists
+
+			BodyList_t b1 = bl, b2 = bl;
+			b1.push_back(LiteralPtr(new Literal(p1)));
+			b2.push_back(LiteralPtr(new Literal(p2)));
+
+			BodyExpr_t body1, body2;
+			body1.first = b1;
+			body2.first = b2;
+			body1.second = TNORM;
+			body2.second = TNORM;
+
+			// Set up the heads;
+
+			HeadList_t hl1, hl2;
+			hl1.push_back(b);
+			hl2.push_back(a);
+
+
+			//std::cout<<"Deleting rule "<<*(*now)<<std::endl;
+			program.deleteRule(now);
+
+			RulePtr r1 (new Rule(std::make_pair(hl1, MAX), body1, "_NEW_", program.size()));
+			RulePtr r2 (new Rule(std::make_pair(hl2, MAX), body2, "_NEW_", program.size()));
+
+			//std::cout<<"adding rule "<<*r1<<"and "<<*r2<<std::endl;
+			program.addRule(r1);
+			program.addRule(r2);
+
+			hl1.clear();
+			hl2.clear();
+			b1.clear();
+			b2.clear();
+
+			hl1.push_back(p1);
+			hl2.push_back(p2);
+
+			b1.push_back(LiteralPtr(new Literal(a, true)));
+			b2.push_back(LiteralPtr(new Literal(b, true)));
+			body1.first = b1;
+			body2.first = b2;
+
+			RulePtr r3 (new Rule(std::make_pair(hl1, MAX), body1, "_VIRT_", program.size()));
+			RulePtr r4 (new Rule(std::make_pair(hl2, MAX), body2, "_VIRT_", program.size()));
+			//std::cout<<"adding rule "<<*r3<<"and "<<*r4<<std::endl;
+			program.addRule(r3);
+			program.addRule(r4);
+
+		}
+
+	}
+
+
 	void doTranslate();
 	void translateRule(RulePtr r);
 	void addConsRule();
@@ -123,7 +278,10 @@ protected:
 
 	std::ostringstream os;
 	Program program;
+	std::set<AtomPtr> nonSRCFAtoms;
+	bool needMincheck;
 	int k;
+
 };
 
 

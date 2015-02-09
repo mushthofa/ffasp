@@ -50,7 +50,7 @@ Globals::Globals()
         strOpt["solver"] = "clingo";
 
 
-        intOpt["maxDenom"] = MAXDENOM;
+        intOpt["maxdenom"] = MAXDENOM;
         intOpt["maxk"] = MAXK;
         intOpt["maxt"] = MAXT;
         intOpt["rp"] = REP;

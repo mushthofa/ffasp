@@ -39,12 +39,16 @@ GraphProcessor::GraphProcessor(DependencyGraph* dg)//, ASPSolverEngine* se)//, E
 	
 	/* Set up array for storing individual AS */
 	
-	std::vector<Component*>::const_iterator cit;
-	unsigned i=0;
-	for(cit = components.begin(); cit!= components.end(); ++cit)
+	for(int i=0; i<components.size(); i++)
 	{
-		globalAS.insert(std::pair<Component*, FAnswerSet> (components[i++], FAnswerSet()));
+		Program cur = components[i]->getBottom();
+		if(cur.size()>0)
+			compPrograms.push_back(cur);
+
 	}
+
+	numComp = compPrograms.size();
+	globalAS.resize(numComp);
 }
 
 GraphProcessor::~GraphProcessor()
@@ -65,7 +69,7 @@ FAnswerSet GraphProcessor::getInput(unsigned idx)
 	}
 	for(unsigned i=0; i<idx; i++)
 	{
-		FAnswerSet cur = globalAS[components[i]];
+		FAnswerSet cur = globalAS[i];
 		//std::cout<<"cur = "<<cur<<std::endl;
 		result = result.merge(cur);
 	}
@@ -79,31 +83,26 @@ void GraphProcessor::eval(unsigned idx)
 {
 	
 	
-	/* Get the input */
+	// Get the input
 	FAnswerSet input = getInput(idx);
 	
-	/* Decide what evaluation method we should call */
 	
-	Program currentComp = components[idx]->getBottom();
+	// Get the current component's program
+	Program currentComp = compPrograms[idx];
 
+	// Add the current input
 	currentComp = currentComp + input.getFacts();
 
-	//std::cout<<"Evaluating component "<<idx<<": " << std::endl;
-	//std::cout<<currentComp<<std::endl;
-	//std::cout <<"with input "<< std::endl << input << std::endl;
-	//std::cout <<"SRCF = " << components[idx]->isSRCF()<< std::endl;
+
+	// Decide what evaluation method we should call
 
 
-	/*
-	std::cout<<"Pred sign:"<<std::endl;
-	MapSign_t predsign = currentComp.getPredicates();
-	MapSign_t::iterator it;
-	for(it=predsign.begin(); it!=predsign.end(); ++it)
-	{
-		std::cout<<it->first<<"/"<<it->second<<", ";
-	}
-	std::cout<<std::endl;
-	*/
+	std::cout<<"Evaluating component "<<idx<<": " << std::endl;
+	std::cout<<currentComp<<std::endl;
+	std::cout <<"with input "<< std::endl << input << std::endl;
+
+
+
 
 	FAnswerSet currentAS;
 
@@ -118,25 +117,25 @@ void GraphProcessor::eval(unsigned idx)
 	ASPSolverEngine* eng = new CLSolverEngine();
 	Eval* evaluator;
 
-
+	//bool needcheck = !components[idx]->isSRCF() && components[idx]->isDisjunctive();
 	evaluator  = new ASPEval(eng, currentComp, stop, step, step);
 
 	while(evaluator->answersetsLeft())
 	{
-		if(idx == components.size()-1)
+		if(idx == numComp-1)
 		{
-			/* Last component to be evaluated */
-			/* Just stream it out */
+			// Last component to be evaluated
+			// Just stream it out
 			// std::cout<<"Reached last component, streaming answer set: "<<std::endl;
 			currentAS = evaluator->getNextAnswerSet();
 			std::cout<<currentAS.getStrClean()<<std::endl;
 		}
 		else
 		{
-			/* Call eval recursively for the next components */
+			// Call eval recursively for the next components
 			currentAS = evaluator->getNextAnswerSet();
 			//std::cout <<" Answer set of component " <<idx<<std::endl<<currentAS<<std::endl;
-			globalAS[components[idx]] = currentAS;
+			globalAS[idx] = currentAS;
 			eval(idx+1);
 		}
 	}

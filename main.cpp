@@ -40,6 +40,7 @@
 #include "BoostComponentFinder.h"
 #include "DependencyGraph.h"
 #include "GraphProcessor.h"
+#include "MIPMinCheck.h"
 
 #include <ctime>
 
@@ -128,6 +129,7 @@ int main(int argc, char *argv[])
         //std::cout<<"program after rewritten : "<<std::endl<<rewp<<std::endl;
         //return 0
 
+        /*
 
         GraphBuilder gb;
 
@@ -179,7 +181,7 @@ int main(int argc, char *argv[])
 				return EXIT_FAILURE;
 		}
 
-
+		*/
 
 		/*
 		std::cout<<"Program Components: "<<std::endl;
@@ -234,7 +236,7 @@ int main(int argc, char *argv[])
 
 
 
-        /*
+
         // Get evaluation options
         int maxk = Globals::Instance()->intOption("maxk");
         int maxtime = Globals::Instance()->intOption("maxt");
@@ -264,16 +266,17 @@ int main(int argc, char *argv[])
         while(eval->answersetsLeft())
         {
         	FAnswerSet as = eval->getNextAnswerSet();
-        	std::cout<<as;
+        	std::cout<<as.getStrClean()<<std::endl;
         }
 
 
         delete eval;
         delete eng;
-        */
+
 
         //ASPSolverEngine* eng = new CLSolverEngine();
 
+        /*
     	GraphProcessor* gp;
     	gp = new GraphProcessor(dg);//, eng);
 
@@ -290,5 +293,6 @@ int main(int argc, char *argv[])
     	}
 
     	delete cf; delete dg; delete gp;
+    	*/
         return EXIT_SUCCESS;
 }

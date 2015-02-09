@@ -151,6 +151,7 @@ bool ASPEval::doSolve()
 
 		//std::cout<<"k="<<curr_k<<std::endl;
 		ASPTranslate* tr;
+
 		try
 		{
 			tr = new ASPTranslate(program, curr_k);

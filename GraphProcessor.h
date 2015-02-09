@@ -49,7 +49,8 @@ class GraphProcessor
 		~GraphProcessor();
 		void run()
 		{
-			std::cout<<"Running evaluation on "<<components.size()<<" components"<<std::endl;
+			//std::cout<<"Running evaluation on "<<components.size()<<" components"<<std::endl;
+
 			eval(0);
 		}
 	private:
@@ -59,10 +60,12 @@ class GraphProcessor
 		FAnswerSet getInput(unsigned);
 		
 		/* map to store globalAS data */
-		std::map<Component*, FAnswerSet> globalAS;
+		std::vector<FAnswerSet> globalAS;
 		
 		/* the components */
 		std::vector<Component*> components;
+		std::vector<Program> compPrograms;
+		int numComp;
 		
 		/* Initial input EDB */
 

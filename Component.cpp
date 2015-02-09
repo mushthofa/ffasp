@@ -32,7 +32,7 @@
 unsigned Component::labelCounter = 0;
 
 Component::Component()
-	: evaluated(false), compLabel(labelCounter++), issrcf(true)
+	: evaluated(false), compLabel(labelCounter++)
 {
 }
 
@@ -137,17 +137,7 @@ ProgramComponent::ProgramComponent(const std::vector<AtomNodePtr>& nodes)
 		++ni;
 	}
 
-	Program bottom = getBottom();
-	for(Program::iterator it=bottom.begin(); it!=bottom.end(); ++it)
-	{
-		BodyExpr_t body = (*it)->getBody();
-		FuzzyOp_t op = body.second;
-		if(op==CO_TNORM)
-		{
-			issrcf = false;
-			break;
-		}
-	}
+
 }
 
 ProgramComponent::~ProgramComponent()
@@ -181,27 +171,6 @@ void ProgramComponent::dump(std::ostream& out) const
 
 
 
-	/*
-	PrintVisitor rpv(out);
-
-	for(Program::iterator it = bottom.begin(); it!=bottom.end(); ++it)
-	{
-		(*it)->accept(rpv);
-		std::cout<<
-		std::cout<<std::endl;
-	}
-
-	 */
-	if(issrcf)
-		out <<"SRCF"<<std::endl;
-	else
-		out <<"Non-SRCF"<<std::endl;
-	out << "ProgramComponent-object end ----------------------------" << std::endl;
-
-//    out << std::endl;
 }
 
-
 // end
-
-

@@ -494,6 +494,11 @@ void ASPTranslate::translateBMAX(RulePtr r)
 
 void ASPTranslate::translateHTNORM(RulePtr  r)
 {
+	/*
+	 * Translate axb <- c
+	 * With
+	 * a_i
+	 */
 	HeadExpr_t head = r->getHead();
 	BodyExpr_t body = r->getBody();
 
@@ -659,6 +664,14 @@ void ASPTranslate::translateHTNORM(RulePtr  r)
 
 void ASPTranslate::translateHCOTNORM(RulePtr r)
 {
+	/*
+	 * Translate a + b <- c
+	 * Check if we can shift or not
+	 * If we can, replace the rule with
+	 * a <- c x not b
+	 * b <- c x not a
+	 * Else, proceed as usual
+	 */
 	HeadExpr_t head = r->getHead();
 	BodyExpr_t body = r->getBody();
 
@@ -667,6 +680,8 @@ void ASPTranslate::translateHCOTNORM(RulePtr r)
 	if(hl.size()!=2 || head.second!=CO_TNORM)
 		throw FatalError("translateHCOTNORM: wrong rule type!");
 	int i,j;
+
+
 
 	std::sort(bl.begin(), bl.end());
 
