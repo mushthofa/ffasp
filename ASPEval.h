@@ -52,7 +52,7 @@ public:
 
 	virtual bool doSolve();
 
-	bool processAS(std::string as);
+	bool processAS(std::string as, bool check);
 
 	virtual FAnswerSet getNextAnswerSet()
 	{

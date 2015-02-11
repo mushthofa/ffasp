@@ -10,30 +10,50 @@
 
 #include "Mincheck.h"
 #include <glpk.h>
+#include "MIPRegistry.h"
 #include "coin/CbcModel.hpp"
 #include "coin/OsiClpSolverInterface.hpp"
+
+const double EPS = 1e-5;
 
 class MIPMinCheck: public MinCheck
 {
 public:
 	MIPMinCheck(const Program& p, const FAnswerSet& as)
-	:MinCheck(p,as)
-	{}
+	:MinCheck(), mipreg(p, as)
+	{
+		/* Count our target = \Sigma_x a[x]\in AS
+		 * If the objective value z from MIP is s.t.
+		 * |z-target| < EPS
+		 * we got a minimal AS
+		 */
+		Inter_t interp = as.getInter();
+		Inter_t::iterator it;
+		target = 0;
+		for(it=interp.begin(); it!=interp.end(); ++it)
+		{
+			std::string predName = it->first->getPredicateName();
+			if(predName.find("_NEW_")!=string::npos)
+						continue;
+			target += it->second.getFloat();
+		}
+	}
+
+
+	void writeMPS();
+	bool callMIP();
 
 	virtual bool isMinimal()
 	{
-		return true;
+		writeMPS();
+		return callMIP();
 	}
 
-	std::string translate2MIP()
-	{
-		std::string result;
+	virtual ~MIPMinCheck() {}
 
-
-		return result;
-	}
-
-
+protected:
+	MIPRegistry mipreg;
+	double target;
 };
 
 

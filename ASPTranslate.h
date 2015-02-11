@@ -83,17 +83,19 @@ public:
 				HTNORM, HCOTNORM, HMAX, HMIN, BNAF, INV} RuleType_t;
 
 	ASPTranslate(const Program& p, int kk)
-	:program(p), k(kk)
+	:program(p), needmincheck(false), anydisj(false), k(kk)
 	{
 
 		// Compute all non-SRCF Atoms
 		getNonSRCFAtoms();
+		if(nonSRCFAtoms.size()>0 && anydisj)
+			needmincheck = true;
 		// Do shift for disj rules with SRCF atoms
-		/*std::cout<<"Non SRCF = "<<nonSRCFAtoms.size()<<std::endl;
-		std::set<AtomPtr>::iterator it;
-		for(it=nonSRCFAtoms.begin(); it!=nonSRCFAtoms.end(); ++it)
-			std::cout<<*(*it)<<std::endl;
-		*/
+		//std::cout<<"Non SRCF = "<<nonSRCFAtoms.size()<<std::endl;
+		//std::set<AtomPtr>::iterator it;
+		//for(it=nonSRCFAtoms.begin(); it!=nonSRCFAtoms.end(); ++it)
+			//std::cout<<*(*it)<<std::endl;
+
 		doShift();
 
 		doTranslate(); // translate rules
@@ -105,16 +107,12 @@ public:
 		return os.str();
 	}
 
+	bool needMinCheck()
+	{
+		return needmincheck;
+	}
 
 protected:
-
-	/* During translate, rules are converted to string rep
-	 * and accumulated in os,
-	 * doTranslate() recaps all the translation
-	 * addConsRule() adds the auxiliary rules a_i <- a_i+1}
-	 * translateXYX() are rules that perform translation for rules of type XYZ
-	 */
-
 
 	void getNonSRCFAtoms()
 	{
@@ -135,7 +133,7 @@ protected:
 			BodyList_t bl = body.first;
 			if(hl.size()==2 && head.second == CO_TNORM)
 			{
-
+				anydisj = true;
 				//
 				//if(hl[0]->getPredicateName().find("_NEW_") == std::string::npos)
 					headDisj.insert(hl[0]);
@@ -145,7 +143,6 @@ protected:
 
 			if(bl.size() == 2 && body.second == CO_TNORM)
 			{
-
 				//
 				//if(bl[0]->getAtom()->getPredicateName().find("_NEW_") == std::string::npos)
 					bodyDisj.insert(bl[0]->getAtom());
@@ -258,6 +255,14 @@ protected:
 	}
 
 
+	/* During translate, rules are converted to string rep
+	 * and accumulated in os,
+	 * doTranslate() recaps all the translation
+	 * addConsRule() adds the auxiliary rules a_i <- a_i+1}
+	 * translateXYX() are rules that perform translation for rules of type XYZ
+	 */
+
+
 	void doTranslate();
 	void translateRule(RulePtr r);
 	void addConsRule();
@@ -279,7 +284,8 @@ protected:
 	std::ostringstream os;
 	Program program;
 	std::set<AtomPtr> nonSRCFAtoms;
-	bool needMincheck;
+	bool needmincheck;
+	bool anydisj;
 	int k;
 
 };

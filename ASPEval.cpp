@@ -25,12 +25,13 @@
  */
 
 #include "ASPEval.h"
+#include "MIPMinCheck.h"
 #include <boost/algorithm/string/trim.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/tokenizer.hpp>
 
 
-bool ASPEval::processAS(std::string asline)
+bool ASPEval::processAS(std::string asline, bool check)
 {
 	bool found = false;
 	std::map<AtomPtr, int> acc;
@@ -127,9 +128,25 @@ bool ASPEval::processAS(std::string asline)
 
 	if(strAS.find(curr_as.getStr())==strAS.end())
 	{
-		fas.push_back(curr_as);
-		strAS.insert(curr_as.getStr());
-		found = true;
+		if(!check)	// If minimality check is not needed
+		{
+			fas.push_back(curr_as);
+			strAS.insert(curr_as.getStr());
+			found = true;
+		}
+		else		// Check minimality
+		{
+			MinCheck* mc;
+
+			mc = new MIPMinCheck(program, curr_as);
+			if(mc->isMinimal())		// Found
+			{
+				fas.push_back(curr_as);
+				strAS.insert(curr_as.getStr());
+				found = true;
+			}
+			delete mc;
+		}
 	}
 	return found;
 }
@@ -187,14 +204,8 @@ bool ASPEval::doSolve()
 			for(std::vector<std::string>::iterator it=aslines.begin();
 					it!=aslines.end(); ++it)
 			{
-				bool curfound = processAS(*it);
+				bool curfound = processAS(*it, tr->needMinCheck());
 				found = found || curfound;
-				/*
-				if(curfound)
-					std::cout<<"Store "<<*it<<" when curr_k = "<<curr_k<<std::endl;
-				else
-					std::cout<<"No store "<<*it<<" when curr_k = "<<curr_k<<std::endl;
-				 */
 			}
 
 		}

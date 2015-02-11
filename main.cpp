@@ -104,8 +104,6 @@ int main(int argc, char *argv[])
         	return 0;
         }
 
-
-
         /* Rewrite the program
 		*
 		*/
@@ -124,12 +122,12 @@ int main(int argc, char *argv[])
 
         delete rw;
 
-
-        //std::cout<<"done rewriting.."<<std::endl;
-        //std::cout<<"program after rewritten : "<<std::endl<<rewp<<std::endl;
-        //return 0
-
         /*
+        std::cout<<"done rewriting.."<<std::endl;
+        std::cout<<"program after rewritten : "<<std::endl<<rewp<<std::endl;
+        //return 0
+		*/
+
 
         GraphBuilder gb;
 
@@ -181,7 +179,7 @@ int main(int argc, char *argv[])
 				return EXIT_FAILURE;
 		}
 
-		*/
+
 
 		/*
 		std::cout<<"Program Components: "<<std::endl;
@@ -236,6 +234,7 @@ int main(int argc, char *argv[])
 
 
 
+        /*
 
         // Get evaluation options
         int maxk = Globals::Instance()->intOption("maxk");
@@ -266,17 +265,34 @@ int main(int argc, char *argv[])
         while(eval->answersetsLeft())
         {
         	FAnswerSet as = eval->getNextAnswerSet();
-        	std::cout<<as.getStrClean()<<std::endl;
+        	MinCheck* mc;
+        	try
+        	{
+        		mc = new MIPMinCheck(rewp, as);
+        		if(mc->isMinimal())
+        			std::cout<<as.getStrClean()<<std::endl;
+        	}
+        	catch(GeneralError& e)
+        	{
+        		std::cout<<"Error performing min-check: "<<std::endl;
+        		std::cout<<e.getErrorMsg()<<std::endl;
+        		delete eval; delete eng;
+        		return EXIT_FAILURE;
+        	}
+        	delete mc;
+
         }
 
 
         delete eval;
         delete eng;
 
+		*/
+
 
         //ASPSolverEngine* eng = new CLSolverEngine();
 
-        /*
+
     	GraphProcessor* gp;
     	gp = new GraphProcessor(dg);//, eng);
 
@@ -293,6 +309,6 @@ int main(int argc, char *argv[])
     	}
 
     	delete cf; delete dg; delete gp;
-    	*/
+
         return EXIT_SUCCESS;
 }

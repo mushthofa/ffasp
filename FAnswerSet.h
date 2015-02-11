@@ -61,9 +61,21 @@ public:
 		as.clear();
 	}
 
+	Rational operator[](AtomPtr a) const
+	{
+		Inter_t::const_iterator it = as.find(a);
+		if(it!=as.end())
+			return it->second;
+		else
+			return Rational(0,1);
+	}
+
 	Rational operator[](AtomPtr a)
 	{
-		return as[a];
+		if(as.find(a)!=as.end())
+			return as[a];
+		else
+			return Rational(0,1);
 	}
 
 	std::string getStr() const
@@ -174,6 +186,12 @@ public:
 
 		return res;
 	}
+
+	Inter_t getInter() const
+	{
+		return as;
+	}
+
 protected:
 	Inter_t as;
 };

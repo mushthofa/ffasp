@@ -20,6 +20,7 @@ typedef std::vector<AtomPtr > HeadList_t;
 typedef std::vector<LiteralPtr> BodyList_t;
 typedef enum {TNORM, CO_TNORM, MAX, MIN} FuzzyOp_t;
 
+
 typedef std::pair<HeadList_t, FuzzyOp_t> HeadExpr_t;
 typedef std::pair<BodyList_t, FuzzyOp_t> BodyExpr_t;
 

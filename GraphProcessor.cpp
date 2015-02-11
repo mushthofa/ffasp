@@ -26,11 +26,8 @@
  *	@author Mushthofa
  */
 
-
 #include "GraphProcessor.h"
 //#include "EvalComp.h"
-
-
 
 GraphProcessor::GraphProcessor(DependencyGraph* dg)//, ASPSolverEngine* se)//, Eval* eval, int k)
 //	:solver_engine(se)//, ev(eval), step(k)
@@ -93,16 +90,12 @@ void GraphProcessor::eval(unsigned idx)
 	// Add the current input
 	currentComp = currentComp + input.getFacts();
 
-
 	// Decide what evaluation method we should call
-
-
+	/*
 	std::cout<<"Evaluating component "<<idx<<": " << std::endl;
 	std::cout<<currentComp<<std::endl;
 	std::cout <<"with input "<< std::endl << input << std::endl;
-
-
-
+	*/
 
 	FAnswerSet currentAS;
 
@@ -120,7 +113,8 @@ void GraphProcessor::eval(unsigned idx)
 	//bool needcheck = !components[idx]->isSRCF() && components[idx]->isDisjunctive();
 	evaluator  = new ASPEval(eng, currentComp, stop, step, step);
 
-	while(evaluator->answersetsLeft())
+	bool found = false;
+	while(evaluator->answersetsLeft() && !found)
 	{
 		if(idx == numComp-1)
 		{
@@ -129,6 +123,7 @@ void GraphProcessor::eval(unsigned idx)
 			// std::cout<<"Reached last component, streaming answer set: "<<std::endl;
 			currentAS = evaluator->getNextAnswerSet();
 			std::cout<<currentAS.getStrClean()<<std::endl;
+			found = true;
 		}
 		else
 		{

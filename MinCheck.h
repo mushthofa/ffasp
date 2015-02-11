@@ -15,18 +15,15 @@
 class MinCheck
 {
 public:
-	MinCheck(const Program& p, const FAnswerSet& i)
-	:program(p), as(i)
+	MinCheck()
 	{}
 
 	virtual bool isMinimal() = 0;
 
-	virtual ~MinCheck();
+	virtual ~MinCheck() {}
 
 protected:
 
-	Program program;
-	FAnswerSet as;
 };
 
 
