@@ -46,13 +46,13 @@ CLSolver::CLSolver(std::set<std::string> filter, bool co)
         lpargs.push_back("-W");
         lpargs.push_back("no-atom-undefined");
         lpargs.push_back("-W");
-        lpargs.push_back("no-define-cyclic");
+        lpargs.push_back("no-file-included");
         lpargs.push_back("-W");
-        lpargs.push_back("no-define-redfinition");
+        lpargs.push_back("no-operation-undefined");
         lpargs.push_back("-W");
-        lpargs.push_back("no-nonmonotone-aggregate");
+        lpargs.push_back("no-variable-unbounded");
         lpargs.push_back("-W");
-        lpargs.push_back("no-term-undefined");
+        lpargs.push_back("no-global-variable");
         lpargs.push_back("dummy");
 
         /*
@@ -95,7 +95,7 @@ void CLSolver::callSolver(std::string program, int k, int time_limit)
 {
 
         int retcode = 0;
-        aslines.clear();
+        //aslines.clear();
         if(pb->isOpen())
                 retcode = pb->close();
 
@@ -149,11 +149,12 @@ void CLSolver::callSolver(std::string program, int k, int time_limit)
 				std::string sat("SATISFIABLE");
 				std::string unsat("UNSATISFIABLE");
 				std::string timelimit("*** Info : (clingo): INTERRUPTED by signal!");
-				std::getline(iopipe, outputline);
+				std::getline(iopipe, outputline, '\n');
 				if(outputline!=sat && outputline != unsat && outputline!=timelimit )
 				{
-					aslines.push_back(outputline);
+					currline = outputline;
 					//std::cout<<outputline<<std::endl;
+					/*
 					try
 					{
 						while(std::getline(iopipe, outputline))
@@ -171,19 +172,22 @@ void CLSolver::callSolver(std::string program, int k, int time_limit)
 						ostr<<e.what()<<std::endl;
 						throw FatalError(ostr.str());
 					}
+					*/
 					answersetsleft = true;
 				}
 				else
 				{
+					/*
 					 if(outputline == sat)
 						 answersetsleft = true;
 					 else
+					 */
 						 answersetsleft = false;
 				}
 
 			}
 
-			retcode = pb->close();
+			//retcode = pb->close();
 
         }
         catch(FatalError& e)
@@ -307,8 +311,9 @@ void CLSolver::getNextAnswerSet()
                 resultParser->parseLine(outputline);
                 currentAnswer = resultParser->getAnswerSet();
 				*/
-				std::cout<<outputline<<std::endl;
-                answersetsleft = true;
+				//std::cout<<outputline<<std::endl;
+			currline = outputline;
+            answersetsleft = true;
         }
         else
                 answersetsleft = false;

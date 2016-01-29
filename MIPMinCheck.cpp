@@ -15,9 +15,12 @@ void MIPMinCheck::writeMPS()
 	glp_set_prob_name(lp, "chekmin");
 	glp_set_obj_dir(lp, GLP_MIN);
 
+
 	// Size of the matrix
 	int nCols = mipreg.colVars.size();
 	int nRows = mipreg.rowVars.size();
+
+	//std::cout<<"MIP size = "<<nCols<<"x"<<nRows<<std::endl;
 
 	// Adding columns
 	glp_add_cols(lp, nCols);
@@ -118,13 +121,17 @@ bool MIPMinCheck::callMIP()
 	// Pass the solver with the problem to be solved to CbcModel
 	CbcModel model(solver1);
 
+
 	model.setLogLevel(0);
 	// Do complete search
+	//cout<<"solveMIP"<<endl;
 	model.branchAndBound();
+	//cout<<"Done!"<<endl;
 
 	double z = model.getObjValue();
 
 	return (target-z) < EPS;
+	//return true;
 	//std::cout<<"Target = "<<target<<" Obj = "<<z<<std::endl;
 }
 

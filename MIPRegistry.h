@@ -541,7 +541,7 @@ public:
 				// If current lower bound of v_a < c, then change it to c;
 				AtomPtr atomc = bl[0]->getAtom();
 				Rational c = atomc->getRat();
-				if(colVars[idxva].lb < c)
+				if(colVars[idxva].lb < c && colVars[idxva].ub >= c)
 					colVars[idxva].lb = c;
 			}
 			// Check for #c <- a
@@ -554,7 +554,7 @@ public:
 				// If current upper bound for v_a is > c, then change it to c;
 				AtomPtr atomc = hl[0];
 				Rational c = atomc->getRat();
-				if(colVars[idxva].ub > c)
+				if(colVars[idxva].ub > c && colVars[idxva].lb <= c)
 					colVars[idxva].ub = c;
 			}
 			// Check for a <- b and a <- not b
@@ -571,7 +571,7 @@ public:
 				if(bl[0]->isNAF())
 				{
 					Rational asb = as[b];
-					if(colVars[idxva].lb < asb)
+					if(colVars[idxva].lb < asb && colVars[idxva].ub >= asb)
 						colVars[idxva].lb = asb;
 				}
 				else
@@ -702,7 +702,9 @@ public:
 			AtomPtr a = it->first;
 			Rational v = it->second;
 			int idxva = colsAtom[atommap[a]];
-			if(colVars[idxva].ub > v)
+			//if(colVars[idxva].name == "v0")
+				//std::cout<<"update column bounds "<<colVars[idxva].ub<<" with "<<v<<endl;
+			if(colVars[idxva].ub > v && colVars[idxva].lb <= v)
 				colVars[idxva].ub = v;
 		}
 

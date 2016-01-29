@@ -35,8 +35,8 @@
 #include <boost/algorithm/string/trim.hpp>
 #include "Globals.h"
 
-#define MAXDENOM 10
-#define MAXK 10
+#define MAXDENOM 100
+#define MAXK 100
 #define MAXT 600
 #define REP 0
 
@@ -54,8 +54,11 @@ Globals::Globals()
         intOpt["maxk"] = MAXK;
         intOpt["maxt"] = MAXT;
         intOpt["rp"] = REP;
+        intOpt["usek"] = 0;
+        boolOpt["fin"] = false;
         boolOpt["check"] = false;
         boolOpt["help"] = false;
+        boolOpt["noscc"] = false;
 
         //strOpt["DLVArgs"] = "-silent --";
 }
@@ -87,8 +90,12 @@ void Globals::processArgs(GetPot cl)
 
         int trans_k = cl("--trans", 0);
 
+        int use_k = cl("--usek", 0);
+
         const bool checkOnly = cl.options_contain("-c") || cl.search("--check");
         const bool help = cl.options_contain("-h") || cl.search("--help");
+        const bool noscc = cl.options_contain("-s") || cl.search("--noscc");
+        const bool finas = cl.options_contain("-f") || cl.search("--usek");
 
         int rep = cl("--rnd", REP);
         if(rep>0)
@@ -108,6 +115,9 @@ void Globals::processArgs(GetPot cl)
         boolOpt["check"] = checkOnly;
         intOpt["rp"] = rep;
         boolOpt["help"] = help;
+        boolOpt["noscc"] = noscc;
+
+        boolOpt["fin"] = finas;
 
         /* Determine the input file */
 

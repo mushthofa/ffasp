@@ -547,7 +547,7 @@ void Rewrite::doRewrite()
 	int change;
 
 	// replacing constants need to be done only once
-
+	//cout<<"doRewrite()..."<<endl;
 	do
 	{
 
@@ -562,6 +562,7 @@ void Rewrite::doRewrite()
 				change++;
 			}
 		}
+		//cout<<"change "<<change<<endl;
 	}
 	while(change>0);
 
@@ -636,6 +637,8 @@ void Rewrite::doRewrite()
 				change++;
 			}
 		}
+
+		//cout<<"Change = "<<change<<endl;
 	}
 	while(change>0);
 

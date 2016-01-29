@@ -66,6 +66,7 @@ class GraphProcessor
 		std::vector<Component*> components;
 		std::vector<Program> compPrograms;
 		int numComp;
+		bool found;
 		
 		/* Initial input EDB */
 

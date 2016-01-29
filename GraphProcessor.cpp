@@ -31,6 +31,7 @@
 
 GraphProcessor::GraphProcessor(DependencyGraph* dg)//, ASPSolverEngine* se)//, Eval* eval, int k)
 //	:solver_engine(se)//, ev(eval), step(k)
+:found(false)
 {
 	components = dg->getComponents();
 	
@@ -91,11 +92,12 @@ void GraphProcessor::eval(unsigned idx)
 	currentComp = currentComp + input.getFacts();
 
 	// Decide what evaluation method we should call
-	/*
-	std::cout<<"Evaluating component "<<idx<<": " << std::endl;
-	std::cout<<currentComp<<std::endl;
-	std::cout <<"with input "<< std::endl << input << std::endl;
-	*/
+
+
+	//std::cout<<"Evaluating component "<<idx<<": " << std::endl;
+	//std::cout<<currentComp<<std::endl;
+	//std::cout <<"with input "<< std::endl << input << std::endl;
+
 
 	FAnswerSet currentAS;
 
@@ -113,8 +115,8 @@ void GraphProcessor::eval(unsigned idx)
 	//bool needcheck = !components[idx]->isSRCF() && components[idx]->isDisjunctive();
 	evaluator  = new ASPEval(eng, currentComp, stop, step, step);
 
-	bool found = false;
-	while(evaluator->answersetsLeft() && !found)
+	//found = false;
+	while(!found && evaluator->answersetsLeft())
 	{
 		if(idx == numComp-1)
 		{
@@ -122,7 +124,8 @@ void GraphProcessor::eval(unsigned idx)
 			// Just stream it out
 			// std::cout<<"Reached last component, streaming answer set: "<<std::endl;
 			currentAS = evaluator->getNextAnswerSet();
-			std::cout<<currentAS.getStrClean()<<std::endl;
+			//std::cout<<currentAS.getStrClean()<<std::endl;
+			std::cout<<"<<Consistent>>"<<std::endl;
 			found = true;
 		}
 		else
@@ -135,7 +138,7 @@ void GraphProcessor::eval(unsigned idx)
 		}
 	}
 	
-	delete evaluator;
+	//delete evaluator;
 	
 }
 

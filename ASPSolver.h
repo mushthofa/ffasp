@@ -80,9 +80,11 @@ class ASPSolver
 
                 virtual bool answerSetsLeft() const = 0;
 
-                std::vector<std::string> getlines() const
+                std::string getNextLine()
 				{
-					return aslines;
+					std::string result = currline;
+					getNextAnswerSet();
+					return result;
 				}
 
         protected:
@@ -104,8 +106,8 @@ class ASPSolver
 
                 //AtomSet currentAnswer;
 
-                std::vector<std::string> aslines;
-
+                // std::vector<std::string> aslines;
+                std::string currline;
                 /* Is there any answers left */
                 bool answersetsleft;
 

@@ -33,6 +33,7 @@
 
 bool ASPEval::processAS(std::string asline, bool check)
 {
+	//std::cout<<"Process AS = "<<asline<<std::endl;
 	bool found = false;
 	std::map<AtomPtr, int> acc;
 	std::map<AtomPtr, int>::iterator acc_it;
@@ -72,7 +73,7 @@ bool ASPEval::processAS(std::string asline, bool check)
 		}
 
 		AtomPtr atom(new Atom(args, false));
-
+		//std::cout<<"Atom="<<atomv[sz-1]<<std::endl;
 
 		int a = boost::lexical_cast<int> (atomv[sz-1]);
 
@@ -97,7 +98,9 @@ bool ASPEval::processAS(std::string asline, bool check)
 		if(acc_it == acc.end() || acc[os.str()] < a)
 				acc[os.str()] = a;
 		*/
-	}
+	} // End for
+
+	//std::cout<<"created "<<acc.size()<<" atoms"<<endl;
 
 	/*
 	std::ostringstream os;
@@ -132,12 +135,14 @@ bool ASPEval::processAS(std::string asline, bool check)
 		{
 			fas.push_back(curr_as);
 			strAS.insert(curr_as.getStr());
+			//std::cout<<"strAS.size() = "<<strAS.size() <<endl;
 			found = true;
+			//std::cout<<"No Check!"<<std::endl;
 		}
 		else		// Check minimality
 		{
 			MinCheck* mc;
-
+			//std::cout<<"Min-Checking..."<<endl; //<<curr_as<<endl;
 			mc = new MIPMinCheck(program, curr_as);
 			if(mc->isMinimal())		// Found
 			{
@@ -161,12 +166,12 @@ bool ASPEval::doSolve()
 	//int k = std::max(step, 2);	// start search from k=2
 	bool found = false;
 
-	//std::cout<<"doSolve(): "<<std::endl;
+	std::cout<<"doSolve(): "<<std::endl;
 	//std::cout<<program<<std::endl;
 	do
 	{
 
-		//std::cout<<"k="<<curr_k<<std::endl;
+		std::cout<<"k="<<curr_k<<std::endl;
 		ASPTranslate* tr;
 
 		try
@@ -187,6 +192,7 @@ bool ASPEval::doSolve()
 		{
 			//std::cout<<"Translated program "<<std::endl;
 			//std::cout<<tr->getProgram()<<std::endl;
+			//std::cout<<"Calling solver..."<<std::endl;
 			solver->callSolver(tr->getProgram(), curr_k, maxtime-dur);
 		}
 		catch(GeneralError& e)
@@ -199,14 +205,18 @@ bool ASPEval::doSolve()
 		{
 
 			//fas.clear();
-			std::vector<std::string> aslines = solver->getlines();
+
+			std::string asline = solver->getNextLine();
 			//std::cout<<"Found "<<aslines.size()<<std::endl;
-			for(std::vector<std::string>::iterator it=aslines.begin();
-					it!=aslines.end(); ++it)
-			{
-				bool curfound = processAS(*it, tr->needMinCheck());
-				found = found || curfound;
-			}
+			//int i=0;
+			//for(std::vector<std::string>::iterator it=aslines.begin();
+			//		it!=aslines.end(); ++it)
+			//{
+				//cout<<i<<endl;
+				//cout<<"Processing "<<asline<<endl;
+				found = processAS(asline, tr->needMinCheck());
+				//found = found || curfound;
+			//}
 
 		}
 
@@ -223,6 +233,7 @@ bool ASPEval::doSolve()
 bool ASPEval::answersetsLeft()
 {
 	//std::cout<<"as_idx = "<<as_idx<<", fas = "<<fas.size()<<std::endl;
+	//std::cout<<"curr_k = "<<curr_k<<endl;
 	if(as_idx < fas.size())
 		return true;
 	else if(curr_k <= stop.first)

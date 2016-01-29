@@ -88,6 +88,7 @@ public:
 
 		// Compute all non-SRCF Atoms
 		getNonSRCFAtoms();
+
 		if(nonSRCFAtoms.size()>0 && anydisj)
 			needmincheck = true;
 		// Do shift for disj rules with SRCF atoms

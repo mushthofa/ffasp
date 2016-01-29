@@ -104,6 +104,7 @@ int main(int argc, char *argv[])
         	return 0;
         }
 
+        //cout<<"Rewriting program ..."<<endl;
         /* Rewrite the program
 		*
 		*/
@@ -122,66 +123,60 @@ int main(int argc, char *argv[])
 
         delete rw;
 
-        /*
-        std::cout<<"done rewriting.."<<std::endl;
-        std::cout<<"program after rewritten : "<<std::endl<<rewp<<std::endl;
-        //return 0
-		*/
+
+        //std::cout<<"done rewriting.."<<std::endl;
+        //std::cout<<"program after rewritten : "<<std::endl<<rewp<<std::endl;
+        //return 0;
+
+
+
 
 
         GraphBuilder gb;
-
 		NodeGraph nodegraph;
-
-		try
-		{
-				// Build the graph of dependency between atoms
-				gb.run(rewp, nodegraph);
-		}
-		catch (GeneralError& e)
-		{
-				std::cerr << e.getErrorMsg() << std::endl << std::endl;
-
-				return EXIT_FAILURE;
-		}
-
-
-
-		//gb.dumpGraph(nodegraph, std::cout);
-		//return EXIT_SUCCESS;
-
-
 		ComponentFinder* cf;
-
-		//
-		// The DependencyGraph identifies and creates the graph components that will
-		// be processed by the GraphProcessor.
-		//
 		DependencyGraph* dg;
 
-		try
+		if (!Globals::Instance()->boolOption("noscc"))
 		{
-				cf = new BoostComponentFinder();
+			try
+			{
+					// Build the graph of dependency between atoms
+					gb.run(rewp, nodegraph);
+			}
+			catch (GeneralError& e)
+			{
+					std::cerr << e.getErrorMsg() << std::endl << std::endl;
 
-				//
-				// Initializing the DependencyGraph. Its constructor uses the
-				// ComponentFinder to find relevant graph
-				// properties for the subsequent processing stage.
-				//
-				dg = new DependencyGraph(nodegraph, cf);
+					return EXIT_FAILURE;
+			}
+
+
+			try
+			{
+					cf = new BoostComponentFinder();
+
+					//
+					// Initializing the DependencyGraph. Its constructor uses the
+					// ComponentFinder to find relevant graph
+					// properties for the subsequent processing stage.
+					//
+					dg = new DependencyGraph(nodegraph, cf);
+			}
+			catch (GeneralError &e)
+			{
+					std::cerr << e.getErrorMsg() << std::endl << std::endl;
+
+					delete cf;
+					delete dg;
+					return EXIT_FAILURE;
+			}
 		}
-		catch (GeneralError &e)
-		{
-				std::cerr << e.getErrorMsg() << std::endl << std::endl;
-
-				delete cf;
-				delete dg;
-				return EXIT_FAILURE;
-		}
 
 
-
+		//std::cout<<"Done graph analysis"<<endl;
 		/*
+
 		std::cout<<"Program Components: "<<std::endl;
 		std::vector<Component*> comps = dg->getComponents();
 		std::vector<Component*>::iterator cit;
@@ -190,8 +185,8 @@ int main(int argc, char *argv[])
 			if((*cit)->getBottom().size() > 0)
 				(*cit)->dump(std::cout);
 		}
-
 		*/
+
 
 		//delete cf;
 		//return EXIT_SUCCESS;
@@ -234,81 +229,101 @@ int main(int argc, char *argv[])
 
 
 
-        /*
 
-        // Get evaluation options
-        int maxk = Globals::Instance()->intOption("maxk");
-        int maxtime = Globals::Instance()->intOption("maxt");
-        //bool printAS = !Globals::Instance()->boolOption("check");
-
-        stop_t stop = std::make_pair(maxk, maxtime);
-        int step = lcm(ConstantAtom::denomList);
-
-        ASPSolverEngine* eng = new CLSolverEngine();
-        Eval* eval;
-
-        try
+        if(Globals::Instance()->boolOption("noscc"))
         {
-        	eval  = new ASPEval(eng, rewp, stop, step, step);
+			// Get evaluation options
+        	std::cout <<" No SCC evaluation "<<std::endl;
+			int maxk = Globals::Instance()->intOption("maxk");
+			int maxtime = Globals::Instance()->intOption("maxt");
+			if(Globals::Instance()->boolOption("fin"))
+				maxk = Globals::Instance()->intOption("usek");
+			//bool printAS = !Globals::Instance()->boolOption("check");
+
+			stop_t stop = std::make_pair(maxk, maxtime);
+			int step = lcm(ConstantAtom::denomList);
+
+			ASPSolverEngine* eng = new CLSolverEngine();
+			Eval* eval;
+
+			try
+			{
+				if(Globals::Instance()->boolOption("fin"))
+					eval  = new ASPEval(eng, rewp, stop, maxk, step);
+				else
+					eval  = new ASPEval(eng, rewp, stop, step, step);
+			}
+			catch(GeneralError& err)
+			{
+				std::cout<<"Error evaluating program using ASP eval: "<<std::endl;
+				std::cout<<err.getErrorMsg()<<std::endl;
+				//delete eval;
+				//delete eng;
+				return 1;
+			}
+
+
+			bool found = false;
+			while(!found && eval->answersetsLeft())
+			{
+				FAnswerSet as = eval->getNextAnswerSet();
+				std::cout<<as.getStrClean()<<std::endl;
+				//std::cout<<"Done..."<<std::endl;
+				found = true;
+				/*
+				MinCheck* mc;
+				try
+				{
+
+					mc = new MIPMinCheck(rewp, as);
+					if(mc->isMinimal())
+					{
+						std::cout<<as.getStrClean()<<std::endl;
+						found = true;
+					}
+				}
+				catch(GeneralError& e)
+				{
+					std::cout<<"Error performing min-check: "<<std::endl;
+					std::cout<<e.getErrorMsg()<<std::endl;
+					delete eval; delete eng;
+					return EXIT_FAILURE;
+				}
+				delete mc;
+				*/
+
+			}
+			//delete eval;
+			delete eng;
         }
-        catch(GeneralError& err)
-        {
-        	std::cout<<"Error evaluating program using ASP eval: "<<std::endl;
-        	std::cout<<err.getErrorMsg()<<std::endl;
-        	//delete eval;
-        	//delete eng;
-        	return 1;
-        }
 
 
-
-        while(eval->answersetsLeft())
-        {
-        	FAnswerSet as = eval->getNextAnswerSet();
-        	MinCheck* mc;
-        	try
-        	{
-        		mc = new MIPMinCheck(rewp, as);
-        		if(mc->isMinimal())
-        			std::cout<<as.getStrClean()<<std::endl;
-        	}
-        	catch(GeneralError& e)
-        	{
-        		std::cout<<"Error performing min-check: "<<std::endl;
-        		std::cout<<e.getErrorMsg()<<std::endl;
-        		delete eval; delete eng;
-        		return EXIT_FAILURE;
-        	}
-        	delete mc;
-
-        }
-
-
-        delete eval;
-        delete eng;
-
-		*/
 
 
         //ASPSolverEngine* eng = new CLSolverEngine();
 
 
-    	GraphProcessor* gp;
-    	gp = new GraphProcessor(dg);//, eng);
+        //cout<<"Run graph "<<endl;
+        if(!Globals::Instance()->boolOption("noscc"))
+        {
+			GraphProcessor* gp;
+			gp = new GraphProcessor(dg);//, eng);
 
-    	try
-    	{
-    		gp->run();
-    	}
-    	catch(GeneralError& err)
-    	{
-    		std::cout<<"Error evaluating component "<<std::endl;
-    		std::cout<<err.getErrorMsg()<<std::endl;
-    		delete cf; delete dg; delete gp;
-    		return EXIT_FAILURE;
-    	}
+			try
+			{
+				gp->run();
+			}
+			catch(GeneralError& err)
+			{
+				std::cout<<"Error evaluating component "<<std::endl;
+				std::cout<<err.getErrorMsg()<<std::endl;
+				delete cf; delete dg; delete gp;
+				return EXIT_FAILURE;
+			}
 
-    	delete cf; delete dg; delete gp;
+			delete cf; delete dg; delete gp;
+        }
+
 
         return EXIT_SUCCESS;
 }
