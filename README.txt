@@ -1,6 +1,6 @@
-FFASP
-A finite-valued fuzzy answer set solver
-(c) 2014 Mushthofa
+#FFASP
+#A finite-valued fuzzy answer set solver
+#(c) 2017 Mushthofa
 Mushthofa.Mushthofa (AT) UGent.be
 ==============================================================================
 
