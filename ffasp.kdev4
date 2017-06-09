@@ -1,4 +1,5 @@
 [Project]
-Name=ffasp
+CreatedFrom=CMakeLists.txt
 Manager=KDevCMakeManager
+Name=ffasp
 VersionControl=
