@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="ffasp" InternalType="Console">
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="src">
+    <File Name="main.cpp"/>
+    <File Name="ASPEval.cpp"/>
+    <File Name="ASPTranslate.cpp"/>
+    <File Name="Atom.cpp"/>
+    <File Name="AtomFactory.cpp"/>
+    <File Name="AtomNode.cpp"/>
+    <File Name="AtomSet.cpp"/>
+    <File Name="BoostComponentFinder.cpp"/>
+    <File Name="CLSolver.cpp"/>
+    <File Name="Component.cpp"/>
+    <File Name="ComponentFinder.cpp"/>
+    <File Name="DependencyGraph.cpp"/>
+    <File Name="Error.cpp"/>
+    <File Name="EvalComp.cpp"/>
+    <File Name="FAnswerSet.cpp"/>
+    <File Name="Globals.cpp"/>
+    <File Name="GraphBuilder.cpp"/>
+    <File Name="GraphProcessor.cpp"/>
+    <File Name="Literal.cpp"/>
+    <File Name="MIPMinCheck.cpp"/>
+    <File Name="ProcessBuff.cpp"/>
+    <File Name="Program.cpp"/>
+    <File Name="Registry.cpp"/>
+    <File Name="Rewrite.cpp"/>
+    <File Name="Rule.cpp"/>
+    <File Name="SafetyChecker.cpp"/>
+    <File Name="SpiritProgramParser.cpp"/>
+    <File Name="Term.cpp"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="include">
+    <File Name="ASPEval.h"/>
+    <File Name="ASPResultParser.h"/>
+    <File Name="ASPSolver.h"/>
+    <File Name="ASPTranslate.h"/>
+    <File Name="Atom.h"/>
+    <File Name="AtomFactory.h"/>
+    <File Name="AtomNode.h"/>
+    <File Name="AtomSet.h"/>
+    <File Name="BoostComponentFinder.h"/>
+    <File Name="CLSolver.h"/>
+    <File Name="Component.h"/>
+    <File Name="ComponentFinder.h"/>
+    <File Name="DependencyGraph.h"/>
+    <File Name="Error.h"/>
+    <File Name="Eval.h"/>
+    <File Name="EvalComp.h"/>
+    <File Name="FAnswerSet.h"/>
+    <File Name="GetPot.h"/>
+    <File Name="Globals.h"/>
+    <File Name="GraphBuilder.h"/>
+    <File Name="GraphProcessor.h"/>
+    <File Name="Literal.h"/>
+    <File Name="logic_grammar.h"/>
+    <File Name="MinCheck.h"/>
+    <File Name="MIPMinCheck.h"/>
+    <File Name="MIPRegistry.h"/>
+    <File Name="Number.h"/>
+    <File Name="ProcessBuff.h"/>
+    <File Name="Program.h"/>
+    <File Name="ProgramParser.h"/>
+    <File Name="Registry.h"/>
+    <File Name="Rewrite.h"/>
+    <File Name="Rule.h"/>
+    <File Name="SafetyChecker.h"/>
+    <File Name="SpiritProgramParser.h"/>
+    <File Name="Term.h"/>
+  </VirtualDirectory>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="Cross GCC ( x86_64-linux-gnu )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes">
+        <LibraryPath Value="/usr/lib/x86_64-linux-gnu"/>
+        <Library Value="glpk"/>
+        <Library Value="Cbc"/>
+        <Library Value="Cgl"/>
+        <Library Value="CbcSolver"/>
+        <Library Value="Clp"/>
+        <Library Value="CoinUtils"/>
+        <Library Value="OsiCbc"/>
+        <Library Value="OsiClp"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="yes">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="Cross GCC ( x86_64-linux-gnu )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-O2;-Wall" C_Options="-O2;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+        <Preprocessor Value="NDEBUG"/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Release" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

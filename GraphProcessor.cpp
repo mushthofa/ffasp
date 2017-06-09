@@ -124,8 +124,8 @@ void GraphProcessor::eval(unsigned idx)
 			// Just stream it out
 			// std::cout<<"Reached last component, streaming answer set: "<<std::endl;
 			currentAS = evaluator->getNextAnswerSet();
-			//std::cout<<currentAS.getStrClean()<<std::endl;
-			std::cout<<"<<Consistent>>"<<std::endl;
+			std::cout<<currentAS.getStrClean()<<std::endl;
+			//std::cout<<"<<Consistent>>"<<std::endl;
 			found = true;
 		}
 		else

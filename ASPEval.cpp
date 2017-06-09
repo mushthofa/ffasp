@@ -166,12 +166,12 @@ bool ASPEval::doSolve()
 	//int k = std::max(step, 2);	// start search from k=2
 	bool found = false;
 
-	std::cout<<"doSolve(): "<<std::endl;
+	//std::cout<<"doSolve(): "<<std::endl;
 	//std::cout<<program<<std::endl;
 	do
 	{
 
-		std::cout<<"k="<<curr_k<<std::endl;
+		//std::cout<<"k="<<curr_k<<std::endl;
 		ASPTranslate* tr;
 
 		try

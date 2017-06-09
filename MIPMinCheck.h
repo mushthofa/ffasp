@@ -8,11 +8,11 @@
 #ifndef MIPMINCHECK_H_
 #define MIPMINCHECK_H_
 
-#include "Mincheck.h"
+#include "MinCheck.h"
 #include <glpk.h>
 #include "MIPRegistry.h"
-#include "coin/CbcModel.hpp"
-#include "coin/OsiClpSolverInterface.hpp"
+#include <coin/CbcModel.hpp>
+#include <coin/OsiClpSolverInterface.hpp>
 
 const double EPS = 1e-5;
 

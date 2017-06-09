@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Mushthofa                                       *
+ *   Copyright (C) 2017 by Mushthofa                                       *
  *   Mushthofa.Mushthofa@Ugent.						*
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -47,7 +47,7 @@
 void showUsage(char* prog)
 {
 	std::cout<<"FFASP -- A finite-valued fuzzy answer set solver -- "<<std::endl;
-	std::cout<<"build 03/2014"<<std::endl;
+	std::cout<<"build 05/2017"<<std::endl;
 	std::cout<<"(c) Ghent University, BE"<<std::endl;
 	std::cout<<std::endl<<"USAGE: \t"<<prog<<" [options] [<input-file>]"<<std::endl<<std::endl;
 	std::cout<<"E.g.: \t"<<prog<<" --maxk=200 -c program.lp"<<std::endl<<std::endl;
@@ -233,7 +233,7 @@ int main(int argc, char *argv[])
         if(Globals::Instance()->boolOption("noscc"))
         {
 			// Get evaluation options
-        	std::cout <<" No SCC evaluation "<<std::endl;
+        	std::cout <<"*** No SCC evaluation *** "<<std::endl;
 			int maxk = Globals::Instance()->intOption("maxk");
 			int maxtime = Globals::Instance()->intOption("maxt");
 			if(Globals::Instance()->boolOption("fin"))
