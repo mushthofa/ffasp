@@ -1,0 +1,13 @@
+Install 
+- Boost Library:
+sudo apt-get install libboost-dev
+
+- Install clingo/clasp
+sudo apt-get install gringo clasp 
+
+- Install GLPK 
+sudo apt-get install libglpk-dev 
+
+- Install COIN OR Cbc
+sudo apt-get install coinor-cbc coinor-libcbc3 coinor-libcbc-dev coinor-libcoinutils-dev coinor-libclp-dev
+
