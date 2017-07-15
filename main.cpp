@@ -297,11 +297,7 @@ int main(int argc, char *argv[])
 			delete eng;
         }
 
-
-
-
-        //ASPSolverEngine* eng = new CLSolverEngine();
-
+        //ASPSolverEngine* eng = new CLSolverEngine();s
 
         //cout<<"Run graph "<<endl;
         if(!Globals::Instance()->boolOption("noscc"))
