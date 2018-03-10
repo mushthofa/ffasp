@@ -47,7 +47,7 @@
 void showUsage(char* prog)
 {
 	std::cout<<"FFASP -- A finite-valued fuzzy answer set solver -- "<<std::endl;
-	std::cout<<"build 06/2017"<<std::endl;
+	std::cout<<"Version 0.9"<<std::endl;
 	std::cout<<"(c) Ghent University, BE"<<std::endl;
 	std::cout<<std::endl<<"USAGE: \t"<<prog<<" [options] [<input-file>]"<<std::endl<<std::endl;
 	std::cout<<"E.g.: \t"<<prog<<" --maxk=200 -c program.lp"<<std::endl<<std::endl;
