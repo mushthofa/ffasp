@@ -14,6 +14,8 @@ Might compile on Windows (with Cygwin), but never tested.
 http://www.boost.org/
 Make sure it can be found in your include path
 e.g. : in '/usr/include/', /'usr/local/include/' etc.
+On Debian/Ubuntu, this is usually done using:
+$ sudo apt-get install libboost-dev
 
 2) Download 'clingo' (>=4.3.0) from the Potassco suite.
 http://potassco.sourceforge.net/
@@ -22,15 +24,22 @@ Make sure it can be called using the following command
 
 $ clingo
 
+3) Install GLPK libraries (https://www.gnu.org/software/glpk/). 
+On Debian/Ubuntu, this is usually done using:
+sudo apt-get install libglpk-dev glpk-utils 
 
-3) Run the following commands in the directory ffasp :
+4) Install Coinor-Cbc libraries (https://projects.coin-or.org/Cbc)
+On Debian/Ubuntu, this is usually done using:
+sudo apt-get install coinor-cbc coinor-libcbc-dev
+
+5) Run the following commands in the directory ffasp :
 
 $ mkdir build
 $ cd build
 $ cmake ../
 $ make
 
-Compilation will proceed and an executable named 'ffasp' will be created.
+Compilation will proceed and an executable named 'ffasp' will be created in the build directory.
 
 USAGE
 -----------------
